@@ -1002,6 +1002,47 @@
             </div>
         </div>
 
+        
+            <!-- AI & SEO Interactive Checklist -->
+            <div class="calendar-section" style="margin-top: 2rem;">
+                <div class="calendar-header-box">
+                    <div class="calendar-title-group">
+                        <h3><i class="fa-solid fa-robot" style="color: var(--umi-brand);"></i> خطوات تنفيذ استراتيجية الذكاء الاصطناعي والـ SEO</h3>
+                        <p>خطوات تفصيلية قابلة للتتبع مع حاسبة إنجاز فورية تُحدَّث بالضغط على كل خطوة مكتملة.</p>
+                    </div>
+                    <div class="progress-widget">
+                        <div class="progress-info">
+                            <span class="progress-label"><i class="fa-solid fa-chart-line"></i> نسبة تنفيذ خطة الـ AI:</span>
+                            <span class="progress-percentage" id="aiProgressPercent">0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="aiProgressBarFill"></div>
+                        </div>
+                        <div class="progress-stats-sub">
+                            <span>الخطوات المكتملة: <strong id="aiCompletedCount">0</strong> / 15</span>
+                            <span>المتبقية: <strong id="aiRemainingCount">15</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-table-responsive">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">تم؟</th>
+                                <th style="width: 220px;">المرحلة</th>
+                                <th>الخطوة التنفيذية</th>
+                                <th style="width: 180px;">المسؤول</th>
+                                <th style="width: 130px;">الأولوية</th>
+                            </tr>
+                        </thead>
+                        <tbody id="aiChecklistTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         <!-- TAB 3: خطة المحتوى (3 أجزاء + جدول 3 أشهر وتشاك ليست) -->
         <div id="tab-pillars" class="tab-content">
             <!-- 3 Pillar Summary Cards -->
@@ -1402,6 +1443,110 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderCalendarTable('all');
         });
+    
+        // -------------------------------------------------------------
+        // AI & SEO INTERACTIVE CHECKLIST DATA
+        // -------------------------------------------------------------
+        const aiChecklistData = [
+            // Phase 1: Schema.org JSON-LD
+            { phase: 'المرحلة 1: Schema.org', step: 'إضافة بيانات Organization JSON-LD على الصفحة الرئيسية باسم وعنوان وتفاصيل UMI Group.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
+            { phase: 'المرحلة 1: Schema.org', step: 'إضافة بيانات LocalBusiness مع إحداثيات دبي الدقيقة (GPS Coordinates) ونطاق الخدمة.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
+            { phase: 'المرحلة 1: Schema.org', step: 'إضافة Service Schema لكل خدمة: تصميم الأجنحة، الديكور، الأكشاك، وإنتاج الفعاليات.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
+            { phase: 'المرحلة 1: Schema.org', step: 'إضافة Person Schema للأستاذ فراس نصر (CEO) مربوط بـ sameAs لحسابات LinkedIn & Instagram.', resp: 'مدير الموقع', priority: 'عالية', color: 'icon-gold' },
+            { phase: 'المرحلة 1: Schema.org', step: 'اختبار الـ Schema على أداة Google Rich Results Test والتأكد من عدم وجود أخطاء.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
+
+            // Phase 2: CTR Meta Titles
+            { phase: 'المرحلة 2: Meta Titles & CTR', step: 'مراجعة وتحديث عنوان صفحة Home ليكون: "UMI Group | #1 Exhibition Stand Designers in Dubai".', resp: 'مدير المحتوى', priority: 'عالية', color: 'icon-blue' },
+            { phase: 'المرحلة 2: Meta Titles & CTR', step: 'صياغة Meta Descriptions مخصصة لكل صفحة رئيسية بالكلمات المفتاحية الأكثر بحثاً بدبي.', resp: 'مدير المحتوى', priority: 'عالية', color: 'icon-blue' },
+            { phase: 'المرحلة 2: Meta Titles & CTR', step: 'إضافة الكلمات المفتاحية الاستفهامية التي يجيب عليها ChatGPT & Perplexity في نصوص الصفحات.', resp: 'مدير المحتوى', priority: 'متوسطة', color: 'icon-blue' },
+            { phase: 'المرحلة 2: Meta Titles & CTR', step: 'إضافة هيكل H1 / H2 / H3 محسّن بالكلمات المفتاحية الجغرافية (دبي، الإمارات، معارض، أجنحة).', resp: 'مطور الموقع', priority: 'متوسطة', color: 'icon-blue' },
+            { phase: 'المرحلة 2: Meta Titles & CTR', step: 'تفعيل Rank Math Analytics وربطه بـ Google Search Console لمتابعة النتائج.', resp: 'مدير الموقع', priority: 'متوسطة', color: 'icon-blue' },
+
+            // Phase 3: Brand Entity / Knowledge Graph
+            { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'إنشاء وربط حسابات سوشيال ميديا رسمية (LinkedIn & Instagram & Facebook) بنفس الاسم والبيانات.', resp: 'مدير التسويق', priority: 'عالية', color: 'icon-purple' },
+            { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'نشر مقال إعلامي/صحفي خارجي يذكر اسم UMI Group مع رابط للموقع (مصادر موثوقة).', resp: 'مدير التسويق', priority: 'عالية', color: 'icon-purple' },
+            { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'إعداد صفحة Wikipedia أو Wikidata لـ UMI Group مع كافة التفاصيل (اختياري مستقبلي).', resp: 'مدير التسويق', priority: 'منخفضة', color: 'icon-purple' },
+            { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'تسجيل UMI Group في Google Business Profile وتحديث كافة بيانات الشركة بدبي.', resp: 'مدير الموقع', priority: 'عالية', color: 'icon-purple' },
+            { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'مراجعة النتائج شهرياً: اختبار الظهور في ChatGPT & Gemini & Perplexity بعبارات البحث المستهدفة.', resp: 'مدير التسويق', priority: 'متوسطة', color: 'icon-purple' },
+        ];
+
+        // Load AI checklist saved states
+        const savedAiChecklist = JSON.parse(localStorage.getItem('umi_ai_checklist') || '{}');
+
+        function getPriorityBadge(priority) {
+            if (priority === 'عالية') return '<span style="background: rgba(216,27,96,0.1); color: #d81b60; border: 1px solid rgba(216,27,96,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + priority + '</span>';
+            if (priority === 'متوسطة') return '<span style="background: rgba(37,99,235,0.1); color: #2563eb; border: 1px solid rgba(37,99,235,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + priority + '</span>';
+            return '<span style="background: rgba(124,58,237,0.1); color: #7c3aed; border: 1px solid rgba(124,58,237,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + priority + '</span>';
+        }
+
+        function renderAiChecklist() {
+            const tbody = document.getElementById('aiChecklistTableBody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            aiChecklistData.forEach((item, index) => {
+                const isChecked = savedAiChecklist[index] ? 'checked' : '';
+                const rowClass = isChecked ? 'completed-row' : '';
+
+                const tr = document.createElement('tr');
+                tr.className = rowClass;
+                tr.id = 'ai-row-' + index;
+                tr.innerHTML = '<td><label class="chk-container"><input type="checkbox" onchange="toggleAiCheck(' + index + ', this)" ' + isChecked + '><span class="checkmark"></span></label></td>'
+                    + '<td><span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">' + item.phase + '</span></td>'
+                    + '<td style="font-size: 0.95rem; font-weight: 600;">' + item.step + '</td>'
+                    + '<td><span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">' + item.resp + '</span></td>'
+                    + '<td>' + getPriorityBadge(item.priority) + '</td>';
+
+                tbody.appendChild(tr);
+            });
+
+            updateAiProgressStats();
+        }
+
+        function toggleAiCheck(index, checkboxElem) {
+            savedAiChecklist[index] = checkboxElem.checked;
+            localStorage.setItem('umi_ai_checklist', JSON.stringify(savedAiChecklist));
+
+            const rowElem = document.getElementById('ai-row-' + index);
+            if (rowElem) {
+                if (checkboxElem.checked) rowElem.classList.add('completed-row');
+                else rowElem.classList.remove('completed-row');
+            }
+
+            updateAiProgressStats();
+        }
+
+        function updateAiProgressStats() {
+            const total = aiChecklistData.length;
+            let checked = 0;
+            for (let i = 0; i < total; i++) {
+                if (savedAiChecklist[i]) checked++;
+            }
+
+            const percent = Math.round((checked / total) * 100);
+            const pct = document.getElementById('aiProgressPercent');
+            const bar = document.getElementById('aiProgressBarFill');
+            const comp = document.getElementById('aiCompletedCount');
+            const rem = document.getElementById('aiRemainingCount');
+
+            if (pct) pct.innerText = percent + '%';
+            if (bar) bar.style.width = percent + '%';
+            if (comp) comp.innerText = checked;
+            if (rem) rem.innerText = total - checked;
+        }
+
+        // Render AI checklist after DOM is ready
+        const origDOMLoad = document.addEventListener;
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('aiChecklistTableBody')) {
+                renderAiChecklist();
+            }
+        });
+
+
+        // Render AI Checklist on page load
+        renderAiChecklist();
+
     </script>
 </body>
 </html>
