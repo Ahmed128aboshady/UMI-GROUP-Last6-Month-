@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطة النمو الاستراتيجية 2026 - UMI Group</title>
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Premium Executive Light Theme Palette */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --border-card: #e2e8f0;
+            
+            /* UMI Group Brand Color Palette (Magenta & Rose) */
+            --umi-brand: #d81b60;
+            --umi-brand-light: #e91e63;
+            --umi-brand-dark: #ad1457;
+            --umi-brand-glow: rgba(216, 27, 96, 0.18);
+            
+            --accent-gold: #d81b60;
+            --accent-gold-glow: rgba(216, 27, 96, 0.15);
+            --accent-blue: #2563eb;
+            --accent-cyan: #0284c7;
+            --accent-purple: #7c3aed;
+            --accent-pink: #db2777;
+            --accent-green: #10b981;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            
+            --gradient-gold: linear-gradient(135deg, #e91e63 0%, #d81b60 50%, #ad1457 100%);
+            --gradient-blue: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+            --gradient-purple: linear-gradient(135deg, #6d28d9 0%, #7c3aed 50%, #8b5cf6 100%);
+            --gradient-glass: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 20px 35px -10px rgba(216, 27, 96, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Ambient Background Overlay */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(216, 27, 96, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 90% 90%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.15rem 3rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(216, 27, 96, 0.15);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .brand-logo-box {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .brand-logo-img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px var(--umi-brand-glow));
+        }
+
+        .brand-logo-text {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .brand-logo-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .brand-badge {
+            background: rgba(216, 27, 96, 0.08);
+            border: 1px solid rgba(216, 27, 96, 0.25);
+            color: var(--umi-brand);
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            color: var(--umi-brand);
+            background: rgba(216, 27, 96, 0.05);
+            border-color: rgba(216, 27, 96, 0.15);
+        }
+
+        .nav-btn.active {
+            color: #ffffff;
+            background: var(--gradient-gold);
+            font-weight: 700;
+            box-shadow: 0 4px 16px var(--umi-brand-glow);
+        }
+
+        /* Container Layout */
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        /* Hero Banner Section */
+        .hero-banner {
+            text-align: center;
+            padding: 2rem 1.5rem 3rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 2.75rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero-title span {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Interactive Tab Container */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CAROUSEL SECTION */
+        .carousel-wrapper {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0.5rem;
+        }
+
+        /* Carousel Slide Content Cards */
+        .slide-card {
+            background: var(--gradient-glass);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .slide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .tag-gold { background: rgba(216, 27, 96, 0.08); color: var(--umi-brand); border: 1px solid rgba(216, 27, 96, 0.25); }
+        .tag-blue { background: rgba(37, 99, 235, 0.08); color: var(--accent-blue); border: 1px solid rgba(37, 99, 235, 0.25); }
+        .tag-purple { background: rgba(124, 58, 237, 0.08); color: var(--accent-purple); border: 1px solid rgba(124, 58, 237, 0.25); }
+        .tag-insta { background: rgba(219, 39, 119, 0.08); color: var(--accent-pink); border: 1px solid rgba(219, 39, 119, 0.25); }
+
+        .slide-heading {
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .slide-description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* Grid inside Slide */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(216, 27, 96, 0.3);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--umi-brand);
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+        }
+
+        .feature-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Carousel Navigation Controls */
+        .carousel-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            width: 32px;
+            border-radius: 10px;
+            background: var(--umi-brand);
+            box-shadow: 0 0 12px var(--umi-brand-glow);
+        }
+
+        .carousel-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .arrow-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: var(--text-main);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .arrow-btn:hover {
+            background: var(--umi-brand);
+            color: #ffffff;
+            border-color: var(--umi-brand);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* GRID CARDS FOR SECTIONS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(216, 27, 96, 0.3);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .icon-gold { background: rgba(216, 27, 96, 0.1); color: var(--umi-brand); }
+        .icon-blue { background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); }
+        .icon-purple { background: rgba(124, 58, 237, 0.1); color: var(--accent-purple); }
+        .icon-insta { background: rgba(219, 39, 119, 0.1); color: var(--accent-pink); }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .card-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-list li {
+            position: relative;
+            padding-right: 1.75rem;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+        }
+
+        .card-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: 2px;
+            color: var(--umi-brand);
+            font-size: 1rem;
+        }
+
+        /* KPI STATS ROW */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .kpi-box {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .kpi-value {
+            font-size: 2.25rem;
+            font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* -------------------------------------------------------------
+           3-MONTH CONTENT CALENDAR & DYNAMIC PROGRESS TRACKER STYLES
+        ------------------------------------------------------------- */
+        .calendar-section {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .calendar-header-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .calendar-title-group h3 {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .calendar-title-group h3 i {
+            color: var(--umi-brand);
+        }
+
+        .calendar-title-group p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Progress Bar Widget Box */
+        .progress-widget {
+            background: rgba(216, 27, 96, 0.04);
+            border: 1px solid rgba(216, 27, 96, 0.18);
+            border-radius: 20px;
+            padding: 1.25rem 2rem;
+            min-width: 340px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .progress-label {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .progress-percentage {
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--umi-brand);
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-gold);
+            border-radius: 10px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px var(--umi-brand-glow);
+        }
+
+        .progress-stats-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 700;
+        }
+
+        /* Month Filter Buttons */
+        .month-filters {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .month-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: var(--text-muted);
+            padding: 0.6rem 1.4rem;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .month-btn:hover {
+            border-color: var(--umi-brand);
+            color: var(--umi-brand);
+        }
+
+        .month-btn.active {
+            background: var(--umi-brand);
+            color: #ffffff;
+            border-color: var(--umi-brand);
+            box-shadow: 0 4px 12px var(--umi-brand-glow);
+        }
+
+        /* Table Design */
+        .calendar-table-responsive {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 0.95rem;
+            background: #ffffff;
+        }
+
+        .calendar-table th {
+            background: #f8fafc;
+            color: var(--text-main);
+            font-weight: 800;
+            padding: 1.1rem 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            white-space: nowrap;
+        }
+
+        .calendar-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: middle;
+        }
+
+        .calendar-table tr:hover {
+            background: rgba(216, 27, 96, 0.02);
+        }
+
+        .calendar-table tr.completed-row {
+            background: rgba(16, 185, 129, 0.04);
+        }
+
+        /* Pillar Badges in Table */
+        .pillar-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .badge-p1 { background: rgba(216, 27, 96, 0.1); color: var(--umi-brand); border: 1px solid rgba(216, 27, 96, 0.25); }
+        .badge-p2 { background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); border: 1px solid rgba(37, 99, 235, 0.25); }
+        .badge-p3 { background: rgba(124, 58, 237, 0.1); color: var(--accent-purple); border: 1px solid rgba(124, 58, 237, 0.25); }
+
+        /* Custom Checkbox */
+        .chk-container {
+            display: block;
+            position: relative;
+            padding-right: 28px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            user-select: none;
+            font-weight: 700;
+        }
+
+        .chk-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 2px;
+            right: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .chk-container:hover input ~ .checkmark {
+            border-color: var(--umi-brand);
+        }
+
+        .chk-container input:checked ~ .checkmark {
+            background-color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .chk-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .chk-container .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid var(--border-card);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            background: #ffffff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .hero-title { font-size: 2rem; }
+            .carousel-wrapper { padding: 1.25rem; }
+            .slide-card { padding: 1.5rem; }
+            .calendar-header-box { flex-direction: column; align-items: flex-start; }
+            .progress-widget { width: 100%; min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand-container">
+            <div class="brand-logo-box">
+                <!-- UMI Group Official High-Res PNG Logo -->
+                <img src="logo.png" alt="UMI Group Logo" class="brand-logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'12\' fill=\'%23d81b60\'/><text x=\'50\' y=\'60\' fill=\'white\' font-size=\'30\' text-anchor=\'middle\' font-weight=\'bold\'>UMI</text></svg>';">
+                <div>
+                    <div class="brand-logo-text">UMI GROUP</div>
+                    <div class="brand-logo-sub">EXHIBITION STAND DESIGNERS</div>
+                </div>
+            </div>
+            <div class="brand-badge"><i class="fa-solid fa-crown"></i> خطة النمو 2026</div>
+        </div>
+
+        <ul class="nav-links">
+            <li><button class="nav-btn active" onclick="switchTab('tab-summary')"><i class="fa-solid fa-chart-pie"></i> الملخص التنفيذي</button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-ai-seo')"><i class="fa-solid fa-brain"></i> الذكاء الاصطناعي وSEO</button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-pillars')"><i class="fa-solid fa-layer-group"></i> خطة المحتوى (3 أجزاء والجدول)</button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-instagram')"><i class="fa-brands fa-instagram"></i> نمو إنستجرام</button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-leads')"><i class="fa-solid fa-magnet"></i> زيادة الليز (Leads)</button></li>
+        </ul>
+    </header>
+
+    <main>
+        <!-- Hero Title Banner -->
+        <div class="hero-banner">
+            <h1 class="hero-title">استراتيجية التوسع والتواجد الرقمي <span>UMI Group 2026</span></h1>
+            <p class="hero-subtitle">رؤية كاملة للظهور في محركات الذكاء الاصطناعي (AI Search)، زيادة التفاعل على إنستجرام، مضاعفة العملاء المحتملين (Leads)، وبناء علامة تجارية شخصية قوية للقيادة.</p>
+        </div>
+
+        <!-- KPI Key Highlights Row -->
+        <div class="kpi-row">
+            <div class="kpi-box">
+                <div class="kpi-value">#1</div>
+                <div class="kpi-label">الظهور في AI Search بدبي</div>
+            </div>
+            <div class="kpi-box">
+                <div class="kpi-value">3x</div>
+                <div class="kpi-label">مضاعفة عملاء Contact Us</div>
+            </div>
+            <div class="kpi-box">
+                <div class="kpi-value">36 بوست</div>
+                <div class="kpi-label">خطة الكاليندر (3 أشهر)</div>
+            </div>
+            <div class="kpi-box">
+                <div class="kpi-value" id="kpiProgressVal">0%</div>
+                <div class="kpi-label">نسبة الإنجاز الفعلية للخطة</div>
+            </div>
+        </div>
+
+        <!-- TAB 1: الملخص التنفيذي و العرض الرئيسي الكاروسيل -->
+        <div id="tab-summary" class="tab-content active">
+            <div class="carousel-wrapper">
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="mainCarouselTrack">
+                        
+                        <!-- Slide 1: الرؤية والهدف العريض -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <span class="slide-tag tag-gold"><i class="fa-solid fa-star"></i> الشرائح العريضة - الإدارة العليا</span>
+                                <h2 class="slide-heading">الرؤية والهدف الاستراتيجي لعام 2026</h2>
+                                <p class="slide-description">بناء تواجد رقمي مهيمن لمجموعة UMI Group في دبي والإمارات، والتحول إلى Brand Entity معتمد يجيب عليه الذكاء الاصطناعي عند البحث عن أفضل مصممي ومصنعي أجنحة المعارض والديكورات.</p>
+                                
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
+                                        <div class="feature-title">الهيمنة على الذكاء الاصطناعي</div>
+                                        <div class="feature-text">الظهور التلقائي في إجابات ChatGPT وPerplexity وGemini كـ Top Recommendation.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-brands fa-instagram"></i></div>
+                                        <div class="feature-title">انطلاقة إنستجرام القوية</div>
+                                        <div class="feature-text">رفع حجم المتابعين والتفاعل ليتجاوز أداء صفحاتنا الناجحة في فيسبوك ولينكدان.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+                                        <div class="feature-title">تحويل الزوار لعملاء (Leads)</div>
+                                        <div class="feature-text">تحسين صفحة Contact Us لرفع معدل التحويل وسرعة استلام طلبات العروض.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: جزء البرند الشخصي CEO -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <span class="slide-tag tag-gold"><i class="fa-solid fa-user-tie"></i> الجزء الأول: Personal Branding</span>
+                                <h2 class="slide-heading">العلامة الشخصية للأستاذ / فراس نصر (CEO)</h2>
+                                <p class="slide-description">بناء الثقة (Thought Leadership) وترسيخ مكانة القيادة كخبير وصانع رأي في قطاع تصميم المعارض، الفعاليات الكبرى، والديكورات بالإمارات والخليج.</p>
+                                
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-video"></i></div>
+                                        <div class="feature-title">فيديوهات القيادة والتوجيه</div>
+                                        <div class="feature-text">فيديوهات قصيرة مع الأستاذ فراس تدور حول اتجاهات السوق وتحديات التنفيذ في دبي.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-newspaper"></i></div>
+                                        <div class="feature-title">مقالات وInsights تخصصية</div>
+                                        <div class="feature-text">منشورات دورية على LinkedIn تناقش ROI مشاركة الشركات بالمعارض الدولية.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                                        <div class="feature-title">التواجد في الأحداث واللقاءات</div>
+                                        <div class="feature-text">تغطيات من قلب المعارض وتوقيع العقود مع كبرى المؤسسات الحكومية والخاصة.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: جزء الموظفين وكواليس العمل -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <span class="slide-tag tag-blue"><i class="fa-solid fa-people-group"></i> الجزء الثاني: Employee Showcase</span>
+                                <h2 class="slide-heading">إظهار كواليس العمل والمهندسين وفريق التنفيذ</h2>
+                                <p class="slide-description">إبراز العنصر البشري والدقة الهندسة لتجسيد الأمانة والجودة العالية في التنفيذ، وإظهار البيئة الاحترافية لـ UMI Group.</p>
+                                
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                                        <div class="feature-title">فيديوهات "Behind The Scenes"</div>
+                                        <div class="feature-text">تغطية مراحل تحويل المخطط الـ 3D إلى حقيقة ملموسة في أرض المعرض خلال ساعات.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+                                        <div class="feature-title">أضواء على نجوم الفريق (Spotlight)</div>
+                                        <div class="feature-text">سلسلة أسبوعية للتعريف بمهندسي الديكور والمصممين ومدراء المشاريع المبدعين.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                                        <div class="feature-title">ثقافة الشركة والالتزام</div>
+                                        <div class="feature-text">إظهار روح الفريق والعمل الجماعي تحت الضغط وتسليم المعارض قبل الموعد.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: جزء معرض الأعمال Portfolio -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <span class="slide-tag tag-insta"><i class="fa-solid fa-briefcase"></i> الجزء الثالث: Company Portfolio</span>
+                                <h2 class="slide-heading">استعراض المشاريع والإنجازات الضخمة</h2>
+                                <p class="slide-description">استعراض مبهر لأبرز الأجنحة والمشاريع المنفذة لكبار العملاء (مثل: شرطة دبي، طيران الإمارات، ديوا، بينانس، وأرادَ).</p>
+                                
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-film"></i></div>
+                                        <div class="feature-title">قبل وبعد (3D vs Real Life)</div>
+                                        <div class="feature-text">مقارنات بصرية تثبت مطابقة التنفيذ على الواقع مع التصميم المعتمد 100%.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-building-flag"></i></div>
+                                        <div class="feature-title">دراسات حالة (Case Studies)</div>
+                                        <div class="feature-text">عرض بالأرقام لكيف ساهم جناح UMI في جذب آلاف الزوار لعميلنا بالمعرض.</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i class="fa-solid fa-camera"></i></div>
+                                        <div class="feature-title">فيديوهات السينمائية Reels</div>
+                                        <div class="feature-text">تصوير بدقة عالية لجماليات الإضاءة والخامات المستخدمة بالأ جناح.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="carousel-nav">
+                    <div class="carousel-indicators" id="carouselDots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                        <span class="dot" onclick="goToSlide(3)"></span>
+                    </div>
+
+                    <div class="carousel-buttons">
+                        <button class="arrow-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="arrow-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: الذكاء الاصطناعي و SEO -->
+        <div id="tab-ai-seo" class="tab-content">
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-gold"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="card-title">إعداد هيكل Schema.org JSON-LD</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>تضمين بيانات Organization & LocalBusiness المحسّنة لدبي والإمارات.</li>
+                        <li>إضافة تعريف الخدمة: Exhibition Stand Design, Event Production, Retail Kiosks.</li>
+                        <li>ربط الموقع محلياً بالنطاق الجغرافي والأنشطة التجارية المعتمدة.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-blue"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="card-title">تحسين العناوين والعناصر (CTR Meta)</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>صياغة Meta Titles جذابة تحوي الكلمات المفتاحية الأكثر طلباً بدبي.</li>
+                        <li>استهداف الجمل الاستفهامية التي يجيب عليها ChatGPT وPerplexity.</li>
+                        <li>تضمين السمعة القوية للمجموعة وكلمات الثقة مثل "Award-Winning Designers".</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-purple"><i class="fa-solid fa-network-wired"></i></div>
+                        <div class="card-title">ترسيخ الـ Brand Entity في الذكاء الاصطناعي</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>ربط صفحات التواصل الاجتماعي للأستاذ فراس نصر والشركة بنفس الـ Knowledge Graph.</li>
+                        <li>نشر مقالات صحفية وبيانات إعلامية لربط اسم UMI Group بالمعارض الضخمة.</li>
+                        <li>تغطية كافة المعارض الرئيسية (GITEX, Arab Health, Gulfood, Cityscape).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: خطة المحتوى (3 أجزاء + جدول 3 أشهر وتشاك ليست) -->
+        <div id="tab-pillars" class="tab-content">
+            <!-- 3 Pillar Summary Cards -->
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-gold"><i class="fa-solid fa-user-gear"></i></div>
+                        <div class="card-title">1. البيرسونال براند (الأستاذ فراس نصر)</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>رؤية وأفكار الأستاذ فراس نصر عن مستقبل تصميم الفعاليات والمعارض.</li>
+                        <li>فيديوهات نصائح للشركات حول اختيار المساحات والاستفادة القصوى من المعرض.</li>
+                        <li>لقاءات وصور تجمع الأستاذ فراس مع كبار الشخصيات والشباك الاستثماري.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-blue"><i class="fa-solid fa-users"></i></div>
+                        <div class="card-title">2. فريق العمل والموظفين</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>فيديوهات سريعة للمصممين أثناء بناء المخططات 3D على أحدث برامج Render.</li>
+                        <li>تغطيات المهندسين والفنيين داخل مصنع UMI وتجهيز الخامات.</li>
+                        <li>إبراز التكريمات والإنجازات والجوائز الداخلية لفريق العمل.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-purple"><i class="fa-solid fa-award"></i></div>
+                        <div class="card-title">3. سابقة الأعمال (Portfolio)</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>استعراض سينمائي لأجنحة المعارض المنفذة في دبي وأبوظبي.</li>
+                        <li>تسليط الضوء على مشاريع شرطة دبي، ديوا، بينانس، وأهم العلامات.</li>
+                        <li>فيديوهات Timelapse تبين بناء الجناح بالكامل في 48 ساعة.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3-MONTH DYNAMIC CONTENT CALENDAR & CHECKLIST SECTION -->
+            <div class="calendar-section">
+                <div class="calendar-header-box">
+                    <div class="calendar-title-group">
+                        <h3><i class="fa-solid fa-calendar-days"></i> جدول محتوى 3 أشهر والتراكينج (36 منشور)</h3>
+                        <p>بمعدل 3 منشورات أسبوعياً (الأحد، الثلاثاء، الخميس) موزعة بالتساوي على الأجزاء الثلاثة مع حاسبة إنجاز فورية.</p>
+                    </div>
+
+                    <!-- Interactive Progress Tracker Box -->
+                    <div class="progress-widget">
+                        <div class="progress-info">
+                            <span class="progress-label"><i class="fa-solid fa-chart-line"></i> نسبة تنفيذ الخطة:</span>
+                            <span class="progress-percentage" id="progressPercent">0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="progressBarFill"></div>
+                        </div>
+                        <div class="progress-stats-sub">
+                            <span>المنشورات المكتملة: <strong id="completedCount">0</strong> / 36</span>
+                            <span>المتبقية: <strong id="remainingCount">36</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Month Filters -->
+                <div class="month-filters">
+                    <button class="month-btn active" onclick="filterCalendar('all')">كافة الأشهر (36 منشور)</button>
+                    <button class="month-btn" onclick="filterCalendar('m1')">الشهر الأول (12 منشور)</button>
+                    <button class="month-btn" onclick="filterCalendar('m2')">الشهر الثاني (12 منشور)</button>
+                    <button class="month-btn" onclick="filterCalendar('m3')">الشهر الثالث (12 منشور)</button>
+                </div>
+
+                <!-- Calendar Table -->
+                <div class="calendar-table-responsive">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">تم؟</th>
+                                <th>الأسبوع / اليوم</th>
+                                <th>جزء المحتوى (Pillar)</th>
+                                <th>الهدف من المنشور (Goal)</th>
+                                <th>فكرة الكرياتيف والنوع (Creative & Format)</th>
+                                <th>منصات النشر والتفاعل</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendarTableBody">
+                            <!-- Dynamically Generated 36 Rows via JS below -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: نمو إنستجرام -->
+        <div id="tab-instagram" class="tab-content">
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-insta"><i class="fa-solid fa-clapperboard"></i></div>
+                        <div class="card-title">استراتيجية الـ Reels والوصول العريض</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>إنتاج Reels سريعة وجذابة (15-30 ثانية) بأصوات التريند للانتشار المباشر.</li>
+                        <li>استخدام انتقالات بصرية مذهلة بين المخطط الـ 3D والجناح الحقيقي.</li>
+                        <li>إدراج Hashtags مستهدفة لرجال الأعمال وصناع القرار بالإمارات.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-blue"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="card-title">الربط والتوجيه من المنصات الأخري</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>توجيه متابعي صفحة فيسبوك المليونية ولينكدان للتفاعل في إنستجرام.</li>
+                        <li>مسابقات وفاعليات تفاعلية حصرية لمتابعي حساب إنستجرام.</li>
+                        <li>استخدام الـ Collab Posts مع الموظفين والشخصيات المؤثرة بالقطاع.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-gold"><i class="fa-solid fa-comments"></i></div>
+                        <div class="card-title">الأتمتة والتفاعل الفوري (DM Automation)</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>رد تلقائي ذكي سريع عند التعليق على الصور بكلمات مثل "Quote" أو "Price".</li>
+                        <li>إرسال البروفايل ورابط سابقة الأعمال في الخاص فوراً لزيادة Leads.</li>
+                        <li>تخصيص هايلايتس (Highlights) مرتبة للمشاريع حسب القطاعات.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: زيادة الليز (Leads) -->
+        <div id="tab-leads" class="tab-content">
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-gold"><i class="fa-solid fa-paper-plane"></i></div>
+                        <div class="card-title">تطوير نموذج صفحة Contact Us</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>تبسيط نموذج التواصل إلى 4 حقول رئيسية فقط لتقليل نسبة التسرب.</li>
+                        <li>إضافة خيار رفع المخطط أو ملف الـ Brief مباشرة في النموذج.</li>
+                        <li>زر اتخاذ قرار واضح وقوي (CTA): "احصل على تصميم 3D وتكلفة مجاناً".</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-blue"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="card-title">التواصل الفوري عبر الواتساب (WhatsApp Direct)</div>
+                    </div>
+                    <ul class="card-list">
+                        <li><span style="color: #10b981; font-weight: bold;">[مُفعّل حالياً]</span> زر الواتساب التفاعلي المربوط بصفحة التواصل والمشاريع.</li>
+                        <li>رسالة ترحيبية مجهزة: "أهلاً بك في UMI Group، كيف يمكننا مساعدتك في معرضك القادم؟"</li>
+                        <li>ربط الرسائل بنظام التتبع المباشر لمعرفة مصدر كل عميل.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon-box icon-purple"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="card-title">إشارات الثقة (Social Proof)</div>
+                    </div>
+                    <ul class="card-list">
+                        <li>إضافة لوجو كبار العملاء (شرطة دبي، ديوا، بينانس) بجانب النموذج مباشرة.</li>
+                        <li>عرض التقييمات وآراء العملاء (Testimonials) لرفع درجة الاطمئنان.</li>
+                        <li>تأكيد سرية البيانات وسرعة الرد خلال أقل من 15 دقيقة.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>تم إعداد هذه الخطة خصيصاً لمجلس إدارة <strong>UMI Group</strong> لعام 2026 &copy;</p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Carousel, Calendar, & Interactive Checklist -->
+    <script>
+        // Tab Switcher Function
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            const targetTab = document.getElementById(tabId);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+
+            event.currentTarget.classList.add('active');
+        }
+
+        // Carousel Slider Functionality
+        let currentSlide = 0;
+        const track = document.getElementById('mainCarouselTrack');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = 4;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        let autoSlideTimer = setInterval(nextSlide, 6000);
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
+        carouselWrapper.addEventListener('mouseleave', () => {
+            autoSlideTimer = setInterval(nextSlide, 6000);
+        });
+
+        // -------------------------------------------------------------
+        // 3-MONTH CONTENT CALENDAR & DYNAMIC CHECKLIST DATA GENERATOR
+        // -------------------------------------------------------------
+        const calendarPostsData = [
+            // MONTH 1 (Weeks 1 - 4)
+            // Week 1
+            { month: 'm1', week: 'الأسبوع 1 - الأحد (2 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'بناء الثقة والقيادة الفكرية', creative: 'فيديو قصير (Reel) للأستاذ فراس نصر يتحدث عن "سر نجاح تواجد UMI في معارض دبي من 2005 حتى 2026".', platform: 'LinkedIn & Instagram & FB' },
+            { month: 'm1', week: 'الأسبوع 1 - الثلاثاء (4 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'إبراز العنصر البشري والدقة', creative: 'فيديو BTS لمهندسي التصميم أثناء بناء مخطط جناح 3D وتعديل تفاصيل الإضاءة.', platform: 'Instagram Reel & TikTok' },
+            { month: 'm1', week: 'الأسبوع 1 - الخميس (6 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض القوة والعملاء الكبار', creative: 'فيديو سينمائي عالي الجودة لجناح (شرطة دبي) مع مقارنة التصميم الـ 3D بالتنفيذ الحقيقي.', platform: 'Instagram & LinkedIn & FB' },
+
+            // Week 2
+            { month: 'm1', week: 'الأسبوع 2 - الأحد (9 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'نصائح استراتيجية للشركات', creative: 'منشور كارسول (Carousel 5 شرائح) بقلم الأستاذ فراس: "أخطاء قاتلة تجنبها عند تصميم جناح معرضك".', platform: 'LinkedIn & Instagram' },
+            { month: 'm1', week: 'الأسبوع 2 - الثلاثاء (11 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'تعزيز ثقافة الجودة والتصنيع', creative: 'تغطية مصورة من داخل مصنع UMI لتجهيز وتجميع خامات الأخشاب والإضاءات (هتتعمل بالـ AI).', platform: 'Instagram & Facebook' },
+            { month: 'm1', week: 'الأسبوع 2 - الخميس (13 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'إبراز التنوع والضخامة', creative: 'عرض خاص لجناح شركة (بينانس Binance) بالمعارض التقنية مع تفاصيل التفاعلية.', platform: 'Instagram Reel & LinkedIn' },
+
+            // Week 3
+            { month: 'm1', week: 'الأسبوع 3 - الأحد (16 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'استعراض الرؤية المستقبلية', creative: 'صورة احترافية للأستاذ فراس نصر مع اقتباس (Quote) حول الابتكار في مواد البناء المستدامة.', platform: 'LinkedIn & Instagram' },
+            { month: 'm1', week: 'الأسبوع 3 - الثلاثاء (18 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'Spotlight الموظفين', creative: 'سلسلة "تعرف على مهندسي UMI" - مقابلة 30 ثانية مع واحد من التيم ليدر وكيفية العمل مع العميل.', platform: 'Instagram Reel & LinkedIn' },
+            { month: 'm1', week: 'الأسبوع 3 - الخميس (20 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'إثبات سرعة الإنجاز', creative: 'فيديو Fast-Motion / Timelapse لبناء جناح معارض كامل خلال 48 ساعة فقط.', platform: 'Instagram Reel & FB & TikTok' },
+
+            // Week 4
+            { month: 'm1', week: 'الأسبوع 4 - الأحد (23 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'تحليل عائد الاستثمار ROI', creative: 'مقالة تخصصية بقلم الأستاذ فراس نصر: "كيف أحدثت التكنولوجيا ثورة في تصميم المعارض وأصبحت الركن الأساسي لجذب العملاء والشركات؟".', platform: 'LinkedIn Article & IG Carousel' },
+            { month: 'm1', week: 'الأسبوع 4 - الثلاثاء (25 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'إبراز روح الفريق والتحدي', creative: 'فيديو التسليم النهائي لعميل طلب التنفيذ في وقت قياسي متأخر وكان يواجه أزمة وقت حقيقية، وفرحة فريق UMI بالإنجاز والتسليم قبل الافتتاح بساعة.', platform: 'Instagram Reel & Stories' },
+            { month: 'm1', week: 'الأسبوع 4 - الخميس (27 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'حالة نجاح Case Study', creative: 'دراسة حالة بالأرقام لجناح (DEWA - هيئة كهرباء ومياه دبي) وكيف جذب آلاف الزوار.', platform: 'LinkedIn & Instagram & FB' },
+
+            // MONTH 2 (Weeks 5 - 8)
+            // Week 5
+            { month: 'm2', week: 'الأسبوع 5 - الأحد (6 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'القيادة في المعارض القادمة', creative: 'فيديو الأستاذ فراس نصر يتحدث عن الاستعدادات لمعرض GITEX و Gulfood القادم.', platform: 'LinkedIn & Instagram' },
+            { month: 'm2', week: 'الأسبوع 5 - الثلاثاء (8 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'الدقة والابتكار في 3D', creative: 'فيديو مقارنة الشاشة بين برنامج الريندر 3D والخامة الواقعية المستخدمة في الحقيقة.', platform: 'Instagram Reel & TikTok' },
+            { month: 'm2', week: 'الأسبوع 5 - الخميس (10 سبتمبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض قطاع العقارات', creative: 'عرض مشروع جناح (Meraas - ميرداس) وتفاصيل الفخامة والتنسيق الهيكلي.', platform: 'Instagram & LinkedIn' },
+
+            // Week 6
+            { month: 'm2', week: 'الأسبوع 6 - الأحد (13 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'نصائح اختيار المساحات', creative: 'فيديو نصائح الأستاذ فراس: "كيف تختار مكان جناحك داخل قاعة المعرض لضمان أعلى حركة زوار؟".', platform: 'LinkedIn Reel & IG' },
+            { month: 'm2', week: 'الأسبوع 6 - الثلاثاء (15 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'إبراز معايير السلامة والجودة', creative: 'تغطية جودة تشطيبات الأخشاب والدهانات الاحترافية داخل المصنع بأيدي الفنيين.', platform: 'Instagram & Facebook' },
+            { month: 'm2', week: 'الأسبوع 6 - الخميس (17 سبتمبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض الأكشاك Retail Kiosks', creative: 'عرض أكشاك ومنافذ البيع المبتكرة (Ain Dubai Kiosks) والديكورات التجارية.', platform: 'Instagram & FB & LinkedIn' },
+
+            // Week 7
+            { month: 'm2', week: 'الأسبوع 7 - الأحد (20 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'العلاقات الدبلوماسية والشراكات', creative: 'صورة وتغطية لقاء الأستاذ فراس نصر مع الوفود المشاركة بملتقى الاستثمار.', platform: 'LinkedIn & Instagram' },
+            { month: 'm2', week: 'الأسبوع 7 - الثلاثاء (22 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'Spotlight فريق المبيعات والخدمة', creative: 'لقاء سريع مع مدير حسابات العملاء يوضح كيفية تنفيذ ميزانية العميل بأفضل تصميم.', platform: 'Instagram Reel & LinkedIn' },
+            { month: 'm2', week: 'الأسبوع 7 - الخميس (24 سبتمبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض قطاع العطور والتجميل', creative: 'فيديو سينمائي لجناح (العربية للعود Arabian Oud) بالمعرض وتأثيرات الإضاءة الزجاجية.', platform: 'Instagram Reel & FB' },
+
+            // Week 8
+            { month: 'm2', week: 'الأسبوع 8 - الأحد (27 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'توظيف التكنولوجيا المعمارية', creative: 'منشور كارسول برأي الأستاذ فراس: "كيف ندمج الذكاء الاصطناعي والشاشات التفاعلية في الأجنحة؟".', platform: 'LinkedIn & Instagram' },
+            { month: 'm2', week: 'الأسبوع 8 - الثلاثاء (29 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'الالتزام والعمل الليلي', creative: 'تغطية العمليات اللوجستية والشحن والنقل إلى مركز دبي التجاري العالمي في منتصف الليل.', platform: 'Instagram Story & Reel' },
+            { month: 'm2', week: 'الأسبوع 8 - الخميس (1 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'المشاريع الحكومية الضخمة', creative: 'عرض كامل لجناح (وزارة الصحة MOHAP) بالتفاصيل الفنية والتجهيز الهيكلي.', platform: 'LinkedIn & Instagram & FB' },
+
+            // MONTH 3 (Weeks 9 - 12)
+            // Week 9
+            { month: 'm3', week: 'الأسبوع 9 - الأحد (4 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'رسالة شكر ونجاح', creative: 'فيديو الأستاذ فراس نصر يشكر العملاء بعد ختام الموسم الأول ويستعرض الخطوات القادمة.', platform: 'LinkedIn & Instagram' },
+            { month: 'm3', week: 'الأسبوع 9 - الثلاثاء (6 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'تجميع الجوائز والإنجازات', creative: 'صورة وفيديو تجمع فريق UMI بالكامل مع الجوائز التكريمية بعد تسليم المعارض بنجاح.', platform: 'Instagram & LinkedIn' },
+            { month: 'm3', week: 'الأسبوع 9 - الخميس (8 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'قطاع البنوك والمؤسسات المالية', creative: 'استعراض مشروع جناح (بنك الإمارات دبي الوطني / البنوك الوطنية) بالمعرض.', platform: 'LinkedIn & Instagram' },
+
+            // Week 10
+            { month: 'm3', week: 'الأسبوع 10 - الأحد (11 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'دليل الشركات الجديد 2026', creative: 'الإعلان عن إطلاق دليل UMI المجاني لتصميم الأجنحة بقلم الأستاذ فراس نصر.', platform: 'LinkedIn & IG (Lead Magnet)' },
+            { month: 'm3', week: 'الأسبوع 10 - الثلاثاء (13 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'اختبارات الإضاءة والصوت', creative: 'فيديو كواليس مهندسي الصوت والإضاءة أثناء ضبط الشاشات التفاعلية قبل افتتاح الجناح.', platform: 'Instagram Reel & TikTok' },
+            { month: 'm3', week: 'الأسبوع 10 - الخميس (15 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض المطاعم والكافيهات', creative: 'استعراض تصاميم المطاعم والمقاهي العصرية (Taisuke & Helvaci Ali).', platform: 'Instagram Reel & FB' },
+
+            // Week 11
+            { month: 'm3', week: 'الأسبوع 11 - الأحد (18 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'التوسع الإقليمي بالخليج', creative: 'فيديو الأستاذ فراس يتحدث عن مشاريع UMI المرتقبة في السعودية والإمارات.', platform: 'LinkedIn & Instagram' },
+            { month: 'm3', week: 'الأسبوع 11 - الثلاثاء (20 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'Spotlight فريق الدعم اللوجستي', creative: 'فيديو شكر وتكريم لسائقي وفنيي الشحن والديكور لجهودهم في تسليم المشاريع.', platform: 'Instagram & Facebook' },
+            { month: 'm3', week: 'الأسبوع 11 - الخميس (22 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'أجنحة الطيران والتكنولوجيا', creative: 'عرض مشروع جناح (طيران الإمارات / مصر للطيران) بمعرض الطيران الدولي.', platform: 'LinkedIn & Instagram & FB' },
+
+            // Week 12
+            { month: 'm3', week: 'الأسبوع 12 - الأحد (25 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'ملخص الربع الأول 2026', creative: 'مقالة ملخص الربع الأول للأستاذ فراس نصر وتوجيه الدعوة لحجز أجنحة المعارض القادمة.', platform: 'LinkedIn Article & IG' },
+            { month: 'm3', week: 'الأسبوع 12 - الثلاثاء (27 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'احتفالية ختام الربع السنوي', creative: 'فيديو احتفال عائلة UMI بتحقيق كامل أهداف المحتوى والنمو معاً.', platform: 'Instagram Reel & Stories' },
+            { month: 'm3', week: 'الأسبوع 12 - الخميس (29 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'فيديو حصاد 3 أشهر (Showreel)', creative: 'فيديو Showreel سينمائي مجمع لأجمل 10 أجنحة معارض تم تنفيذها خلال الـ 3 أشهر.', platform: 'Instagram Reel & LinkedIn & FB' }
+        ];
+
+        // Load checked states from LocalStorage
+        const savedChecklist = JSON.parse(localStorage.getItem('umi_calendar_checklist') || '{}');
+
+        function renderCalendarTable(filterMonth = 'all') {
+            const tbody = document.getElementById('calendarTableBody');
+            tbody.innerHTML = '';
+
+            let filteredData = calendarPostsData;
+            if (filterMonth !== 'all') {
+                filteredData = calendarPostsData.filter(item => item.month === filterMonth);
+            }
+
+            filteredData.forEach((post, index) => {
+                const globalIndex = calendarPostsData.indexOf(post);
+                const isChecked = savedChecklist[globalIndex] ? 'checked' : '';
+                const rowClass = isChecked ? 'completed-row' : '';
+
+                let pillarBadgeClass = 'badge-p1';
+                if (post.pillar === 'P2') pillarBadgeClass = 'badge-p2';
+                if (post.pillar === 'P3') pillarBadgeClass = 'badge-p3';
+
+                const tr = document.createElement('tr');
+                tr.className = rowClass;
+                tr.id = `row-${globalIndex}`;
+                tr.innerHTML = `
+                    <td>
+                        <label class="chk-container">
+                            <input type="checkbox" onchange="togglePostCheck(${globalIndex}, this)" ${isChecked}>
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td><strong>${post.week}</strong></td>
+                    <td><span class="pillar-badge ${pillarBadgeClass}">${post.pName}</span></td>
+                    <td>${post.goal}</td>
+                    <td>${post.creative}</td>
+                    <td><span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">${post.platform}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            updateProgressStats();
+        }
+
+        function togglePostCheck(index, checkboxElem) {
+            savedChecklist[index] = checkboxElem.checked;
+            localStorage.setItem('umi_calendar_checklist', JSON.stringify(savedChecklist));
+            
+            const rowElem = document.getElementById(`row-${index}`);
+            if (rowElem) {
+                if (checkboxElem.checked) {
+                    rowElem.classList.add('completed-row');
+                } else {
+                    rowElem.classList.remove('completed-row');
+                }
+            }
+
+            updateProgressStats();
+        }
+
+        function updateProgressStats() {
+            const total = 36;
+            let checkedCount = 0;
+            for (let i = 0; i < total; i++) {
+                if (savedChecklist[i]) checkedCount++;
+            }
+
+            const percent = Math.round((checkedCount / total) * 100);
+
+            // Update Progress UI
+            document.getElementById('progressPercent').innerText = `${percent}%`;
+            document.getElementById('progressBarFill').style.width = `${percent}%`;
+            document.getElementById('completedCount').innerText = checkedCount;
+            document.getElementById('remainingCount').innerText = total - checkedCount;
+            
+            // Update Top KPI Card
+            const kpiProgressVal = document.getElementById('kpiProgressVal');
+            if (kpiProgressVal) {
+                kpiProgressVal.innerText = `${percent}%`;
+            }
+        }
+
+        function filterCalendar(monthFilter) {
+            const filterBtns = document.querySelectorAll('.month-btn');
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            renderCalendarTable(monthFilter);
+        }
+
+        // Initialize Calendar Table on Page Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCalendarTable('all');
+        });
+    </script>
+</body>
+</html>
