@@ -3917,33 +3917,49 @@
 
 
 
-        // Language Switcher Function
-
+                // Language Switcher Function
         function setLang(lang) {
-
             const html = document.documentElement;
-
             const btnAr = document.getElementById('btn-ar');
-
             const btnEn = document.getElementById('btn-en');
-
             const isEn = (lang === 'en');
 
-
-
             if (isEn) {
-
                 html.setAttribute('lang', 'en');
-
                 html.setAttribute('dir', 'ltr');
-
+                document.body.classList.add('en');
                 if (btnEn) btnEn.classList.add('active');
-
                 if (btnAr) btnAr.classList.remove('active');
-
                 document.title = 'Growth Strategy Plan 2026 — UMI Group';
-
             } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                document.body.classList.remove('en');
+                if (btnAr) btnAr.classList.add('active');
+                if (btnEn) btnEn.classList.remove('active');
+                document.title = 'خطة النمو الاستراتيجية 2026 — UMI Group';
+            }
+
+            // Force visibility toggle for static HTML tags
+            document.querySelectorAll('.ar-only').forEach(el => {
+                el.style.display = isEn ? 'none' : '';
+            });
+            document.querySelectorAll('.en-only').forEach(el => {
+                const tag = el.tagName;
+                const isBlock = ['DIV', 'P', 'H1', 'H2', 'H3', 'H4', 'SECTION', 'LI'].includes(tag);
+                el.style.display = isEn ? (isBlock ? 'block' : 'inline') : 'none';
+            });
+
+            // Re-render JS dynamic tables in selected language
+            renderCalendarTable(currentCalendarFilter);
+            renderAiChecklist();
+        }
+
+        // Init language visibility on load
+        (function initLang() {
+            document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
+            document.querySelectorAll('.ar-only').forEach(el => { el.style.display = ''; });
+        })(); else {
 
                 html.setAttribute('lang', 'ar');
 
