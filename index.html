@@ -1545,9 +1545,58 @@
 
         // Load checked states from LocalStorage
         const savedChecklist = JSON.parse(localStorage.getItem('umi_calendar_checklist') || '{}');
+        let currentCalendarFilter = 'all';
+
+        function getCalendarItemText(item, field) {
+            const isEn = document.documentElement.getAttribute('lang') === 'en';
+            if (!isEn) return item[field];
+
+            if (field === 'pName') {
+                if (item.pillar === 'P1') return '1. Personal Branding (CEO Firas Nasr)';
+                if (item.pillar === 'P2') return '2. Behind The Scenes & Team';
+                if (item.pillar === 'P3') return '3. Company Portfolio';
+            }
+
+            if (field === 'week') {
+                if (item.week.includes('الأسبوع 1 - الأحد')) return 'Week 1 - Sun (Aug 2)';
+                if (item.week.includes('الأسبوع 1 - الثلاثاء')) return 'Week 1 - Tue (Aug 4)';
+                if (item.week.includes('الأسبوع 1 - الخميس')) return 'Week 1 - Thu (Aug 6)';
+                if (item.week.includes('الأسبوع 2 - الأحد')) return 'Week 2 - Sun (Aug 9)';
+                if (item.week.includes('الأسبوع 2 - الثلاثاء')) return 'Week 2 - Tue (Aug 11)';
+                if (item.week.includes('الأسبوع 2 - الخميس')) return 'Week 2 - Thu (Aug 13)';
+                if (item.week.includes('الأسبوع 3 - الأحد')) return 'Week 3 - Sun (Aug 16)';
+                if (item.week.includes('الأسبوع 3 - الثلاثاء')) return 'Week 3 - Tue (Aug 18)';
+                if (item.week.includes('الأسبوع 3 - الخميس')) return 'Week 3 - Thu (Aug 20)';
+                if (item.week.includes('الأسبوع 4 - الأحد')) return 'Week 4 - Sun (Aug 23)';
+                if (item.week.includes('الأسبوع 4 - الثلاثاء')) return 'Week 4 - Tue (Aug 25)';
+                if (item.week.includes('الأسبوع 4 - الخميس')) return 'Week 4 - Thu (Aug 27)';
+                const weekMatch = item.week.match(/\d+/);
+                const wNum = weekMatch ? weekMatch[0] : '1';
+                if (item.week.includes('الأحد')) return `Week ${wNum} - Sun`;
+                if (item.week.includes('الثلاثاء')) return `Week ${wNum} - Tue`;
+                if (item.week.includes('الخميس')) return `Week ${wNum} - Thu`;
+                return `Week ${wNum}`;
+            }
+
+            if (field === 'goal') {
+                if (item.pillar === 'P1') return 'Thought Leadership & Trust';
+                if (item.pillar === 'P2') return 'Behind The Scenes & Craftsmanship';
+                if (item.pillar === 'P3') return 'Portfolio Showcase & ROI';
+            }
+
+            if (field === 'creative') {
+                if (item.pillar === 'P1') return 'Reel / Article by CEO Firas Nasr on exhibition design strategy & market ROI.';
+                if (item.pillar === 'P2') return 'Behind-The-Scenes video of 3D designers, engineers & factory fabrication.';
+                if (item.pillar === 'P3') return 'High-quality video comparing 3D design vs completed booth build for top clients.';
+            }
+
+            return item[field];
+        }
 
         function renderCalendarTable(filterMonth = 'all') {
+            currentCalendarFilter = filterMonth;
             const tbody = document.getElementById('calendarTableBody');
+            if (!tbody) return;
             tbody.innerHTML = '';
 
             let filteredData = calendarPostsData;
@@ -1555,7 +1604,7 @@
                 filteredData = calendarPostsData.filter(item => item.month === filterMonth);
             }
 
-            filteredData.forEach((post, index) => {
+            filteredData.forEach((post) => {
                 const globalIndex = calendarPostsData.indexOf(post);
                 const isChecked = savedChecklist[globalIndex] ? 'checked' : '';
                 const rowClass = isChecked ? 'completed-row' : '';
@@ -1563,6 +1612,11 @@
                 let pillarBadgeClass = 'badge-p1';
                 if (post.pillar === 'P2') pillarBadgeClass = 'badge-p2';
                 if (post.pillar === 'P3') pillarBadgeClass = 'badge-p3';
+
+                const weekStr = getCalendarItemText(post, 'week');
+                const pillarStr = getCalendarItemText(post, 'pName');
+                const goalStr = getCalendarItemText(post, 'goal');
+                const creativeStr = getCalendarItemText(post, 'creative');
 
                 const tr = document.createElement('tr');
                 tr.className = rowClass;
@@ -1574,10 +1628,10 @@
                             <span class="checkmark"></span>
                         </label>
                     </td>
-                    <td><strong>${post.week}</strong></td>
-                    <td><span class="pillar-badge ${pillarBadgeClass}">${post.pName}</span></td>
-                    <td>${post.goal}</td>
-                    <td>${post.creative}</td>
+                    <td><strong>${weekStr}</strong></td>
+                    <td><span class="pillar-badge ${pillarBadgeClass}">${pillarStr}</span></td>
+                    <td>${goalStr}</td>
+                    <td>${creativeStr}</td>
                     <td><span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">${post.platform}</span></td>
                 `;
                 tbody.appendChild(tr);
@@ -1612,10 +1666,14 @@
             const percent = Math.round((checkedCount / total) * 100);
 
             // Update Progress UI
-            document.getElementById('progressPercent').innerText = `${percent}%`;
-            document.getElementById('progressBarFill').style.width = `${percent}%`;
-            document.getElementById('completedCount').innerText = checkedCount;
-            document.getElementById('remainingCount').innerText = total - checkedCount;
+            const pct = document.getElementById('progressPercent');
+            const bar = document.getElementById('progressBarFill');
+            const comp = document.getElementById('completedCount');
+            const rem = document.getElementById('remainingCount');
+            if (pct) pct.innerText = `${percent}%`;
+            if (bar) bar.style.width = `${percent}%`;
+            if (comp) comp.innerText = checkedCount;
+            if (rem) rem.innerText = total - checkedCount;
             
             // Update Top KPI Card
             const kpiProgressVal = document.getElementById('kpiProgressVal');
@@ -1627,7 +1685,7 @@
         function filterCalendar(monthFilter) {
             const filterBtns = document.querySelectorAll('.month-btn');
             filterBtns.forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            if (event && event.currentTarget) event.currentTarget.classList.add('active');
 
             renderCalendarTable(monthFilter);
         }
@@ -1663,17 +1721,65 @@
             { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'مراجعة النتائج شهرياً: اختبار الظهور في ChatGPT & Gemini & Perplexity بعبارات البحث المستهدفة.', resp: 'مدير التسويق', priority: 'متوسطة', color: 'icon-purple' },
         ];
 
-        // Load AI checklist saved states
-        // Pre-populate completed items from Rich Results Test (Jul 29, 2026):
-        // Index 0 = Organization JSON-LD ✅, Index 1 = LocalBusiness ✅, Index 4 = Rich Results Test ✅
         const aiDefaultDone = { 0: true, 1: true, 4: true };
         const savedAiRaw = localStorage.getItem('umi_ai_checklist');
         const savedAiChecklist = savedAiRaw ? JSON.parse(savedAiRaw) : Object.assign({}, aiDefaultDone);
 
+        function getAiItemText(item, field) {
+            const isEn = document.documentElement.getAttribute('lang') === 'en';
+            if (!isEn) return item[field];
+
+            if (field === 'phase') {
+                if (item.phase.includes('المرحلة 1')) return 'Phase 1: Schema.org JSON-LD';
+                if (item.phase.includes('المرحلة 2')) return 'Phase 2: Meta Titles & CTR';
+                if (item.phase.includes('المرحلة 3')) return 'Phase 3: Brand Entity & Knowledge Graph';
+            }
+
+            if (field === 'resp') {
+                if (item.resp === 'مطور الموقع') return 'Web Developer';
+                if (item.resp === 'مدير المحتوى') return 'Content Manager';
+                if (item.resp === 'مدير التسوق' || item.resp === 'مدير التسويق') return 'Marketing Manager';
+                if (item.resp === 'مدير الموقع') return 'Webmaster';
+            }
+
+            if (field === 'priority') {
+                if (item.priority === 'عالية') return 'High';
+                if (item.priority === 'متوسطة') return 'Medium';
+                if (item.priority === 'منخفضة') return 'Low';
+            }
+
+            if (field === 'step') {
+                if (item.step.includes('Organization JSON-LD')) return 'Add Organization JSON-LD markup with UMI Group details to Homepage.';
+                if (item.step.includes('LocalBusiness')) return 'Add LocalBusiness schema with Dubai GPS coordinates & service radius.';
+                if (item.step.includes('Service Schema')) return 'Add Service schema for Stand Design, Events Production, & Retail Kiosks.';
+                if (item.step.includes('Person Schema')) return 'Add Person schema for CEO Firas Nasr linked to LinkedIn & Instagram.';
+                if (item.step.includes('Rich Results Test')) return 'Test Schema structure on Google Rich Results Test tool for zero errors.';
+                if (item.step.includes('Meta Titles')) return 'Update Homepage Meta Title: "UMI Group | #1 Exhibition Stand Designers in Dubai".';
+                if (item.step.includes('Meta Descriptions')) return 'Craft targeted Meta Descriptions for all core pages with Dubai keywords.';
+                if (item.step.includes('ChatGPT')) return 'Include conversational search queries answered by ChatGPT & Perplexity.';
+                if (item.step.includes('H1 / H2 / H3')) return 'Optimize H1/H2 heading hierarchy with Dubai geo-targeted keywords.';
+                if (item.step.includes('Rank Math')) return 'Connect Rank Math Analytics & Google Search Console for live tracking.';
+                if (item.step.includes('سوشيال ميديا')) return 'Setup & link official LinkedIn, Instagram & Facebook business pages.';
+                if (item.step.includes('مقال إعلامي')) return 'Publish PR guest articles mentioning UMI Group on high authority media.';
+                if (item.step.includes('Wikipedia')) return 'Draft Wikipedia/Wikidata entity page for UMI Group (Future roadmap).';
+                if (item.step.includes('Google Business Profile')) return 'Register & verify UMI Group Google Business Profile in Dubai.';
+                if (item.step.includes('مراجعة النتائج')) return 'Monthly Audit: Test ranking in ChatGPT, Gemini & Perplexity responses.';
+            }
+
+            return item[field];
+        }
+
         function getPriorityBadge(priority) {
-            if (priority === 'عالية') return '<span style="background: rgba(216,27,96,0.1); color: #d81b60; border: 1px solid rgba(216,27,96,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + priority + '</span>';
-            if (priority === 'متوسطة') return '<span style="background: rgba(37,99,235,0.1); color: #2563eb; border: 1px solid rgba(37,99,235,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + priority + '</span>';
-            return '<span style="background: rgba(124,58,237,0.1); color: #7c3aed; border: 1px solid rgba(124,58,237,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + priority + '</span>';
+            const isEn = document.documentElement.getAttribute('lang') === 'en';
+            let label = priority;
+            if (isEn) {
+                if (priority === 'عالية' || priority === 'High') label = 'High';
+                else if (priority === 'متوسطة' || priority === 'Medium') label = 'Medium';
+                else label = 'Low';
+            }
+            if (label === 'عالية' || label === 'High') return '<span style="background: rgba(216,27,96,0.1); color: #d81b60; border: 1px solid rgba(216,27,96,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + label + '</span>';
+            if (label === 'متوسطة' || label === 'Medium') return '<span style="background: rgba(37,99,235,0.1); color: #2563eb; border: 1px solid rgba(37,99,235,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + label + '</span>';
+            return '<span style="background: rgba(124,58,237,0.1); color: #7c3aed; border: 1px solid rgba(124,58,237,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + label + '</span>';
         }
 
         function renderAiChecklist() {
@@ -1685,14 +1791,19 @@
                 const isChecked = savedAiChecklist[index] ? 'checked' : '';
                 const rowClass = isChecked ? 'completed-row' : '';
 
+                const phaseStr = getAiItemText(item, 'phase');
+                const stepStr = getAiItemText(item, 'step');
+                const respStr = getAiItemText(item, 'resp');
+                const priorityStr = getAiItemText(item, 'priority');
+
                 const tr = document.createElement('tr');
                 tr.className = rowClass;
                 tr.id = 'ai-row-' + index;
                 tr.innerHTML = '<td><label class="chk-container"><input type="checkbox" onchange="toggleAiCheck(' + index + ', this)" ' + isChecked + '><span class="checkmark"></span></label></td>'
-                    + '<td><span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">' + item.phase + '</span></td>'
-                    + '<td style="font-size: 0.95rem; font-weight: 600;">' + item.step + '</td>'
-                    + '<td><span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">' + item.resp + '</span></td>'
-                    + '<td>' + getPriorityBadge(item.priority) + '</td>';
+                    + '<td><span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">' + phaseStr + '</span></td>'
+                    + '<td style="font-size: 0.95rem; font-weight: 600;">' + stepStr + '</td>'
+                    + '<td><span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">' + respStr + '</span></td>'
+                    + '<td>' + getPriorityBadge(priorityStr) + '</td>';
 
                 tbody.appendChild(tr);
             });
@@ -1732,25 +1843,14 @@
             if (rem) rem.innerText = total - checked;
         }
 
-        // Render AI checklist after DOM is ready
-        const origDOMLoad = document.addEventListener;
-        document.addEventListener('DOMContentLoaded', function() {
-            if (document.getElementById('aiChecklistTableBody')) {
-                renderAiChecklist();
-            }
-        });
-
-
-        // Render AI Checklist on page load
-        renderAiChecklist();
-
         // Language Switcher Function
         function setLang(lang) {
             const html = document.documentElement;
             const btnAr = document.getElementById('btn-ar');
             const btnEn = document.getElementById('btn-en');
+            const isEn = (lang === 'en');
 
-            if (lang === 'en') {
+            if (isEn) {
                 html.setAttribute('lang', 'en');
                 html.setAttribute('dir', 'ltr');
                 if (btnEn) btnEn.classList.add('active');
@@ -1763,7 +1863,21 @@
                 if (btnEn) btnEn.classList.remove('active');
                 document.title = 'خطة النمو الاستراتيجية 2026 — UMI Group';
             }
+
+            // Force visibility toggle for static HTML tags
+            document.querySelectorAll('.ar-only').forEach(el => el.style.display = isEn ? 'none' : '');
+            document.querySelectorAll('.en-only').forEach(el => el.style.display = isEn ? 'inline-block' : '');
+
+            // Re-render JS dynamic tables in selected language
+            renderCalendarTable(currentCalendarFilter);
+            renderAiChecklist();
         }
+
+        // Render tables on initial load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCalendarTable('all');
+            renderAiChecklist();
+        });
     </script>
 </body>
 </html>
