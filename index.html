@@ -62,6 +62,50 @@
             min-height: 100vh;
         }
 
+        /* Language Switcher Styles */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50px;
+            overflow: hidden;
+            padding: 3px;
+        }
+
+        .lang-btn {
+            padding: 0.45rem 1.1rem;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.25s ease;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .lang-btn.active {
+            background: var(--gradient-gold);
+            color: #ffffff;
+            box-shadow: 0 0 14px rgba(216, 27, 96, 0.4);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .en-only { display: none !important; }
+        .ar-only { display: inline; }
+
+        html[lang="en"] .en-only { display: inline !important; }
+        html[lang="en"] .ar-only { display: none !important; }
+        html[lang="en"] body { font-family: 'Inter', sans-serif; }
+        html[lang="en"] .calendar-table { text-align: left; }
+
         /* Ambient Background Overlay */
         .bg-grid {
             position: fixed;
@@ -788,42 +832,54 @@
                     <div class="brand-logo-sub">EXHIBITION STAND DESIGNERS</div>
                 </div>
             </div>
-            <div class="brand-badge"><i class="fa-solid fa-crown"></i> خطة النمو 2026</div>
+            <div class="brand-badge"><i class="fa-solid fa-crown"></i> <span class="ar-only">خطة النمو 2026</span><span class="en-only">Growth Plan 2026</span></div>
         </div>
 
         <ul class="nav-links">
-            <li><button class="nav-btn active" onclick="switchTab('tab-summary')"><i class="fa-solid fa-chart-pie"></i> الملخص التنفيذي</button></li>
-            <li><button class="nav-btn" onclick="switchTab('tab-ai-seo')"><i class="fa-solid fa-brain"></i> الذكاء الاصطناعي وSEO</button></li>
-            <li><button class="nav-btn" onclick="switchTab('tab-pillars')"><i class="fa-solid fa-layer-group"></i> خطة المحتوى (3 أجزاء والجدول)</button></li>
-            <li><button class="nav-btn" onclick="switchTab('tab-instagram')"><i class="fa-brands fa-instagram"></i> نمو إنستجرام</button></li>
-            <li><button class="nav-btn" onclick="switchTab('tab-leads')"><i class="fa-solid fa-magnet"></i> زيادة الليز (Leads)</button></li>
+            <li><button class="nav-btn active" onclick="switchTab('tab-summary')"><i class="fa-solid fa-chart-pie"></i> <span class="ar-only">الملخص التنفيذي</span><span class="en-only">Executive Summary</span></button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-ai-seo')"><i class="fa-solid fa-brain"></i> <span class="ar-only">الذكاء الاصطناعي وSEO</span><span class="en-only">AI & SEO</span></button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-pillars')"><i class="fa-solid fa-layer-group"></i> <span class="ar-only">خطة المحتوى والجدول</span><span class="en-only">Content Plan</span></button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-instagram')"><i class="fa-brands fa-instagram"></i> <span class="ar-only">نمو إنستجرام</span><span class="en-only">Instagram Growth</span></button></li>
+            <li><button class="nav-btn" onclick="switchTab('tab-leads')"><i class="fa-solid fa-magnet"></i> <span class="ar-only">زيادة الليز (Leads)</span><span class="en-only">Lead Gen</span></button></li>
         </ul>
+
+        <!-- Language Switcher Button -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">🇸🇦 العربية</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+        </div>
     </header>
 
     <main>
         <!-- Hero Title Banner -->
         <div class="hero-banner">
-            <h1 class="hero-title">استراتيجية التوسع والتواجد الرقمي <span>UMI Group 2026</span></h1>
-            <p class="hero-subtitle">رؤية كاملة للظهور في محركات الذكاء الاصطناعي (AI Search)، زيادة التفاعل على إنستجرام، مضاعفة العملاء المحتملين (Leads)، وبناء علامة تجارية شخصية قوية للقيادة.</p>
+            <h1 class="hero-title">
+                <span class="ar-only">استراتيجية التوسع والتواجد الرقمي <span>UMI Group 2026</span></span>
+                <span class="en-only">Digital Growth Strategy <span>UMI Group 2026</span></span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="ar-only">رؤية كاملة للظهور في محركات الذكاء الاصطناعي (AI Search)، زيادة التفاعل على إنستجرام، مضاعفة العملاء المحتملين (Leads)، وبناء علامة تجارية شخصية قوية للقيادة.</span>
+                <span class="en-only">Comprehensive roadmap for AI Search dominance, Instagram engagement, lead generation, and executive thought leadership in Dubai & GCC.</span>
+            </p>
         </div>
 
         <!-- KPI Key Highlights Row -->
         <div class="kpi-row">
             <div class="kpi-box">
                 <div class="kpi-value">#1</div>
-                <div class="kpi-label">الظهور في AI Search بدبي</div>
+                <div class="kpi-label"><span class="ar-only">الظهور في AI Search بدبي</span><span class="en-only">AI Search Ranking in Dubai</span></div>
             </div>
             <div class="kpi-box">
                 <div class="kpi-value">3x</div>
-                <div class="kpi-label">مضاعفة عملاء Contact Us</div>
+                <div class="kpi-label"><span class="ar-only">مضاعفة عملاء Contact Us</span><span class="en-only">Lead Conversion Growth</span></div>
             </div>
             <div class="kpi-box">
-                <div class="kpi-value">36 بوست</div>
-                <div class="kpi-label">خطة الكاليندر (3 أشهر)</div>
+                <div class="kpi-value"><span class="ar-only">36 بوست</span><span class="en-only">36 Posts</span></div>
+                <div class="kpi-label"><span class="ar-only">خطة الكاليندر (3 أشهر)</span><span class="en-only">3-Month Content Calendar</span></div>
             </div>
             <div class="kpi-box">
                 <div class="kpi-value" id="kpiProgressVal">0%</div>
-                <div class="kpi-label">نسبة الإنجاز الفعلية للخطة</div>
+                <div class="kpi-label"><span class="ar-only">نسبة الإنجاز الفعلية للخطة</span><span class="en-only">Plan Completion Rate</span></div>
             </div>
         </div>
 
@@ -1580,6 +1636,26 @@
         // Render AI Checklist on page load
         renderAiChecklist();
 
+        // Language Switcher Function
+        function setLang(lang) {
+            const html = document.documentElement;
+            const btnAr = document.getElementById('btn-ar');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'en') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                if (btnEn) btnEn.classList.add('active');
+                if (btnAr) btnAr.classList.remove('active');
+                document.title = 'Growth Strategy Plan 2026 — UMI Group';
+            } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                if (btnAr) btnAr.classList.add('active');
+                if (btnEn) btnEn.classList.remove('active');
+                document.title = 'خطة النمو الاستراتيجية 2026 — UMI Group';
+            }
+        }
     </script>
 </body>
 </html>
