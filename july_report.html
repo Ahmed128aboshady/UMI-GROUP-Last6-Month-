@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقرير أداء شهر يوليو 2026 — UMI Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ══════════════════════════════════════════════════
+   ROOT & VARIABLES
+══════════════════════════════════════════════════ */
+:root {
+  --c-brand:    #e91e8c;
+  --c-brand2:   #c2185b;
+  --c-blue:     #3b82f6;
+  --c-purple:   #8b5cf6;
+  --c-green:    #10b981;
+  --c-amber:    #f59e0b;
+  --c-red:      #ef4444;
+  --c-dark:     #0d1117;
+  --c-dark2:    #161b22;
+  --c-dark3:    #21262d;
+  --c-glass:    rgba(255,255,255,0.05);
+  --c-glass2:   rgba(255,255,255,0.08);
+  --c-border:   rgba(255,255,255,0.1);
+  --c-text:     #f0f6fc;
+  --c-muted:    #8b949e;
+  --c-dim:      #484f58;
+  --grad-brand: linear-gradient(135deg,#ff4db8 0%,#e91e8c 50%,#c2185b 100%);
+  --grad-blue:  linear-gradient(135deg,#60a5fa 0%,#3b82f6 50%,#1d4ed8 100%);
+  --grad-purple:linear-gradient(135deg,#a78bfa 0%,#8b5cf6 50%,#6d28d9 100%);
+  --grad-green: linear-gradient(135deg,#34d399 0%,#10b981 50%,#059669 100%);
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-2xl: 36px;
+  --shadow-glow:0 0 40px rgba(233,30,140,0.25);
+  --shadow-card:0 8px 32px rgba(0,0,0,0.4);
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Cairo', sans-serif;
+  background:var(--c-dark);
+  color:var(--c-text);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body.en { font-family:'Inter', sans-serif; }
+
+/* ANIMATED BACKGROUND */
+.bg-canvas {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  overflow:hidden;
+}
+.bg-canvas::before {
+  content:'';
+  position:absolute; inset:-50%;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(233,30,140,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(59,130,246,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(139,92,246,0.08) 0%, transparent 50%);
+  animation: bgShift 18s ease-in-out infinite alternate;
+}
+@keyframes bgShift {
+  0%   { transform:translate(0,0) rotate(0deg); }
+  100% { transform:translate(3%,2%) rotate(2deg); }
+}
+.bg-grid-lines {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+
+/* FLOATING ORBS */
+.orb {
+  position:fixed; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0;
+  animation:orbFloat 12s ease-in-out infinite;
+}
+.orb-1 { width:400px; height:400px; background:rgba(233,30,140,0.12); top:-100px; right:-100px; animation-delay:0s; }
+.orb-2 { width:350px; height:350px; background:rgba(59,130,246,0.1); bottom:-80px; left:-80px; animation-delay:-4s; }
+
+.container {
+  position:relative; z-index:1;
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 1.5rem 4rem;
+}
+
+/* NAVBAR */
+nav {
+  position:sticky; top:0; z-index:100;
+  padding:1rem 2rem;
+  background:rgba(13,17,23,0.85);
+  backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid var(--c-border);
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:1rem;
+}
+.nav-brand { display:flex; align-items:center; gap:1rem; }
+.nav-logo { height:46px; width:auto; filter:drop-shadow(0 0 12px rgba(233,30,140,0.5)); }
+.nav-name-main {
+  font-size:1.4rem; font-weight:900;
+  background:var(--grad-brand);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.nav-name-sub { font-size:0.68rem; color:var(--c-muted); letter-spacing:3px; font-weight:600; }
+
+.nav-pill {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  background:rgba(233,30,140,0.15);
+  border:1px solid rgba(233,30,140,0.3);
+  color:#ff80c0;
+  padding:0.35rem 1rem;
+  border-radius:50px;
+  font-size:0.82rem; font-weight:700;
+}
+
+.nav-actions { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+
+/* Language Switcher */
+.lang-toggle {
+  display:flex; align-items:center;
+  background:var(--c-glass);
+  border:1px solid var(--c-border);
+  border-radius:50px; overflow:hidden;
+  padding:3px;
+}
+.lang-btn {
+  padding:0.4rem 1.1rem;
+  border:none; background:transparent;
+  color:var(--c-muted);
+  font-weight:700; font-size:0.84rem;
+  cursor:pointer; border-radius:50px;
+  transition:var(--transition);
+  font-family:inherit;
+}
+.lang-btn.active {
+  background:var(--grad-brand);
+  color:#fff;
+  box-shadow:0 0 16px rgba(233,30,140,0.4);
+}
+
+.back-btn {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:var(--c-glass2);
+  border:1px solid var(--c-border);
+  color:var(--c-text);
+  padding:0.45rem 1.1rem;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700; font-size:0.88rem;
+  transition:var(--transition);
+}
+.back-btn:hover { background:rgba(233,30,140,0.2); border-color:rgba(233,30,140,0.4); }
+
+/* HERO */
+.hero { text-align:center; padding:4rem 1rem 3rem; }
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:rgba(233,30,140,0.12);
+  border:1px solid rgba(233,30,140,0.25);
+  color:#ff80c0;
+  padding:0.5rem 1.4rem;
+  border-radius:50px;
+  font-size:0.88rem; font-weight:700;
+  margin-bottom:1.5rem;
+}
+.hero-title { font-size:clamp(2rem, 5vw, 3.2rem); font-weight:900; line-height:1.15; margin-bottom:1rem; }
+.hero-title .grad {
+  background:var(--grad-brand);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.hero-desc { font-size:1.05rem; color:var(--c-muted); max-width:700px; margin:0 auto; }
+.hero-divider { width:80px; height:3px; background:var(--grad-brand); border-radius:2px; margin:2rem auto 0; }
+
+/* KPI CARDS */
+.kpi-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+  margin-bottom:3rem;
+}
+@media(max-width:900px) { .kpi-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:500px) { .kpi-grid { grid-template-columns:1fr; } }
+
+.kpi-card {
+  position:relative; overflow:hidden;
+  background:var(--c-dark2);
+  border:1px solid var(--c-border);
+  border-radius:var(--radius-xl);
+  padding:1.75rem 1.5rem;
+  text-align:center;
+  transition:var(--transition);
+}
+.kpi-card:hover { transform:translateY(-5px); border-color:rgba(255,255,255,0.2); box-shadow:var(--shadow-card); }
+.kpi-accent { position:absolute; top:0; left:0; right:0; height:3px; background:var(--kpi-grad, var(--grad-brand)); }
+.kpi-icon-wrap {
+  width:52px; height:52px; border-radius:16px;
+  background:var(--kpi-iconbg, rgba(233,30,140,0.12));
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1rem; font-size:1.5rem; color:var(--kpi-color, var(--c-brand));
+}
+.kpi-number {
+  font-size:2.4rem; font-weight:900;
+  background:var(--kpi-grad, var(--grad-brand));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  line-height:1; margin-bottom:0.4rem;
+}
+.kpi-label { font-size:0.85rem; color:var(--c-muted); font-weight:600; }
+.kpi-badge {
+  display:inline-flex; align-items:center; gap:0.25rem;
+  background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.25);
+  color:#34d399; font-size:0.75rem; font-weight:700;
+  padding:0.2rem 0.6rem; border-radius:50px; margin-top:0.5rem;
+}
+
+/* GLASS PANELS */
+.glass-panel {
+  background:var(--c-dark2);
+  border:1px solid var(--c-border);
+  border-radius:var(--radius-2xl);
+  padding:2.5rem;
+  margin-bottom:2rem;
+}
+.section-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.75rem; }
+.section-icon { width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.35rem; flex-shrink:0; }
+.section-label { font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.15rem; }
+.section-title-text { font-size:1.5rem; font-weight:900; color:var(--c-text); }
+
+/* METRICS ROW */
+.metrics-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:2rem; }
+@media(max-width:768px) { .metrics-row { grid-template-columns:repeat(2,1fr); } }
+
+.metric-box {
+  background:var(--c-dark3); border:1px solid var(--c-border);
+  border-radius:var(--radius-lg); padding:1.35rem 1rem; text-align:center;
+}
+.metric-ico { font-size:1.4rem; margin-bottom:0.5rem; }
+.metric-num { font-size:1.8rem; font-weight:900; color:var(--c-text); margin-bottom:0.2rem; }
+.metric-lbl { font-size:0.8rem; color:var(--c-muted); font-weight:600; }
+
+/* TABLES */
+.table-wrap { overflow-x:auto; border-radius:var(--radius-xl); border:1px solid var(--c-border); margin-bottom:1.5rem; }
+table { width:100%; border-collapse:collapse; min-width:580px; font-size:0.9rem; }
+thead tr { background:linear-gradient(135deg, rgba(233,30,140,0.12), rgba(139,92,246,0.08)); border-bottom:1px solid rgba(233,30,140,0.25); }
+th { padding:1.1rem 1.25rem; font-weight:800; font-size:0.82rem; color:var(--c-muted); white-space:nowrap; text-align:inherit; }
+td { padding:1rem 1.25rem; border-bottom:1px solid var(--c-border); vertical-align:middle; color:var(--c-muted); }
+tbody tr:hover { background:var(--c-glass); }
+.row-umi { background:rgba(233,30,140,0.05); }
+.row-umi td { color:var(--c-text); }
+
+/* BADGES */
+.badge { display:inline-flex; align-items:center; gap:0.3rem; padding:0.28rem 0.85rem; border-radius:50px; font-size:0.78rem; font-weight:700; white-space:nowrap; }
+.b-brand { background:rgba(233,30,140,0.15); color:#ff80c0; border:1px solid rgba(233,30,140,0.3); }
+.b-blue  { background:rgba(59,130,246,0.15); color:#93c5fd; border:1px solid rgba(59,130,246,0.3); }
+.b-green { background:rgba(16,185,129,0.15); color:#6ee7b7; border:1px solid rgba(16,185,129,0.3); }
+.b-amber { background:rgba(245,158,11,0.15); color:#fcd34d; border:1px solid rgba(245,158,11,0.3); }
+.b-red   { background:rgba(239,68,68,0.15);  color:#fca5a5; border:1px solid rgba(239,68,68,0.3); }
+.b-winner{ background:var(--grad-brand); color:#fff; box-shadow:0 0 16px rgba(233,30,140,0.4); }
+
+/* GRID LAYOUTS */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
+.three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:2rem; }
+@media(max-width:768px) { .two-col,.three-col { grid-template-columns:1fr; } }
+
+.info-card { background:var(--c-dark3); border:1px solid var(--c-border); border-radius:var(--radius-xl); padding:1.75rem; height:100%; }
+.info-card-header { display:flex; align-items:center; gap:0.85rem; margin-bottom:1.25rem; }
+.info-card-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.info-card-title { font-size:1.05rem; font-weight:800; color:var(--c-text); }
+
+.data-list { list-style:none; display:flex; flex-direction:column; gap:0.75rem; }
+.data-list li { display:flex; align-items:flex-start; gap:0.7rem; font-size:0.9rem; color:var(--c-muted); padding:0.65rem 0; border-bottom:1px solid var(--c-dim); }
+.data-list li:last-child { border-bottom:none; }
+.data-list li .bullet { width:6px; height:6px; border-radius:50%; background:var(--c-brand); margin-top:8px; flex-shrink:0; }
+.data-list li strong { color:var(--c-text); }
+.data-list li .val { color:var(--c-brand); font-weight:800; }
+
+.insight-box {
+  position:relative; background:linear-gradient(135deg, rgba(233,30,140,0.08), rgba(139,92,246,0.06));
+  border:1px solid rgba(233,30,140,0.2); border-radius:var(--radius-xl); padding:1.75rem 2rem;
+}
+.insight-box::before { content:''; position:absolute; top:0; left:0; bottom:0; width:4px; background:var(--grad-brand); }
+html[dir="rtl"] .insight-box::before { right:0; left:auto; }
+
+footer { text-align:center; padding:3rem 2rem 2rem; border-top:1px solid var(--c-border); margin-top:2rem; }
+.footer-logo-text { font-size:1.75rem; font-weight:900; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:0.5rem; }
+.footer-sub { font-size:0.85rem; color:var(--c-dim); }
+
+.en-only { display:none; }
+.ar-only { display:inline; }
+</style>
+</head>
+
+<body>
+<div class="bg-canvas"><div class="bg-grid-lines"></div></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <img src="logo.png" alt="UMI" class="nav-logo"
+      onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 80 40\'><rect width=\'80\' height=\'40\' rx=\'8\' fill=\'%23e91e8c\'/><text x=\'40\' y=\'26\' fill=\'white\' font-size=\'16\' text-anchor=\'middle\' font-weight=\'bold\' font-family=\'Arial\'>UMI</text></svg>'">
+    <div>
+      <div class="nav-name-main">UMI GROUP</div>
+      <div class="nav-name-sub">EXHIBITION STAND DESIGNERS</div>
+    </div>
+  </div>
+
+  <div class="nav-pill">
+    <i class="fa-solid fa-circle-dot fa-beat-fade" style="color:#ff80c0;"></i>
+    <span class="ar-only">تقرير شهر يوليو 2026 (مستقل)</span>
+    <span class="en-only">July 2026 Standalone Report</span>
+  </div>
+
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">🇸🇦 AR</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+    <a href="index.html" class="back-btn">
+      <i class="fa-solid fa-house"></i>
+      <span class="ar-only">خطة النمو الشاملة</span>
+      <span class="en-only">Main Strategy Plan</span>
+    </a>
+  </div>
+</nav>
+
+<!-- CONTAINER -->
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <i class="fa-solid fa-calendar-check"></i>
+      <span class="ar-only">التقرير الشهري المستقل — يوليو 2026</span>
+      <span class="en-only">Standalone Monthly Performance Report — July 2026</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="ar-only">تقرير الأداء الرقمي <span class="grad">شهر يوليو 2026</span></span>
+      <span class="en-only"><span class="grad">July 2026</span> Digital Performance</span>
+    </h1>
+    <p class="hero-desc">
+      <span class="ar-only">تحليل معمق لنتائج Google Search Console، تحليلات LinkedIn، ديموغرافية صناع القرار، ومقارنة المنافسين لشهر 7.</span>
+      <span class="en-only">Deep-dive into July's Google Search Console, LinkedIn analytics, B2B decision makers demographics, and competitor benchmarks.</span>
+    </p>
+    <div class="hero-divider"></div>
+  </div>
+
+  <!-- KPI CARDS -->
+  <div class="kpi-grid">
+    <div class="kpi-card" style="--kpi-grad:var(--grad-brand);--kpi-iconbg:rgba(233,30,140,0.12);--kpi-color:#e91e8c;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-brands fa-linkedin"></i></div>
+      <div class="kpi-number">219K</div>
+      <div class="kpi-label">
+        <span class="ar-only">ظهور LinkedIn الإجمالي</span>
+        <span class="en-only">Total LinkedIn Impressions</span>
+      </div>
+      <div class="kpi-badge"><i class="fa-solid fa-arrow-trend-up"></i> Organic + Sponsored</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:var(--grad-blue);--kpi-iconbg:rgba(59,130,246,0.12);--kpi-color:#3b82f6;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-solid fa-hand-pointer"></i></div>
+      <div class="kpi-number">4,901</div>
+      <div class="kpi-label">
+        <span class="ar-only">إجمالي النقرات</span>
+        <span class="en-only">Total Clicks</span>
+      </div>
+      <div class="kpi-badge" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);color:#93c5fd;">612 Organic</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:var(--grad-purple);--kpi-iconbg:rgba(139,92,246,0.12);--kpi-color:#8b5cf6;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-brands fa-google"></i></div>
+      <div class="kpi-number">16,593</div>
+      <div class="kpi-label">
+        <span class="ar-only">ظهور بحث جوجل</span>
+        <span class="en-only">Google Impressions (GSC)</span>
+      </div>
+      <div class="kpi-badge" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3);color:#c4b5fd;">208 Clicks</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:var(--grad-green);--kpi-iconbg:rgba(16,185,129,0.12);--kpi-color:#10b981;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-solid fa-user-plus"></i></div>
+      <div class="kpi-number">+110</div>
+      <div class="kpi-label">
+        <span class="ar-only">متابع جديد على LinkedIn</span>
+        <span class="en-only">New LinkedIn Followers</span>
+      </div>
+      <div class="kpi-badge">85 Organic · 25 Paid</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:linear-gradient(135deg,#f472b6,#ec4899,#db2777);--kpi-iconbg:rgba(236,72,153,0.12);--kpi-color:#ec4899;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-solid fa-fire"></i></div>
+      <div class="kpi-number">4.31%</div>
+      <div class="kpi-label">
+        <span class="ar-only">نسبة التفاعل العضوي</span>
+        <span class="en-only">Organic Engagement Rate</span>
+      </div>
+      <div class="kpi-badge">Above B2B avg ✓</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:linear-gradient(135deg,#fb923c,#f97316,#ea580c);--kpi-iconbg:rgba(249,115,22,0.12);--kpi-color:#f97316;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
+      <div class="kpi-number">11</div>
+      <div class="kpi-label">
+        <span class="ar-only">منشورات يوليو</span>
+        <span class="en-only">Posts Published in July</span>
+      </div>
+      <div class="kpi-badge" style="background:rgba(249,115,22,0.15);border-color:rgba(249,115,22,0.3);color:#fdba74;">56 Reactions</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 — GSC -->
+  <div class="glass-panel">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(255,255,255,0.06);"><i class="fa-brands fa-google" style="color:#4285f4;"></i></div>
+      <div>
+        <div class="section-label">
+          <span class="ar-only">نتائج Search Console</span>
+          <span class="en-only">Search Console Results</span>
+        </div>
+        <div class="section-title-text">
+          <span class="ar-only">أداء الموقع على جوجل — يوليو 2026</span>
+          <span class="en-only">Google Search Console — July 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-box">
+        <div class="metric-ico" style="color:#e91e8c;"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="metric-num">208</div>
+        <div class="metric-lbl"><span class="ar-only">النقرات</span><span class="en-only">Clicks</span></div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-ico" style="color:#8b5cf6;"><i class="fa-solid fa-eye"></i></div>
+        <div class="metric-num">16,593</div>
+        <div class="metric-lbl"><span class="ar-only">الظهور</span><span class="en-only">Impressions</span></div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-ico" style="color:#3b82f6;"><i class="fa-solid fa-percentage"></i></div>
+        <div class="metric-num">1.25%</div>
+        <div class="metric-lbl">CTR</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-ico" style="color:#10b981;"><i class="fa-solid fa-ranking-star"></i></div>
+        <div class="metric-num">18.2</div>
+        <div class="metric-lbl"><span class="ar-only">متوسط الترتيب</span><span class="en-only">Avg Position</span></div>
+      </div>
+    </div>
+
+    <!-- Top Queries Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th><span class="ar-only">عبارة البحث</span><span class="en-only">Query</span></th>
+            <th><span class="ar-only">نقرات</span><span class="en-only">Clicks</span></th>
+            <th><span class="ar-only">ظهور</span><span class="en-only">Impr.</span></th>
+            <th>CTR</th>
+            <th><span class="ar-only">الترتيب</span><span class="en-only">Position</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--c-text);">umi group</strong></td>
+            <td><strong style="color:#e91e8c;">49</strong></td><td>427</td><td>11.48%</td>
+            <td><span class="badge b-green">2.74 🥇</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">umi</strong></td>
+            <td>23</td><td>345</td><td>6.67%</td>
+            <td><span class="badge b-blue">5.21</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">umi dubai</strong></td>
+            <td><strong style="color:#e91e8c;">15</strong></td><td>66</td><td>22.73%</td>
+            <td><span class="badge b-green">1.59 🏆</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">umi exhibitions</strong></td>
+            <td>12</td><td>118</td><td>10.17%</td>
+            <td><span class="badge b-blue">6.06</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">exhibition stand design dubai</strong></td>
+            <td>1</td><td>344</td><td>0.29%</td>
+            <td><span class="badge b-amber">27.54</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" style="background:rgba(59,130,246,0.12);color:#3b82f6;"><i class="fa-solid fa-file-code"></i></div>
+          <div class="info-card-title"><span class="ar-only">أكثر الصفحات جذباً</span><span class="en-only">Top Pages</span></div>
+        </div>
+        <ul class="data-list">
+          <li><div class="bullet"></div><span><strong>Homepage (/):</strong> <span class="val">146 clicks</span> (2,529 imp)</span></li>
+          <li><div class="bullet"></div><span><strong>/kiosks-pos/:</strong> 17 clicks (3,122 imp)</span></li>
+          <li><div class="bullet"></div><span><strong>/turnkey-interior-design/:</strong> 10 clicks (2,886 imp)</span></li>
+          <li><div class="bullet"></div><span><strong>Company Profile PDF:</strong> 10 downloads</span></li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" style="background:rgba(139,92,246,0.12);color:#8b5cf6;"><i class="fa-solid fa-earth-americas"></i></div>
+          <div class="info-card-title"><span class="ar-only">الدول والأجهزة</span><span class="en-only">Geography & Devices</span></div>
+        </div>
+        <ul class="data-list">
+          <li><div class="bullet"></div><span>🇦🇪 <strong>UAE:</strong> <span class="val">167 clicks</span> (12,620 imp)</span></li>
+          <li><div class="bullet"></div><span>🇮🇳 <strong>India:</strong> 11 clicks</span></li>
+          <li><div class="bullet"></div><span>🇪🇬 <strong>Egypt:</strong> 5 clicks</span></li>
+          <li><div class="bullet"></div><span>💻 <strong>Desktop:</strong> 150 clicks (72%) | 📱 <strong>Mobile:</strong> 58 clicks</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 — LINKEDIN BENCHMARKING -->
+  <div class="glass-panel">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="fa-solid fa-ranking-star"></i></div>
+      <div>
+        <div class="section-label"><span class="ar-only">مقارنة السوق</span><span class="en-only">Market Benchmark</span></div>
+        <div class="section-title-text"><span class="ar-only">مقارنة المنافسين في دبي — يوليو 2026</span><span class="en-only">LinkedIn Competitor Benchmark</span></div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th><span class="ar-only">الشركة</span><span class="en-only">Company</span></th>
+            <th><span class="ar-only">متابعون جدد</span><span class="en-only">New Followers</span></th>
+            <th><span class="ar-only">منشورات</span><span class="en-only">Posts</span></th>
+            <th><span class="ar-only">تفاعلات</span><span class="en-only">Reactions</span></th>
+            <th><span class="ar-only">التقييم</span><span class="en-only">Status</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-umi">
+            <td><strong style="color:var(--c-brand);"><i class="fa-solid fa-crown"></i> UMI GROUP</strong></td>
+            <td><strong style="color:#e91e8c;">117</strong></td><td>11</td><td>56</td>
+            <td><span class="badge b-winner">🚀 <span class="ar-only">متصاعد</span><span class="en-only">Rising Leader</span></span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">Max Events Dubai</strong></td>
+            <td>79</td><td>4</td><td>86</td>
+            <td><span class="badge b-blue"><span class="ar-only">تفاعل جيد</span><span class="en-only">Good Eng.</span></span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">eventlab</strong></td>
+            <td>2,042</td><td>2</td><td>170</td>
+            <td><span class="badge b-purple"><span class="ar-only">نمو ممول</span><span class="en-only">Sponsored</span></span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">Global Event Mgmt</strong></td>
+            <td>459</td><td>26</td><td>71</td>
+            <td><span class="badge b-amber"><span class="ar-only">محتوى مكثف</span><span class="en-only">High Volume</span></span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">Aspire Brand Marketing</strong></td>
+            <td><strong style="color:#ef4444;">-2</strong></td><td>12</td><td>8</td>
+            <td><span class="badge b-red"><span class="ar-only">تراجع</span><span class="en-only">Declining</span></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight-box">
+      <div style="font-weight:800;color:var(--c-text);margin-bottom:0.5rem;"><i class="fa-solid fa-lightbulb" style="color:#e91e8c;"></i> <span class="ar-only">الاستنتاج الرئيسي</span><span class="en-only">Key Insight</span></div>
+      <p style="font-size:0.92rem;color:var(--c-muted);">
+        <span class="ar-only">حققت UMI Group <strong>117 متابعاً جديداً</strong> في شهر يوليو كأفضل أداء عضوي مقارنة بالمنافسين المباشرين. كلمة <strong>"exhibition stand design dubai"</strong> حققت 344 ظهوراً بدون نقرات كافية — حملة Google Ads مستهدفة تضمن تحويل هذا الظهور إلى عملاء محتملين (Leads).</span>
+        <span class="en-only">UMI Group earned <strong>117 new followers</strong> in July, leading direct competitors in organic growth. <strong>"exhibition stand design dubai"</strong> earned 344 impressions — targeted Google Search Ads will capture high-intent leads.</span>
+      </p>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="footer-logo-text">UMI GROUP</div>
+  <div class="footer-sub">
+    <span class="ar-only">تقرير شهر يوليو 2026 المستقل · جميع الحقوق محفوظة ©</span>
+    <span class="en-only">July 2026 Standalone Performance Report · All Rights Reserved ©</span>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  const html = document.getElementById('html-root');
+  const btnAr = document.getElementById('btn-ar');
+  const btnEn = document.getElementById('btn-en');
+
+  if (lang === 'en') {
+    html.setAttribute('lang','en');
+    html.setAttribute('dir','ltr');
+    document.body.classList.add('en');
+    btnEn.classList.add('active');
+    btnAr.classList.remove('active');
+    document.title = 'July 2026 Report — UMI Group';
+  } else {
+    html.setAttribute('lang','ar');
+    html.setAttribute('dir','rtl');
+    document.body.classList.remove('en');
+    btnAr.classList.add('active');
+    btnEn.classList.remove('active');
+    document.title = 'تقرير أداء شهر يوليو 2026 — UMI Group';
+  }
+
+  const isEN = lang === 'en';
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = isEN ? 'none' : 'inline'; });
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = isEN ? 'inline' : 'none'; });
+}
+(function init() {
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+})();
+</script>
+</body>
+</html>
