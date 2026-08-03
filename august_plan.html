@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة عمل وإعلانات أغسطس 2026 — UMI Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ══════════════════════════════════════════════════
+   VARIABLES & THEME
+══════════════════════════════════════════════════ */
+:root {
+  --c-brand:    #e91e8c;
+  --c-brand2:   #c2185b;
+  --c-blue:     #3b82f6;
+  --c-purple:   #8b5cf6;
+  --c-green:    #10b981;
+  --c-amber:    #f59e0b;
+  --c-red:      #ef4444;
+  --c-dark:     #0d1117;
+  --c-dark2:    #161b22;
+  --c-dark3:    #21262d;
+  --c-glass:    rgba(255,255,255,0.05);
+  --c-glass2:   rgba(255,255,255,0.08);
+  --c-border:   rgba(255,255,255,0.1);
+  --c-text:     #f0f6fc;
+  --c-muted:    #8b949e;
+  --c-dim:      #484f58;
+  --grad-brand: linear-gradient(135deg,#ff4db8 0%,#e91e8c 50%,#c2185b 100%);
+  --grad-blue:  linear-gradient(135deg,#60a5fa 0%,#3b82f6 50%,#1d4ed8 100%);
+  --grad-purple:linear-gradient(135deg,#a78bfa 0%,#8b5cf6 50%,#6d28d9 100%);
+  --grad-green: linear-gradient(135deg,#34d399 0%,#10b981 50%,#059669 100%);
+  --grad-amber: linear-gradient(135deg,#fbbf24 0%,#f59e0b 50%,#d97706 100%);
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-2xl: 36px;
+  --shadow-glow:0 0 40px rgba(233,30,140,0.25);
+  --shadow-card:0 8px 32px rgba(0,0,0,0.4);
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Cairo', sans-serif;
+  background:var(--c-dark);
+  color:var(--c-text);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body.en { font-family:'Inter', sans-serif; }
+
+/* BACKGROUND */
+.bg-canvas {
+  position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+}
+.bg-canvas::before {
+  content:''; position:absolute; inset:-50%;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(233,30,140,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(59,130,246,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(139,92,246,0.08) 0%, transparent 50%);
+  animation: bgShift 18s ease-in-out infinite alternate;
+}
+@keyframes bgShift {
+  0%   { transform:translate(0,0) rotate(0deg); }
+  100% { transform:translate(3%,2%) rotate(2deg); }
+}
+.bg-grid-lines {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+
+.orb { position:fixed; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0; }
+.orb-1 { width:400px; height:400px; background:rgba(233,30,140,0.12); top:-100px; right:-100px; }
+.orb-2 { width:350px; height:350px; background:rgba(59,130,246,0.1); bottom:-80px; left:-80px; }
+
+.container {
+  position:relative; z-index:1;
+  max-width:1280px; margin:0 auto;
+  padding:0 1.5rem 4rem;
+}
+
+/* NAVBAR */
+nav {
+  position:sticky; top:0; z-index:100;
+  padding:1rem 2rem;
+  background:rgba(13,17,23,0.85);
+  backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid var(--c-border);
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:1rem;
+}
+.nav-brand { display:flex; align-items:center; gap:1rem; }
+.nav-logo { height:46px; width:auto; filter:drop-shadow(0 0 12px rgba(233,30,140,0.5)); }
+.nav-name-main { font-size:1.4rem; font-weight:900; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.nav-name-sub { font-size:0.68rem; color:var(--c-muted); letter-spacing:3px; font-weight:600; }
+
+.nav-pill {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3);
+  color:#93c5fd; padding:0.35rem 1rem; border-radius:50px;
+  font-size:0.82rem; font-weight:700;
+}
+
+.nav-actions { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+
+.lang-toggle {
+  display:flex; align-items:center; background:var(--c-glass);
+  border:1px solid var(--c-border); border-radius:50px; overflow:hidden; padding:3px;
+}
+.lang-btn {
+  padding:0.4rem 1.1rem; border:none; background:transparent;
+  color:var(--c-muted); font-weight:700; font-size:0.84rem;
+  cursor:pointer; border-radius:50px; transition:var(--transition); font-family:inherit;
+}
+.lang-btn.active { background:var(--grad-brand); color:#fff; box-shadow:0 0 16px rgba(233,30,140,0.4); }
+
+.back-btn {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:var(--c-glass2); border:1px solid var(--c-border);
+  color:var(--c-text); padding:0.45rem 1.1rem; border-radius:12px;
+  text-decoration:none; font-weight:700; font-size:0.88rem; transition:var(--transition);
+}
+.back-btn:hover { background:rgba(233,30,140,0.2); border-color:rgba(233,30,140,0.4); }
+
+/* HERO */
+.hero { text-align:center; padding:4rem 1rem 3rem; }
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.25);
+  color:#93c5fd; padding:0.5rem 1.4rem; border-radius:50px;
+  font-size:0.88rem; font-weight:700; margin-bottom:1.5rem;
+}
+.hero-title { font-size:clamp(2rem, 5vw, 3.2rem); font-weight:900; line-height:1.15; margin-bottom:1rem; }
+.hero-title .grad { background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero-desc { font-size:1.05rem; color:var(--c-muted); max-width:750px; margin:0 auto; }
+.hero-divider { width:80px; height:3px; background:var(--grad-brand); border-radius:2px; margin:2rem auto 0; }
+
+/* KPI GRID */
+.kpi-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; margin-bottom:3rem;
+}
+@media(max-width:900px) { .kpi-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:500px) { .kpi-grid { grid-template-columns:1fr; } }
+
+.kpi-card {
+  position:relative; overflow:hidden; background:var(--c-dark2);
+  border:1px solid var(--c-border); border-radius:var(--radius-xl);
+  padding:1.75rem 1.5rem; text-align:center; transition:var(--transition);
+}
+.kpi-card:hover { transform:translateY(-5px); border-color:rgba(255,255,255,0.2); box-shadow:var(--shadow-card); }
+.kpi-accent { position:absolute; top:0; left:0; right:0; height:3px; background:var(--kpi-grad, var(--grad-brand)); }
+.kpi-icon-wrap {
+  width:52px; height:52px; border-radius:16px;
+  background:var(--kpi-iconbg, rgba(233,30,140,0.12));
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1rem; font-size:1.5rem; color:var(--kpi-color, var(--c-brand));
+}
+.kpi-number {
+  font-size:2.3rem; font-weight:900;
+  background:var(--kpi-grad, var(--grad-brand));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  line-height:1; margin-bottom:0.4rem;
+}
+.kpi-label { font-size:0.85rem; color:var(--c-muted); font-weight:600; }
+.kpi-badge {
+  display:inline-flex; align-items:center; gap:0.25rem;
+  background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.25);
+  color:#34d399; font-size:0.75rem; font-weight:700;
+  padding:0.2rem 0.6rem; border-radius:50px; margin-top:0.5rem;
+}
+
+/* GLASS PANEL */
+.glass-panel {
+  background:var(--c-dark2); border:1px solid var(--c-border);
+  border-radius:var(--radius-2xl); padding:2.5rem; margin-bottom:2rem;
+}
+.section-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.75rem; }
+.section-icon { width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.35rem; flex-shrink:0; }
+.section-label { font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.15rem; }
+.section-title-text { font-size:1.5rem; font-weight:900; color:var(--c-text); }
+
+/* TABLES */
+.table-wrap { overflow-x:auto; border-radius:var(--radius-xl); border:1px solid var(--c-border); margin-bottom:1.5rem; }
+table { width:100%; border-collapse:collapse; min-width:600px; font-size:0.9rem; }
+thead tr { background:linear-gradient(135deg, rgba(233,30,140,0.12), rgba(139,92,246,0.08)); border-bottom:1px solid rgba(233,30,140,0.25); }
+th { padding:1.1rem 1.25rem; font-weight:800; font-size:0.82rem; color:var(--c-muted); white-space:nowrap; text-align:inherit; }
+td { padding:1rem 1.25rem; border-bottom:1px solid var(--c-border); vertical-align:middle; color:var(--c-muted); }
+tbody tr:hover { background:var(--c-glass); }
+
+.badge { display:inline-flex; align-items:center; gap:0.3rem; padding:0.28rem 0.85rem; border-radius:50px; font-size:0.78rem; font-weight:700; white-space:nowrap; }
+.b-brand { background:rgba(233,30,140,0.15); color:#ff80c0; border:1px solid rgba(233,30,140,0.3); }
+.b-blue  { background:rgba(59,130,246,0.15); color:#93c5fd; border:1px solid rgba(59,130,246,0.3); }
+.b-green { background:rgba(16,185,129,0.15); color:#6ee7b7; border:1px solid rgba(16,185,129,0.3); }
+.b-amber { background:rgba(245,158,11,0.15); color:#fcd34d; border:1px solid rgba(245,158,11,0.3); }
+
+/* GRID LAYOUTS */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
+.three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:2rem; }
+@media(max-width:768px) { .two-col,.three-col { grid-template-columns:1fr; } }
+
+.info-card { background:var(--c-dark3); border:1px solid var(--c-border); border-radius:var(--radius-xl); padding:1.75rem; height:100%; }
+.info-card-header { display:flex; align-items:center; gap:0.85rem; margin-bottom:1.25rem; }
+.info-card-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.info-card-title { font-size:1.05rem; font-weight:800; color:var(--c-text); }
+
+.data-list { list-style:none; display:flex; flex-direction:column; gap:0.75rem; }
+.data-list li { display:flex; align-items:flex-start; gap:0.7rem; font-size:0.9rem; color:var(--c-muted); padding:0.65rem 0; border-bottom:1px solid var(--c-dim); }
+.data-list li:last-child { border-bottom:none; }
+.data-list li .bullet { width:6px; height:6px; border-radius:50%; background:var(--c-brand); margin-top:8px; flex-shrink:0; }
+.data-list li strong { color:var(--c-text); }
+.data-list li .val { color:var(--c-brand); font-weight:800; }
+
+.insight-box {
+  position:relative; background:linear-gradient(135deg, rgba(59,130,246,0.08), rgba(233,30,140,0.06));
+  border:1px solid rgba(59,130,246,0.2); border-radius:var(--radius-xl); padding:1.75rem 2rem;
+}
+.insight-box::before { content:''; position:absolute; top:0; left:0; bottom:0; width:4px; background:var(--grad-blue); }
+html[dir="rtl"] .insight-box::before { right:0; left:auto; }
+
+footer { text-align:center; padding:3rem 2rem 2rem; border-top:1px solid var(--c-border); margin-top:2rem; }
+.footer-logo-text { font-size:1.75rem; font-weight:900; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:0.5rem; }
+.footer-sub { font-size:0.85rem; color:var(--c-dim); }
+
+.en-only { display:none; }
+.ar-only { display:inline; }
+</style>
+</head>
+
+<body>
+<div class="bg-canvas"><div class="bg-grid-lines"></div></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <img src="logo.png" alt="UMI" class="nav-logo"
+      onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 80 40\'><rect width=\'80\' height=\'40\' rx=\'8\' fill=\'%23e91e8c\'/><text x=\'40\' y=\'26\' fill=\'white\' font-size=\'16\' text-anchor=\'middle\' font-weight=\'bold\' font-family=\'Arial\'>UMI</text></svg>'">
+    <div>
+      <div class="nav-name-main">UMI GROUP</div>
+      <div class="nav-name-sub">EXHIBITION STAND DESIGNERS</div>
+    </div>
+  </div>
+
+  <div class="nav-pill">
+    <i class="fa-solid fa-bullseye fa-fade" style="color:#60a5fa;"></i>
+    <span class="ar-only">خطة إعلانات أغسطس 2026</span>
+    <span class="en-only">August 2026 Ads Plan</span>
+  </div>
+
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">🇸🇦 AR</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+    <a href="index.html" class="back-btn">
+      <i class="fa-solid fa-house"></i>
+      <span class="ar-only">الرئيسية</span>
+      <span class="en-only">Home</span>
+    </a>
+  </div>
+</nav>
+
+<!-- CONTAINER -->
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <i class="fa-solid fa-bullhorn"></i>
+      <span class="ar-only">خطة التنفيذ والإعلانات — أغسطس 2026</span>
+      <span class="en-only">Execution & Ads Strategy — August 2026</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="ar-only">خطة حملات <span class="grad">Google Ads & LinkedIn</span> شهر أغسطس</span>
+      <span class="en-only"><span class="grad">Google Ads & LinkedIn</span> Plan — August 2026</span>
+    </h1>
+    <p class="hero-desc">
+      <span class="ar-only">خطة عمل تشغيلية شاملة لاستهداف صناع القرار بدبي والخليج، تحويل الظهور لعملاء محتملين (Leads)، وبناء صفحة هبوط Landing Page مخصصة.</span>
+      <span class="en-only">Complete tactical campaign plan targeting Dubai & GCC decision-makers, converting search impressions into high-value B2B leads.</span>
+    </p>
+    <div class="hero-divider"></div>
+  </div>
+
+  <!-- KPI TARGETS GRID -->
+  <div class="kpi-grid">
+    <div class="kpi-card" style="--kpi-grad:var(--grad-blue);--kpi-iconbg:rgba(59,130,246,0.12);--kpi-color:#3b82f6;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-brands fa-google"></i></div>
+      <div class="kpi-number">350+</div>
+      <div class="kpi-label">
+        <span class="ar-only">نقرات جوجل المستهدفة</span>
+        <span class="en-only">Target Google Clicks</span>
+      </div>
+      <div class="kpi-badge"><i class="fa-solid fa-arrow-up"></i> +68% vs July</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:var(--grad-brand);--kpi-iconbg:rgba(233,30,140,0.12);--kpi-color:#e91e8c;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-solid fa-filter-circle-dollar"></i></div>
+      <div class="kpi-number">20–40</div>
+      <div class="kpi-label">
+        <span class="ar-only">عميل محتمل (Leads)</span>
+        <span class="en-only">Target B2B Leads</span>
+      </div>
+      <div class="kpi-badge">Exhibition Stand Buyers</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:var(--grad-green);--kpi-iconbg:rgba(16,185,129,0.12);--kpi-color:#10b981;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-solid fa-sack-dollar"></i></div>
+      <div class="kpi-number">$750</div>
+      <div class="kpi-label">
+        <span class="ar-only">ميزانية Google Ads المقترحة</span>
+        <span class="en-only">Google Ads Budget</span>
+      </div>
+      <div class="kpi-badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;">$25/day</div>
+    </div>
+
+    <div class="kpi-card" style="--kpi-grad:var(--grad-purple);--kpi-iconbg:rgba(139,92,246,0.12);--kpi-color:#8b5cf6;">
+      <div class="kpi-accent"></div>
+      <div class="kpi-icon-wrap"><i class="fa-solid fa-bullseye"></i></div>
+      <div class="kpi-number">2.0%+</div>
+      <div class="kpi-label">
+        <span class="ar-only">معدل CTR المستهدف</span>
+        <span class="en-only">Target CTR Rate</span>
+      </div>
+      <div class="kpi-badge">vs 1.25% in July</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 — GOOGLE ADS PLAN -->
+  <div class="glass-panel">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(59,130,246,0.15);color:#3b82f6;"><i class="fa-brands fa-google"></i></div>
+      <div>
+        <div class="section-label">
+          <span class="ar-only">الكامبيين الأول</span>
+          <span class="en-only">Campaign 01</span>
+        </div>
+        <div class="section-title-text">
+          <span class="ar-only">خطة حملة Google Search Ads (أغسطس 2026)</span>
+          <span class="en-only">Google Search Ads Campaign Plan</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Groups & Keywords Table -->
+    <h4 style="font-size:1rem;font-weight:800;color:var(--c-text);margin-bottom:1rem;">
+      <i class="fa-solid fa-key" style="color:#3b82f6;"></i>
+      <span class="ar-only"> المجموعات الإعلانية والكلمات المستهدفة</span>
+      <span class="en-only"> Ad Groups & Target Keywords</span>
+    </h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th><span class="ar-only">المجموعة الإعلانية</span><span class="en-only">Ad Group</span></th>
+            <th><span class="ar-only">الكلمة المفتاحية</span><span class="en-only">Target Keyword</span></th>
+            <th><span class="ar-only">نوع المطابقة</span><span class="en-only">Match Type</span></th>
+            <th><span class="ar-only">السبب والفرصة</span><span class="en-only">Strategic Reason</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--c-text);">Stand Design Dubai</strong></td>
+            <td><code>"exhibition stand design dubai"</code></td>
+            <td><span class="badge b-brand">Phrase Match</span></td>
+            <td><span class="ar-only">344 ظهور في يوليو بدون نقرات كافية — فرصة تحويل سريعة</span><span class="en-only">344 impressions in July with low clicks — immediate conversion opportunity</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">Stand Design Dubai</strong></td>
+            <td><code>"custom exhibition booth dubai"</code></td>
+            <td><span class="badge b-brand">Phrase Match</span></td>
+            <td><span class="ar-only">مشتري جاهز يبحث عن تصميم مخصص</span><span class="en-only">High intent buyer searching for bespoke stands</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">Stand Contractors</strong></td>
+            <td><code>"exhibition stand contractor dubai"</code></td>
+            <td><span class="badge b-blue">Phrase Match</span></td>
+            <td><span class="ar-only">استهداف شركات المقاولات والتصنيع الفعلي</span><span class="en-only">Targeting fabrication & contractor queries</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">Stand Contractors</strong></td>
+            <td><code>[exhibition stand builder uae]</code></td>
+            <td><span class="badge b-green">Exact Match</span></td>
+            <td><span class="ar-only">مطابقة دقيقة لمن يبحث عن مصنع في الإمارات</span><span class="en-only">Exact match for UAE stand builders</span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">Brand Protection</strong></td>
+            <td><code>[umi group dubai]</code></td>
+            <td><span class="badge b-amber">Exact Match</span></td>
+            <td><span class="ar-only">حماية البراند وضمان الترتيب الأول دائماً</span><span class="en-only">Brand protection ensuring #1 spot always</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Ad Copy Headlines -->
+    <div class="two-col">
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" style="background:rgba(233,30,140,0.12);color:#e91e8c;"><i class="fa-solid fa-rectangle-ad"></i></div>
+          <div class="info-card-title">
+            <span class="ar-only">عناوين الإعلانات (Responsive Search Ads)</span>
+            <span class="en-only">Ad Headlines (RSA)</span>
+          </div>
+        </div>
+        <ul class="data-list">
+          <li><div class="bullet"></div><span>1. Exhibition Stand Design Dubai</span></li>
+          <li><div class="bullet"></div><span>2. Custom Exhibition Booths UAE</span></li>
+          <li><div class="bullet"></div><span>3. UMI Group — Stand Out at Every Expo</span></li>
+          <li><div class="bullet"></div><span>4. Full Turnkey Design & Build</span></li>
+          <li><div class="bullet"></div><span>5. Request a Free Quote in 24 Hours</span></li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="fa-solid fa-ban"></i></div>
+          <div class="info-card-title">
+            <span class="ar-only">الكلمات المستبعدة (Negative Keywords)</span>
+            <span class="en-only">Negative Keywords</span>
+          </div>
+        </div>
+        <ul class="data-list">
+          <li><div class="bullet" style="background:#ef4444;"></div><span><code>- free</code> / <code>- diy</code> / <code>- cheap</code></span></li>
+          <li><div class="bullet" style="background:#ef4444;"></div><span><code>- jobs</code> / <code>- careers</code> / <code>- salary</code></span></li>
+          <li><div class="bullet" style="background:#ef4444;"></div><span><code>- template</code> / <code>- software</code> / <code>- 3d download</code></span></li>
+          <li><div class="bullet" style="background:#ef4444;"></div><span><span class="ar-only">تضمن عدم ضياع الميزانية في عمليات بحث غير تجارية</span><span class="en-only">Prevents budget waste on non-commercial searches</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 — LINKEDIN ADS & CONTENT -->
+  <div class="glass-panel">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(0,119,181,0.15);color:#0a66c2;"><i class="fa-brands fa-linkedin-in"></i></div>
+      <div>
+        <div class="section-label">
+          <span class="ar-only">الكامبيين الثاني</span>
+          <span class="en-only">Campaign 02</span>
+        </div>
+        <div class="section-title-text">
+          <span class="ar-only">حملات LinkedIn المخصصة لشهر أغسطس</span>
+          <span class="en-only">LinkedIn Sponsored Campaigns</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="three-col">
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" style="background:rgba(233,30,140,0.12);color:#e91e8c;"><i class="fa-solid fa-users-line"></i></div>
+          <div class="info-card-title">
+            <span class="ar-only">1. Sponsored Content Lead Gen</span>
+            <span class="en-only">1. Lead Gen Form Campaign</span>
+          </div>
+        </div>
+        <ul class="data-list">
+          <li><div class="bullet"></div><span><strong>Target:</strong> Marketing & Brand Managers in UAE</span></li>
+          <li><div class="bullet"></div><span><strong>Format:</strong> Single Image Ad + Native Lead Form</span></li>
+          <li><div class="bullet"></div><span><strong>Budget:</strong> $300–500 / month</span></li>
+          <li><div class="bullet"></div><span><strong>Target KPI:</strong> 15–25 Qualified Leads</span></li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" style="background:rgba(139,92,246,0.12);color:#8b5cf6;"><i class="fa-solid fa-rotate-left"></i></div>
+          <div class="info-card-title">
+            <span class="ar-only">2. Retargeting Campaign</span>
+            <span class="en-only">2. Website Retargeting</span>
+          </div>
+        </div>
+        <ul class="data-list">
+          <li><div class="bullet"></div><span><strong>Target:</strong> Website visitors & LinkedIn page engaged users</span></li>
+          <li><div class="bullet"></div><span><strong>Format:</strong> Carousel Showcase (Best Builds)</span></li>
+          <li><div class="bullet"></div><span><strong>Budget:</strong> $200–300 / month</span></li>
+          <li><div class="bullet"></div><span><strong>Target KPI:</strong> 8–15 Warm Leads</span></li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-header">
+          <div class="info-card-icon" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="fa-solid fa-file-pdf"></i></div>
+          <div class="info-card-title">
+            <span class="ar-only">3. Thought Leadership PDF</span>
+            <span class="en-only">3. Document Ads (PDF)</span>
+          </div>
+        </div>
+        <ul class="data-list">
+          <li><div class="bullet" style="background:#10b981;"></div><span><strong>Content:</strong> "5 Mistakes to Avoid in Dubai Exhibitions"</span></li>
+          <li><div class="bullet" style="background:#10b981;"></div><span><strong>Format:</strong> Multi-page PDF Document Ad</span></li>
+          <li><div class="bullet" style="background:#10b981;"></div><span><strong>Benefit:</strong> 3x higher engagement rate</span></li>
+          <li><div class="bullet" style="background:#10b981;"></div><span><strong>Target Organic ER:</strong> 5.0%+</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 — LANDING PAGE & BUDGET -->
+  <div class="glass-panel">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b;"><i class="fa-solid fa-laptop-code"></i></div>
+      <div>
+        <div class="section-label">
+          <span class="ar-only">التجهيز الفني والميزانية</span>
+          <span class="en-only">Technical Setup & Budget</span>
+        </div>
+        <div class="section-title-text">
+          <span class="ar-only">ميزانية شهر أغسطس وتجهيز الـ Landing Page</span>
+          <span class="en-only">August Budget & Landing Page Blueprint</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Budget Table -->
+    <h4 style="font-size:1rem;font-weight:800;color:var(--c-text);margin-bottom:1rem;">
+      <i class="fa-solid fa-calculator" style="color:#f59e0b;"></i>
+      <span class="ar-only"> توزيع ميزانية الإعلانات الموصى بها</span>
+      <span class="en-only"> Recommended Ad Budget Allocation</span>
+    </h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th><span class="ar-only">القناة الإعلانية</span><span class="en-only">Ad Channel</span></th>
+            <th><span class="ar-only">الميزانية الشهرية</span><span class="en-only">Monthly Budget</span></th>
+            <th><span class="ar-only">الهدف المتوقع</span><span class="en-only">Expected Target</span></th>
+            <th><span class="ar-only">درجة الأولوية</span><span class="en-only">Priority</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--c-text);">Google Search Ads</strong></td>
+            <td><strong style="color:#3b82f6;">$600 – $750</strong></td>
+            <td>200–350 Clicks / 20–35 Leads</td>
+            <td><span class="badge b-winner">🥇 <span class="ar-only">أعلى أولوية</span><span class="en-only">High Priority</span></span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">LinkedIn Sponsored Lead Gen</strong></td>
+            <td><strong style="color:#e91e8c;">$300 – $500</strong></td>
+            <td>15–25 Decision Maker Leads</td>
+            <td><span class="badge b-brand"><span class="ar-only">أولوية ثانية</span><span class="en-only">High Value</span></span></td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--c-text);">LinkedIn Retargeting</strong></td>
+            <td><strong style="color:#8b5cf6;">$200 – $300</strong></td>
+            <td>8–15 Warm Conversions</td>
+            <td><span class="badge b-blue"><span class="ar-only">أولوية متوسطة</span><span class="en-only">Medium</span></span></td>
+          </tr>
+          <tr class="row-umi">
+            <td><strong style="color:var(--c-text);">الإجمالي الموصى به (Total)</strong></td>
+            <td><strong style="color:#10b981;font-size:1.1rem;">$1,100 – $1,550</strong></td>
+            <td><strong>40–75 Qualified B2B Leads</strong></td>
+            <td><span class="badge b-green">✓ Comprehensive</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Weekly Timeline -->
+    <div class="insight-box">
+      <div style="font-weight:800;color:var(--c-text);margin-bottom:0.75rem;"><i class="fa-solid fa-list-check" style="color:#60a5fa;"></i> <span class="ar-only">جدول التنفيذ الأسبوعي لشهر أغسطس</span><span class="en-only">August Weekly Execution Roadmap</span></div>
+      <ul class="data-list">
+        <li><div class="bullet"></div><span><strong>الأسبوع 1 (1–7 أغسطس):</strong> <span class="ar-only">بناء وتدشين Landing Page مخصصة (`/exhibition-stand-design-dubai`) + تجهيز Conversion Tracking.</span><span class="en-only">Launch dedicated Landing Page + Google & LinkedIn conversion tracking setup.</span></span></li>
+        <li><div class="bullet"></div><span><strong>الأسبوع 2 (8–14 أغسطس):</strong> <span class="ar-only">إطلاق حملة Google Search Ads (Ad Group 1 & 2) + مراقبة الكلمات السلبية يومياً.</span><span class="en-only">Launch Google Search Ads + daily negative keyword optimization.</span></span></li>
+        <li><div class="bullet"></div><span><strong>الأسبوع 3 (15–21 أغسطس):</strong> <span class="ar-only">إطلاق حملة LinkedIn Retargeting + إطلاق منشور PDF Document الأول.</span><span class="en-only">Launch LinkedIn Retargeting campaign + publish 1st PDF document ad.</span></span></li>
+        <li><div class="bullet"></div><span><strong>الأسبوع 4 (22–31 أغسطس):</strong> <span class="ar-only">تحليل تكلفة كل عميل (CPL) وتعديل العروض Bids لرفع التحويل وإعداد تقرير الأداء.</span><span class="en-only">Analyze CPL, optimize bids for max conversions, and report August ROI.</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="footer-logo-text">UMI GROUP</div>
+  <div class="footer-sub">
+    <span class="ar-only">خطة إعلانات وتنفيذ شهر أغسطس 2026 · جميع الحقوق محفوظة ©</span>
+    <span class="en-only">August 2026 Ads & Execution Plan · All Rights Reserved ©</span>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  const html = document.getElementById('html-root');
+  const btnAr = document.getElementById('btn-ar');
+  const btnEn = document.getElementById('btn-en');
+
+  if (lang === 'en') {
+    html.setAttribute('lang','en');
+    html.setAttribute('dir','ltr');
+    document.body.classList.add('en');
+    btnEn.classList.add('active');
+    btnAr.classList.remove('active');
+    document.title = 'August 2026 Ads & Execution Plan — UMI Group';
+  } else {
+    html.setAttribute('lang','ar');
+    html.setAttribute('dir','rtl');
+    document.body.classList.remove('en');
+    btnAr.classList.add('active');
+    btnEn.classList.remove('active');
+    document.title = 'خطة عمل وإعلانات أغسطس 2026 — UMI Group';
+  }
+
+  const isEN = lang === 'en';
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = isEN ? 'none' : 'inline'; });
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = isEN ? 'inline' : 'none'; });
+}
+(function init() {
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+})();
+</script>
+</body>
+</html>
