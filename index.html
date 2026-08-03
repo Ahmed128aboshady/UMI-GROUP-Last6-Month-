@@ -1,1672 +1,3375 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>خطة النمو الاستراتيجية 2026 - UMI Group</title>
+
     <!-- Google Fonts: Cairo & Tajawal -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
     <!-- FontAwesome Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     
+
     <style>
+
         :root {
+
             /* Premium Executive Light Theme Palette */
+
             --bg-primary: #f8fafc;
+
             --bg-secondary: #ffffff;
+
             --bg-card: #ffffff;
+
             --border-card: #e2e8f0;
+
             
+
             /* UMI Group Brand Color Palette (Magenta & Rose) */
+
             --umi-brand: #d81b60;
+
             --umi-brand-light: #e91e63;
+
             --umi-brand-dark: #ad1457;
+
             --umi-brand-glow: rgba(216, 27, 96, 0.18);
+
             
+
             --accent-gold: #d81b60;
+
             --accent-gold-glow: rgba(216, 27, 96, 0.15);
+
             --accent-blue: #2563eb;
+
             --accent-cyan: #0284c7;
+
             --accent-purple: #7c3aed;
+
             --accent-pink: #db2777;
+
             --accent-green: #10b981;
+
             
+
             --text-main: #0f172a;
+
             --text-muted: #475569;
+
             --text-dim: #94a3b8;
+
             
+
             --gradient-gold: linear-gradient(135deg, #e91e63 0%, #d81b60 50%, #ad1457 100%);
+
             --gradient-blue: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+
             --gradient-purple: linear-gradient(135deg, #6d28d9 0%, #7c3aed 50%, #8b5cf6 100%);
+
             --gradient-glass: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+
             
+
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
             --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
             --shadow-lg: 0 20px 35px -10px rgba(216, 27, 96, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+
         }
+
+
 
         * {
+
             box-sizing: border-box;
+
             margin: 0;
+
             padding: 0;
+
         }
+
+
 
         body {
+
             font-family: 'Cairo', 'Tajawal', sans-serif;
+
             background-color: var(--bg-primary);
+
             color: var(--text-main);
+
             line-height: 1.6;
+
             overflow-x: hidden;
+
             min-height: 100vh;
+
         }
+
+
 
         /* Language Switcher Styles */
+
         .lang-switcher {
+
             display: flex;
+
             align-items: center;
+
             background: rgba(255, 255, 255, 0.08);
+
             border: 1px solid rgba(255, 255, 255, 0.18);
+
             border-radius: 50px;
+
             overflow: hidden;
+
             padding: 3px;
+
         }
+
+
 
         .lang-btn {
+
             padding: 0.45rem 1.1rem;
+
             border: none;
+
             background: transparent;
+
             color: #94a3b8;
+
             font-weight: 700;
+
             font-size: 0.85rem;
+
             cursor: pointer;
+
             border-radius: 50px;
+
             transition: all 0.25s ease;
+
             font-family: inherit;
+
             white-space: nowrap;
+
         }
+
+
 
         .lang-btn.active {
+
             background: var(--gradient-gold);
+
             color: #ffffff;
+
             box-shadow: 0 0 14px rgba(216, 27, 96, 0.4);
+
         }
+
+
 
         .lang-btn:hover:not(.active) {
+
             color: #ffffff;
+
             background: rgba(255, 255, 255, 0.08);
+
         }
+
+
 
         .en-only { display: none !important; }
+
         .ar-only { display: inline; }
 
+
+
         html[lang="en"] .en-only { display: inline !important; }
+
         html[lang="en"] .ar-only { display: none !important; }
+
         html[lang="en"] body { font-family: 'Inter', sans-serif; }
+
         html[lang="en"] .calendar-table { text-align: left; }
 
+
+
         /* Ambient Background Overlay */
+
         .bg-grid {
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             width: 100vw;
+
             height: 100vh;
+
             background-image: 
+
                 radial-gradient(circle at 10% 10%, rgba(216, 27, 96, 0.05) 0%, transparent 45%),
+
                 radial-gradient(circle at 90% 90%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
+
                 radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+
             z-index: -1;
+
             pointer-events: none;
+
         }
+
+
 
         /* Header Navigation Bar (Dark Premium Style for Logo Contrast) */
+
         header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             padding: 1.15rem 3rem;
+
             background: #0f172a;
+
             backdrop-filter: blur(16px);
+
             border-bottom: 1px solid rgba(216, 27, 96, 0.3);
+
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+
             position: sticky;
+
             top: 0;
+
             z-index: 100;
+
         }
+
+
 
         .brand-container {
+
             display: flex;
+
             align-items: center;
+
             gap: 1.25rem;
+
         }
+
+
 
         .brand-logo-box {
+
             display: flex;
+
             align-items: center;
+
             gap: 0.85rem;
+
         }
+
+
 
         .brand-logo-img {
+
             height: 52px;
+
             width: auto;
+
             object-fit: contain;
+
             filter: drop-shadow(0 2px 8px rgba(256, 256, 256, 0.2));
+
         }
+
+
 
         .brand-logo-text {
+
             font-size: 1.6rem;
+
             font-weight: 900;
+
             background: var(--gradient-gold);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             letter-spacing: 0.5px;
+
             line-height: 1.1;
+
         }
+
+
 
         .brand-logo-sub {
+
             font-size: 0.75rem;
+
             color: #94a3b8;
+
             letter-spacing: 2px;
+
             font-weight: 700;
+
             text-transform: uppercase;
+
         }
+
+
 
         .brand-badge {
+
             background: rgba(216, 27, 96, 0.2);
+
             border: 1px solid rgba(216, 27, 96, 0.4);
+
             color: #ff80ab;
+
             padding: 0.35rem 0.9rem;
+
             border-radius: 50px;
+
             font-size: 0.85rem;
+
             font-weight: 700;
+
             display: flex;
+
             align-items: center;
+
             gap: 0.4rem;
+
         }
+
+
 
         .nav-links {
+
             display: flex;
+
             gap: 0.5rem;
+
             list-style: none;
+
         }
+
+
 
         .nav-btn {
+
             background: transparent;
+
             border: 1px solid transparent;
+
             color: #cbd5e1;
+
             padding: 0.6rem 1.2rem;
+
             border-radius: 12px;
+
             font-family: inherit;
+
             font-size: 0.95rem;
+
             font-weight: 600;
+
             cursor: pointer;
+
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
             display: flex;
+
             align-items: center;
+
             gap: 0.5rem;
+
         }
+
+
 
         .nav-btn:hover {
+
             color: #ffffff;
+
             background: rgba(216, 27, 96, 0.2);
+
             border-color: rgba(216, 27, 96, 0.4);
+
         }
+
+
 
         .nav-btn.active {
+
             color: #ffffff;
+
             background: var(--gradient-gold);
+
             font-weight: 700;
+
             box-shadow: 0 4px 16px var(--umi-brand-glow);
+
         }
+
+
 
         /* Container Layout */
+
         main {
+
             max-width: 1300px;
+
             margin: 0 auto;
+
             padding: 2.5rem 1.5rem;
+
         }
+
+
 
         /* Hero Banner Section */
+
         .hero-banner {
+
             text-align: center;
+
             padding: 2rem 1.5rem 3rem;
+
             position: relative;
+
         }
+
+
 
         .hero-title {
+
             font-size: 2.75rem;
+
             font-weight: 900;
+
             line-height: 1.25;
+
             margin-bottom: 1rem;
+
             color: var(--text-main);
+
         }
+
+
 
         .hero-title span {
+
             background: var(--gradient-gold);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
         }
+
+
 
         .hero-subtitle {
+
             font-size: 1.15rem;
+
             color: var(--text-muted);
+
             max-width: 780px;
+
             margin: 0 auto 2rem;
+
         }
+
+
 
         /* Interactive Tab Container */
+
         .tab-content {
+
             display: none;
+
             animation: fadeIn 0.5s ease forwards;
+
         }
+
+
 
         .tab-content.active {
+
             display: block;
+
         }
+
+
 
         @keyframes fadeIn {
+
             from { opacity: 0; transform: translateY(12px); }
+
             to { opacity: 1; transform: translateY(0); }
+
         }
+
+
 
         /* CAROUSEL SECTION */
+
         .carousel-wrapper {
+
             position: relative;
+
             background: var(--bg-card);
+
             border: 1px solid var(--border-card);
+
             border-radius: 24px;
+
             padding: 2.5rem;
+
             box-shadow: var(--shadow-md);
+
             overflow: hidden;
+
             margin-bottom: 3rem;
+
         }
+
+
 
         .carousel-track-container {
+
             overflow: hidden;
+
             width: 100%;
+
         }
+
+
 
         .carousel-track {
+
             display: flex;
+
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
             width: 100%;
+
         }
+
+
 
         .carousel-slide {
+
             min-width: 100%;
+
             box-sizing: border-box;
+
             padding: 0.5rem;
+
         }
+
+
 
         /* Carousel Slide Content Cards */
+
         .slide-card {
+
             background: var(--gradient-glass);
+
             border: 1px solid rgba(226, 232, 240, 0.8);
+
             border-radius: 20px;
+
             padding: 2.5rem;
+
             position: relative;
+
             box-shadow: var(--shadow-sm);
+
         }
+
+
 
         .slide-tag {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 0.5rem;
+
             padding: 0.4rem 1rem;
+
             border-radius: 30px;
+
             font-size: 0.85rem;
+
             font-weight: 700;
+
             margin-bottom: 1.25rem;
+
         }
+
+
 
         .tag-gold { background: rgba(216, 27, 96, 0.08); color: var(--umi-brand); border: 1px solid rgba(216, 27, 96, 0.25); }
+
         .tag-blue { background: rgba(37, 99, 235, 0.08); color: var(--accent-blue); border: 1px solid rgba(37, 99, 235, 0.25); }
+
         .tag-purple { background: rgba(124, 58, 237, 0.08); color: var(--accent-purple); border: 1px solid rgba(124, 58, 237, 0.25); }
+
         .tag-insta { background: rgba(219, 39, 119, 0.08); color: var(--accent-pink); border: 1px solid rgba(219, 39, 119, 0.25); }
 
+
+
         .slide-heading {
+
             font-size: 1.9rem;
+
             font-weight: 800;
+
             margin-bottom: 1rem;
+
             color: var(--text-main);
+
         }
+
+
 
         .slide-description {
+
             color: var(--text-muted);
+
             font-size: 1.05rem;
+
             margin-bottom: 2rem;
+
             line-height: 1.7;
+
         }
+
+
 
         /* Grid inside Slide */
+
         .feature-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
             gap: 1.5rem;
+
         }
+
+
 
         .feature-item {
+
             background: #ffffff;
+
             border: 1px solid #e2e8f0;
+
             padding: 1.25rem;
+
             border-radius: 14px;
+
             box-shadow: var(--shadow-sm);
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .feature-item:hover {
+
             transform: translateY(-4px);
+
             border-color: rgba(216, 27, 96, 0.3);
+
             box-shadow: var(--shadow-md);
+
         }
+
+
 
         .feature-icon {
+
             font-size: 1.5rem;
+
             margin-bottom: 0.75rem;
+
             color: var(--umi-brand);
+
         }
+
+
 
         .feature-title {
+
             font-size: 1.1rem;
+
             font-weight: 700;
+
             margin-bottom: 0.4rem;
+
             color: var(--text-main);
+
         }
+
+
 
         .feature-text {
+
             font-size: 0.9rem;
+
             color: var(--text-muted);
+
         }
+
+
 
         /* Carousel Navigation Controls */
+
         .carousel-nav {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-top: 1.5rem;
+
         }
+
+
 
         .carousel-indicators {
+
             display: flex;
+
             gap: 0.6rem;
+
         }
+
+
 
         .dot {
+
             width: 12px;
+
             height: 12px;
+
             border-radius: 50%;
+
             background: #cbd5e1;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .dot.active {
+
             width: 32px;
+
             border-radius: 10px;
+
             background: var(--umi-brand);
+
             box-shadow: 0 0 12px var(--umi-brand-glow);
+
         }
+
+
 
         .carousel-buttons {
+
             display: flex;
+
             gap: 0.75rem;
+
         }
+
+
 
         .arrow-btn {
+
             background: #ffffff;
+
             border: 1px solid #cbd5e1;
+
             color: var(--text-main);
+
             width: 44px;
+
             height: 44px;
+
             border-radius: 12px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             cursor: pointer;
+
             box-shadow: var(--shadow-sm);
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .arrow-btn:hover {
+
             background: var(--umi-brand);
+
             color: #ffffff;
+
             border-color: var(--umi-brand);
+
             box-shadow: var(--shadow-md);
+
         }
+
+
 
         /* GRID CARDS FOR SECTIONS */
+
         .cards-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
             gap: 2rem;
+
             margin-bottom: 3rem;
+
         }
+
+
 
         .card {
+
             background: var(--bg-card);
+
             border: 1px solid var(--border-card);
+
             border-radius: 20px;
+
             padding: 2rem;
+
             position: relative;
+
             box-shadow: var(--shadow-sm);
+
             overflow: hidden;
+
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
         }
+
+
 
         .card:hover {
+
             transform: translateY(-8px);
+
             border-color: rgba(216, 27, 96, 0.3);
+
             box-shadow: var(--shadow-lg);
+
         }
+
+
 
         .card-header {
+
             display: flex;
+
             align-items: center;
+
             gap: 1rem;
+
             margin-bottom: 1.25rem;
+
         }
+
+
 
         .card-icon-box {
+
             width: 52px;
+
             height: 52px;
+
             border-radius: 16px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 1.5rem;
+
         }
+
+
 
         .icon-gold { background: rgba(216, 27, 96, 0.1); color: var(--umi-brand); }
+
         .icon-blue { background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); }
+
         .icon-purple { background: rgba(124, 58, 237, 0.1); color: var(--accent-purple); }
+
         .icon-insta { background: rgba(219, 39, 119, 0.1); color: var(--accent-pink); }
 
+
+
         .card-title {
+
             font-size: 1.35rem;
+
             font-weight: 800;
+
             color: var(--text-main);
+
         }
+
+
 
         .card-list {
+
             list-style: none;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 1rem;
+
         }
+
+
 
         .card-list li {
+
             position: relative;
+
             padding-right: 1.75rem;
+
             font-size: 0.98rem;
+
             color: var(--text-muted);
+
         }
+
+
 
         .card-list li::before {
+
             content: "\f058";
+
             font-family: "Font Awesome 6 Free";
+
             font-weight: 900;
+
             position: absolute;
+
             right: 0;
+
             top: 2px;
+
             color: var(--umi-brand);
+
             font-size: 1rem;
+
         }
+
+
 
         /* KPI STATS ROW */
+
         .kpi-row {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
             gap: 1.5rem;
+
             margin-bottom: 3rem;
+
         }
+
+
 
         .kpi-box {
+
             background: #ffffff;
+
             border: 1px solid var(--border-card);
+
             border-radius: 18px;
+
             padding: 1.5rem;
+
             text-align: center;
+
             box-shadow: var(--shadow-sm);
+
         }
+
+
 
         .kpi-value {
+
             font-size: 2.25rem;
+
             font-weight: 900;
+
             background: var(--gradient-gold);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             margin-bottom: 0.25rem;
+
         }
+
+
 
         .kpi-label {
+
             font-size: 0.9rem;
+
             color: var(--text-muted);
+
             font-weight: 600;
+
         }
+
+
 
         /* -------------------------------------------------------------
+
            3-MONTH CONTENT CALENDAR & DYNAMIC PROGRESS TRACKER STYLES
+
         ------------------------------------------------------------- */
+
         .calendar-section {
+
             background: #ffffff;
+
             border: 1px solid var(--border-card);
+
             border-radius: 24px;
+
             padding: 2.5rem;
+
             box-shadow: var(--shadow-md);
+
             margin-top: 2rem;
+
             margin-bottom: 3rem;
+
         }
+
+
 
         .calendar-header-box {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             flex-wrap: wrap;
+
             gap: 1.5rem;
+
             margin-bottom: 2rem;
+
             padding-bottom: 1.5rem;
+
             border-bottom: 1px solid #e2e8f0;
+
         }
+
+
 
         .calendar-title-group h3 {
+
             font-size: 1.75rem;
+
             font-weight: 900;
+
             color: var(--text-main);
+
             display: flex;
+
             align-items: center;
+
             gap: 0.75rem;
+
         }
+
+
 
         .calendar-title-group h3 i {
+
             color: var(--umi-brand);
+
         }
+
+
 
         .calendar-title-group p {
+
             color: var(--text-muted);
+
             font-size: 0.95rem;
+
             margin-top: 0.25rem;
+
         }
+
+
 
         /* Progress Bar Widget Box */
+
         .progress-widget {
+
             background: rgba(216, 27, 96, 0.04);
+
             border: 1px solid rgba(216, 27, 96, 0.18);
+
             border-radius: 20px;
+
             padding: 1.25rem 2rem;
+
             min-width: 340px;
+
             box-shadow: var(--shadow-sm);
+
         }
+
+
 
         .progress-info {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 0.75rem;
+
         }
+
+
 
         .progress-label {
+
             font-weight: 800;
+
             font-size: 1rem;
+
             color: var(--text-main);
+
         }
+
+
 
         .progress-percentage {
+
             font-weight: 900;
+
             font-size: 1.4rem;
+
             color: var(--umi-brand);
+
         }
+
+
 
         .progress-bar-bg {
+
             width: 100%;
+
             height: 12px;
+
             background: #e2e8f0;
+
             border-radius: 10px;
+
             overflow: hidden;
+
             position: relative;
+
         }
+
+
 
         .progress-bar-fill {
+
             height: 100%;
+
             width: 0%;
+
             background: var(--gradient-gold);
+
             border-radius: 10px;
+
             transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
             box-shadow: 0 0 10px var(--umi-brand-glow);
+
         }
+
+
 
         .progress-stats-sub {
+
             display: flex;
+
             justify-content: space-between;
+
             font-size: 0.8rem;
+
             color: var(--text-muted);
+
             margin-top: 0.5rem;
+
             font-weight: 700;
+
         }
+
+
 
         /* Month Filter Buttons */
+
         .month-filters {
+
             display: flex;
+
             gap: 0.75rem;
+
             margin-bottom: 2rem;
+
             flex-wrap: wrap;
+
         }
+
+
 
         .month-btn {
+
             background: #f1f5f9;
+
             border: 1px solid #cbd5e1;
+
             color: var(--text-muted);
+
             padding: 0.6rem 1.4rem;
+
             border-radius: 12px;
+
             font-family: inherit;
+
             font-size: 0.95rem;
+
             font-weight: 700;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .month-btn:hover {
+
             border-color: var(--umi-brand);
+
             color: var(--umi-brand);
+
         }
+
+
 
         .month-btn.active {
+
             background: var(--umi-brand);
+
             color: #ffffff;
+
             border-color: var(--umi-brand);
+
             box-shadow: 0 4px 12px var(--umi-brand-glow);
+
         }
+
+
 
         /* Table Design */
+
         .calendar-table-responsive {
+
             overflow-x: auto;
+
             border-radius: 16px;
+
             border: 1px solid #e2e8f0;
+
         }
+
+
 
         .calendar-table {
+
             width: 100%;
+
             border-collapse: collapse;
+
             text-align: right;
+
             font-size: 0.95rem;
+
             background: #ffffff;
+
         }
+
+
 
         .calendar-table th {
+
             background: #f8fafc;
+
             color: var(--text-main);
+
             font-weight: 800;
+
             padding: 1.1rem 1rem;
+
             border-bottom: 2px solid #e2e8f0;
+
             white-space: nowrap;
+
         }
+
+
 
         .calendar-table td {
+
             padding: 1rem;
+
             border-bottom: 1px solid #e2e8f0;
+
             vertical-align: middle;
+
         }
+
+
 
         .calendar-table tr:hover {
+
             background: rgba(216, 27, 96, 0.02);
+
         }
+
+
 
         .calendar-table tr.completed-row {
+
             background: rgba(16, 185, 129, 0.04);
+
         }
+
+
 
         /* Pillar Badges in Table */
+
         .pillar-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 0.4rem;
+
             padding: 0.3rem 0.8rem;
+
             border-radius: 20px;
+
             font-size: 0.82rem;
+
             font-weight: 700;
+
             white-space: nowrap;
+
         }
+
+
 
         .badge-p1 { background: rgba(216, 27, 96, 0.1); color: var(--umi-brand); border: 1px solid rgba(216, 27, 96, 0.25); }
+
         .badge-p2 { background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); border: 1px solid rgba(37, 99, 235, 0.25); }
+
         .badge-p3 { background: rgba(124, 58, 237, 0.1); color: var(--accent-purple); border: 1px solid rgba(124, 58, 237, 0.25); }
 
+
+
         /* Custom Checkbox */
+
         .chk-container {
+
             display: block;
+
             position: relative;
+
             padding-right: 28px;
+
             cursor: pointer;
+
             font-size: 0.95rem;
+
             user-select: none;
+
             font-weight: 700;
+
         }
+
+
 
         .chk-container input {
+
             position: absolute;
+
             opacity: 0;
+
             cursor: pointer;
+
             height: 0;
+
             width: 0;
+
         }
+
+
 
         .checkmark {
+
             position: absolute;
+
             top: 2px;
+
             right: 0;
+
             height: 20px;
+
             width: 20px;
+
             background-color: #ffffff;
+
             border: 2px solid #cbd5e1;
+
             border-radius: 6px;
+
             transition: all 0.2s ease;
+
         }
+
+
 
         .chk-container:hover input ~ .checkmark {
+
             border-color: var(--umi-brand);
+
         }
+
+
 
         .chk-container input:checked ~ .checkmark {
+
             background-color: var(--accent-green);
+
             border-color: var(--accent-green);
+
         }
+
+
 
         .checkmark:after {
+
             content: "";
+
             position: absolute;
+
             display: none;
+
         }
+
+
 
         .chk-container input:checked ~ .checkmark:after {
+
             display: block;
+
         }
+
+
 
         .chk-container .checkmark:after {
+
             left: 6px;
+
             top: 2px;
+
             width: 5px;
+
             height: 10px;
+
             border: solid white;
+
             border-width: 0 2px 2px 0;
+
             transform: rotate(45deg);
+
         }
+
+
 
         /* Footer */
+
         footer {
+
             text-align: center;
+
             padding: 2.5rem;
+
             border-top: 1px solid var(--border-card);
+
             color: var(--text-dim);
+
             font-size: 0.9rem;
+
             background: #ffffff;
+
         }
 
+
+
         /* Responsive Styles */
+
         @media (max-width: 900px) {
+
             header {
+
                 flex-direction: column;
+
                 gap: 1rem;
+
                 padding: 1rem;
+
             }
+
             .hero-title { font-size: 2rem; }
+
             .carousel-wrapper { padding: 1.25rem; }
+
             .slide-card { padding: 1.5rem; }
+
             .calendar-header-box { flex-direction: column; align-items: flex-start; }
+
             .progress-widget { width: 100%; min-width: auto; }
+
         }
+
     </style>
+
 </head>
+
 <body>
+
+
 
     <div class="bg-grid"></div>
 
+
+
     <!-- Header Navigation -->
+
     <header>
+
         <div class="brand-container">
+
             <div class="brand-logo-box">
+
                 <!-- UMI Group Official High-Res PNG Logo -->
+
                 <img src="logo.png" alt="UMI Group Logo" class="brand-logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'12\' fill=\'%23d81b60\'/><text x=\'50\' y=\'60\' fill=\'white\' font-size=\'30\' text-anchor=\'middle\' font-weight=\'bold\'>UMI</text></svg>';">
+
                 <div>
+
                     <div class="brand-logo-text">UMI GROUP</div>
+
                     <div class="brand-logo-sub">EXHIBITION STAND DESIGNERS</div>
+
                 </div>
+
             </div>
+
             <div class="brand-badge"><i class="fa-solid fa-crown"></i> <span class="ar-only">خطة النمو 2026</span><span class="en-only">Growth Plan 2026</span></div>
+
         </div>
+
+
 
         <ul class="nav-links">
+
             <li><button class="nav-btn active" onclick="switchTab('tab-summary')"><i class="fa-solid fa-chart-pie"></i> <span class="ar-only">الملخص التنفيذي</span><span class="en-only">Executive Summary</span></button></li>
+
             <li><button class="nav-btn" onclick="switchTab('tab-ai-seo')"><i class="fa-solid fa-brain"></i> <span class="ar-only">الذكاء الاصطناعي وSEO</span><span class="en-only">AI & SEO</span></button></li>
+
             <li><button class="nav-btn" onclick="switchTab('tab-pillars')"><i class="fa-solid fa-layer-group"></i> <span class="ar-only">خطة المحتوى والجدول</span><span class="en-only">Content Plan</span></button></li>
+
             <li><button class="nav-btn" onclick="switchTab('tab-instagram')"><i class="fa-brands fa-instagram"></i> <span class="ar-only">نمو إنستجرام</span><span class="en-only">Instagram Growth</span></button></li>
+
             <li><button class="nav-btn" onclick="switchTab('tab-leads')"><i class="fa-solid fa-magnet"></i> <span class="ar-only">زيادة الليز (Leads)</span><span class="en-only">Lead Gen</span></button></li>
+
         </ul>
 
+
+
         <!-- Language Switcher Button -->
+
         <div class="lang-switcher">
+
             <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">🇸🇦 العربية</button>
+
             <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+
         </div>
+
     </header>
 
+
+
     <main>
+
         <!-- Hero Title Banner -->
+
         <div class="hero-banner">
+
             <h1 class="hero-title">
+
                 <span class="ar-only">استراتيجية التوسع والتواجد الرقمي <span>UMI Group 2026</span></span>
+
                 <span class="en-only">Digital Growth Strategy <span>UMI Group 2026</span></span>
+
             </h1>
+
             <p class="hero-subtitle">
+
                 <span class="ar-only">رؤية كاملة للظهور في محركات الذكاء الاصطناعي (AI Search)، زيادة التفاعل على إنستجرام، مضاعفة العملاء المحتملين (Leads)، وبناء علامة تجارية شخصية قوية للقيادة.</span>
+
                 <span class="en-only">Comprehensive roadmap for AI Search dominance, Instagram engagement, lead generation, and executive thought leadership in Dubai & GCC.</span>
+
             </p>
+
         </div>
+
+
 
         <!-- KPI Key Highlights Row -->
+
         <div class="kpi-row">
+
             <div class="kpi-box">
+
                 <div class="kpi-value">#1</div>
+
                 <div class="kpi-label"><span class="ar-only">الظهور في AI Search بدبي</span><span class="en-only">AI Search Ranking in Dubai</span></div>
+
             </div>
+
             <div class="kpi-box">
+
                 <div class="kpi-value">3x</div>
+
                 <div class="kpi-label"><span class="ar-only">مضاعفة عملاء Contact Us</span><span class="en-only">Lead Conversion Growth</span></div>
+
             </div>
+
             <div class="kpi-box">
+
                 <div class="kpi-value"><span class="ar-only">36 بوست</span><span class="en-only">36 Posts</span></div>
+
                 <div class="kpi-label"><span class="ar-only">خطة الكاليندر (3 أشهر)</span><span class="en-only">3-Month Content Calendar</span></div>
+
             </div>
+
             <div class="kpi-box">
+
                 <div class="kpi-value" id="kpiProgressVal">0%</div>
+
                 <div class="kpi-label"><span class="ar-only">نسبة الإنجاز الفعلية للخطة</span><span class="en-only">Plan Completion Rate</span></div>
+
             </div>
+
         </div>                        <!-- Slide 1: الرؤية والهدف العريض -->
+
                         <div class="carousel-slide">
+
                             <div class="slide-card">
+
                                 <span class="slide-tag tag-gold"><i class="fa-solid fa-star"></i> <span class="ar-only">الشرائح العريضة - الإدارة العليا</span><span class="en-only">Executive Overview — Top Management</span></span>
+
                                 <h2 class="slide-heading">
+
                                     <span class="ar-only">الرؤية والهدف الاستراتيجي لعام 2026</span>
+
                                     <span class="en-only">Strategic Growth Vision & Objectives 2026</span>
+
                                 </h2>
+
                                 <p class="slide-description">
+
                                     <span class="ar-only">بناء تواجد رقمي مهيمن لمجموعة UMI Group في دبي والإمارات، والتحول إلى Brand Entity معتمد يجيب عليه الذكاء الاصطناعي عند البحث عن أفضل مصممي ومصنعي أجنحة المعارض والديكورات.</span>
+
                                     <span class="en-only">Establishing UMI Group as the #1 dominant digital brand entity in Dubai & GCC for custom exhibition stand design, event production, and bespoke interior fit-outs.</span>
+
                                 </p>
+
                                 
+
                                 <div class="feature-grid">
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">الهيمنة على الذكاء الاصطناعي</span><span class="en-only">AI Search Dominance</span></div>
+
                                         <div class="feature-text"><span class="ar-only">الظهور التلقائي في إجابات ChatGPT وPerplexity وGemini كـ Top Recommendation.</span><span class="en-only">Ranking as top recommendation in ChatGPT, Perplexity & Gemini queries.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-brands fa-instagram"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">انطلاقة إنستجرام القوية</span><span class="en-only">Instagram Growth Launch</span></div>
+
                                         <div class="feature-text"><span class="ar-only">رفع حجم المتابعين والتفاعل ليتجاوز أداء صفحاتنا الناجحة في فيسبوك ولينكدان.</span><span class="en-only">Boosting followers & viral Reels reach to surpass FB & LinkedIn performance.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">تحويل الزوار لعملاء (Leads)</span><span class="en-only">Lead Gen Optimization</span></div>
+
                                         <div class="feature-text"><span class="ar-only">تحسين صفحة Contact Us لرفع معدل التحويل وسرعة استلام طلبات العروض.</span><span class="en-only">Streamlining Contact Us page to maximize B2B lead capture & conversion.</span></div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Slide 2: جزء البرند الشخصي CEO -->
+
                         <div class="carousel-slide">
+
                             <div class="slide-card">
+
                                 <span class="slide-tag tag-gold"><i class="fa-solid fa-user-tie"></i> <span class="ar-only">الجزء الأول: Personal Branding</span><span class="en-only">Pillar 1: Personal Branding</span></span>
+
                                 <h2 class="slide-heading">
+
                                     <span class="ar-only">العلامة الشخصية للأستاذ / فراس نصر (CEO)</span>
+
                                     <span class="en-only">Executive Thought Leadership — CEO Firas Nasr</span>
+
                                 </h2>
+
                                 <p class="slide-description">
+
                                     <span class="ar-only">بناء الثقة (Thought Leadership) وترسيخ مكانة القيادة كخبير وصانع رأي في قطاع تصميم المعارض، الفعاليات الكبرى، والديكورات بالإمارات والخليج.</span>
+
                                     <span class="en-only">Positioning CEO Firas Nasr as the premier authority and thought leader in Dubai exhibition stand design and event architecture.</span>
+
                                 </p>
+
                                 
+
                                 <div class="feature-grid">
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-video"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">فيديوهات القيادة والتوجيه</span><span class="en-only">Executive Thought Shorts</span></div>
+
                                         <div class="feature-text"><span class="ar-only">فيديوهات قصيرة مع الأستاذ فراس تدور حول اتجاهات السوق وتحديات التنفيذ في دبي.</span><span class="en-only">Short-form videos with CEO Firas on market trends & Dubai exhibition ROI.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-newspaper"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">مقالات وInsights تخصصية</span><span class="en-only">Specialized LinkedIn Insights</span></div>
+
                                         <div class="feature-text"><span class="ar-only">منشورات دورية على LinkedIn تناقش ROI مشاركة الشركات بالمعارض الدولية.</span><span class="en-only">Regular LinkedIn articles analyzing international expo participation ROI.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">التواجد في الأحداث واللقاءات</span><span class="en-only">VIP Networking & Expos</span></div>
+
                                         <div class="feature-text"><span class="ar-only">تغطيات من قلب المعارض وتوقيع العقود مع كبرى المؤسسات الحكومية والخاصة.</span><span class="en-only">On-site coverage at GITEX, Arab Health & key government contract signings.</span></div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Slide 3: جزء الموظفين وكواليس العمل -->
+
                         <div class="carousel-slide">
+
                             <div class="slide-card">
+
                                 <span class="slide-tag tag-blue"><i class="fa-solid fa-people-group"></i> <span class="ar-only">الجزء الثاني: Employee Showcase</span><span class="en-only">Pillar 2: Employee & Team Showcase</span></span>
+
                                 <h2 class="slide-heading">
+
                                     <span class="ar-only">إظهار كواليس العمل والمهندسين وفريق التنفيذ</span>
+
                                     <span class="en-only">Behind-The-Scenes & Engineering Excellence</span>
+
                                 </h2>
+
                                 <p class="slide-description">
+
                                     <span class="ar-only">إبراز العنصر البشري والدقة الهندسة لتجسيد الأمانة والجودة العالية في التنفيذ، وإظهار البيئة الاحترافية لـ UMI Group.</span>
+
                                     <span class="en-only">Showcasing the human craftsmanship, 3D engineering precision, and factory fabrication quality behind UMI Group.</span>
+
                                 </p>
+
                                 
+
                                 <div class="feature-grid">
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">فيديوهات "Behind The Scenes"</span><span class="en-only">Behind-The-Scenes Videos</span></div>
+
                                         <div class="feature-text"><span class="ar-only">تغطية مراحل تحويل المخطط الـ 3D إلى حقيقة ملموسة في أرض المعرض خلال ساعات.</span><span class="en-only">Transforming 3D renders into physical exhibition stands in 48 hours.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">أضواء على نجوم الفريق (Spotlight)</span><span class="en-only">Employee Spotlights</span></div>
+
                                         <div class="feature-text"><span class="ar-only">سلسلة أسبوعية للتعريف بمهندسي الديكور والمصممين ومدراء المشاريع المبدعين.</span><span class="en-only">Weekly feature highlighting 3D designers, engineers & project leads.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">ثقافة الشركة والالتزام</span><span class="en-only">Company Culture & Values</span></div>
+
                                         <div class="feature-text"><span class="ar-only">إظهار روح الفريق والعمل الجماعي تحت الضغط وتسليم المعارض قبل الموعد.</span><span class="en-only">High-performance teamwork delivering stand builds ahead of opening hours.</span></div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Slide 4: جزء معرض الأعمال Portfolio -->
+
                         <div class="carousel-slide">
+
                             <div class="slide-card">
+
                                 <span class="slide-tag tag-insta"><i class="fa-solid fa-briefcase"></i> <span class="ar-only">الجزء الثالث: Company Portfolio</span><span class="en-only">Pillar 3: Portfolio Showcase</span></span>
+
                                 <h2 class="slide-heading">
+
                                     <span class="ar-only">استعراض المشاريع والإنجازات الضخمة</span>
+
                                     <span class="en-only">Key Projects & Masterpiece Portfolio</span>
+
                                 </h2>
+
                                 <p class="slide-description">
+
                                     <span class="ar-only">استعراض مبهر لأبرز الأجنحة والمشاريع المنفذة لكبار العملاء (مثل: شرطة دبي، طيران الإمارات، ديوا، بينانس، وأرادَ).</span>
+
                                     <span class="en-only">Stunning visual showcases of custom stand builds for flagship clients including Dubai Police, DEWA, Binance, and Arada.</span>
+
                                 </p>
+
                                 
+
                                 <div class="feature-grid">
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-film"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">قبل وبعد (3D vs Real Life)</span><span class="en-only">3D vs Real Life Builds</span></div>
+
                                         <div class="feature-text"><span class="ar-only">مقارنات بصرية تثبت مطابقة التنفيذ على الواقع مع التصميم المعتمد 100%.</span><span class="en-only">Side-by-side visual comparisons proving 100% design-to-reality accuracy.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-building-flag"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">دراسات حالة (Case Studies)</span><span class="en-only">Client Case Studies</span></div>
+
                                         <div class="feature-text"><span class="ar-only">عرض بالأرقام لكيف ساهم جناح UMI في جذب آلاف الزوار لعميلنا بالمعرض.</span><span class="en-only">Data-driven reports showing how UMI stands generated thousands of visitor leads.</span></div>
+
                                     </div>
+
                                     <div class="feature-item">
+
                                         <div class="feature-icon"><i class="fa-solid fa-camera"></i></div>
+
                                         <div class="feature-title"><span class="ar-only">فيديوهات السينمائية Reels</span><span class="en-only">Cinematic Video Reels</span></div>
+
                                         <div class="feature-text"><span class="ar-only">تصوير بدقة عالية لجماليات الإضاءة والخامات المستخدمة بالأ جناح.</span><span class="en-only">4K video tours highlighting custom lighting, materials & luxury finishes.</span></div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
+
                     </div>
+
                 </div>
+
+
 
                 <!-- Carousel Controls -->
+
                 <div class="carousel-nav">
+
                     <div class="carousel-indicators" id="carouselDots">
+
                         <span class="dot active" onclick="goToSlide(0)"></span>
+
                         <span class="dot" onclick="goToSlide(1)"></span>
+
                         <span class="dot" onclick="goToSlide(2)"></span>
+
                         <span class="dot" onclick="goToSlide(3)"></span>
+
                     </div>
+
+
 
                     <div class="carousel-buttons">
+
                         <button class="arrow-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+
                         <button class="arrow-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+
                     </div>
-                </div>
-            </div>
-        
-            <!-- Executive Highlights: Exhibition Stand Awards & Dubai PR Backlinks -->
-            <div class="cards-grid" style="margin-top: 2.5rem;">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon-box icon-gold"><i class="fa-solid fa-trophy"></i></div>
-                        <div class="card-title">
-                            <span class="ar-only">🏆 جوائز المعارض بدبي (Awards Strategy)</span>
-                            <span class="en-only">🏆 Dubai Exhibition Stand Awards Strategy</span>
-                        </div>
-                    </div>
-                    <ul class="card-list">
-                        <li>
-                            <span class="ar-only"><strong>جوائز المعارض الفردية:</strong> تحكيم يوم الافتتاح في (GITEX, Gulfood, ATM, Arab Health) بفئات Best Stand Design.</span>
-                            <span class="en-only"><strong>Expo Specific Awards:</strong> Opening day judging at GITEX, Gulfood, ATM & Arab Health for Best Stand Design.</span>
-                        </li>
-                        <li>
-                            <span class="ar-only"><strong>Middle East Event Awards (MEEA):</strong> التقديم بين فبراير وأبريل بفئات تصميم وتصنيع الأجنحة (&lt;100m² و &gt;100m²).</span>
-                            <span class="en-only"><strong>Middle East Event Awards (MEEA):</strong> Annual submissions for Stand Design & Fabrication (&lt;100m² & &gt;100m²).</span>
-                        </li>
-                        <li>
-                            <span class="ar-only"><strong>World Exhibition Stand Awards (WESA):</strong> جوائز سنوية عالمية متخصصة بملفات توثيق عالية الدقة.</span>
-                            <span class="en-only"><strong>World Exhibition Stand Awards (WESA):</strong> Global recognition program with HD portfolio documentation.</span>
-                        </li>
-                    </ul>
+
                 </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-icon-box icon-blue"><i class="fa-solid fa-newspaper"></i></div>
-                        <div class="card-title">
-                            <span class="ar-only">📰 أفضل 3 منصات باك لينكس بدبي (PR Outlets)</span>
-                            <span class="en-only">📰 Top 3 Dubai PR Outlets & Backlink Outlets</span>
-                        </div>
-                    </div>
-                    <ul class="card-list">
-                        <li>
-                            <span class="ar-only"><strong>1. Entrepreneur Middle East:</strong> مقال قيادة أعمال Thought Leadership ($1,500 - $2,500) لرفع Authority.</span>
-                            <span class="en-only"><strong>1. Entrepreneur Middle East:</strong> Executive thought leadership article ($1,500 - $2,500) to boost Domain Authority.</span>
-                        </li>
-                        <li>
-                            <span class="ar-only"><strong>2. Arabian Business (ITP Media):</strong> خبر صحفي تجاري فاخر لبناء الموثوقية ($2,000 - $3,500).</span>
-                            <span class="en-only"><strong>2. Arabian Business (ITP Media):</strong> Premium B2B press feature establishing brand credibility ($2,000 - $3,500).</span>
-                        </li>
-                        <li>
-                            <span class="ar-only"><strong>3. Zawya / AETOSWire / Gulf News:</strong> توزيع بيانات صحفية مترجمة عربي/إنجليزي ($400 - $900).</span>
-                            <span class="en-only"><strong>3. Zawya / AETOSWire / Gulf News:</strong> Dual-language press release distribution ($400 - $900).</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
+
+        
+
+            <!-- Executive Highlights: Exhibition Stand Awards & Dubai PR Backlinks -->
+
+            <div class="cards-grid" style="margin-top: 2.5rem;">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div class="card-icon-box icon-gold"><i class="fa-solid fa-trophy"></i></div>
+
+                        <div class="card-title">
+
+                            <span class="ar-only">🏆 جوائز المعارض بدبي (Awards Strategy)</span>
+
+                            <span class="en-only">🏆 Dubai Exhibition Stand Awards Strategy</span>
+
+                        </div>
+
+                    </div>
+
+                    <ul class="card-list">
+
+                        <li>
+
+                            <span class="ar-only"><strong>جوائز المعارض الفردية:</strong> تحكيم يوم الافتتاح في (GITEX, Gulfood, ATM, Arab Health) بفئات Best Stand Design.</span>
+
+                            <span class="en-only"><strong>Expo Specific Awards:</strong> Opening day judging at GITEX, Gulfood, ATM & Arab Health for Best Stand Design.</span>
+
+                        </li>
+
+                        <li>
+
+                            <span class="ar-only"><strong>Middle East Event Awards (MEEA):</strong> التقديم بين فبراير وأبريل بفئات تصميم وتصنيع الأجنحة (&lt;100m² و &gt;100m²).</span>
+
+                            <span class="en-only"><strong>Middle East Event Awards (MEEA):</strong> Annual submissions for Stand Design & Fabrication (&lt;100m² & &gt;100m²).</span>
+
+                        </li>
+
+                        <li>
+
+                            <span class="ar-only"><strong>World Exhibition Stand Awards (WESA):</strong> جوائز سنوية عالمية متخصصة بملفات توثيق عالية الدقة.</span>
+
+                            <span class="en-only"><strong>World Exhibition Stand Awards (WESA):</strong> Global recognition program with HD portfolio documentation.</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div class="card-icon-box icon-blue"><i class="fa-solid fa-newspaper"></i></div>
+
+                        <div class="card-title">
+
+                            <span class="ar-only">📰 أفضل 3 منصات باك لينكس بدبي (PR Outlets)</span>
+
+                            <span class="en-only">📰 Top 3 Dubai PR Outlets & Backlink Outlets</span>
+
+                        </div>
+
+                    </div>
+
+                    <ul class="card-list">
+
+                        <li>
+
+                            <span class="ar-only"><strong>1. Entrepreneur Middle East:</strong> مقال قيادة أعمال Thought Leadership ($1,500 - $2,500) لرفع Authority.</span>
+
+                            <span class="en-only"><strong>1. Entrepreneur Middle East:</strong> Executive thought leadership article ($1,500 - $2,500) to boost Domain Authority.</span>
+
+                        </li>
+
+                        <li>
+
+                            <span class="ar-only"><strong>2. Arabian Business (ITP Media):</strong> خبر صحفي تجاري فاخر لبناء الموثوقية ($2,000 - $3,500).</span>
+
+                            <span class="en-only"><strong>2. Arabian Business (ITP Media):</strong> Premium B2B press feature establishing brand credibility ($2,000 - $3,500).</span>
+
+                        </li>
+
+                        <li>
+
+                            <span class="ar-only"><strong>3. Zawya / AETOSWire / Gulf News:</strong> توزيع بيانات صحفية مترجمة عربي/إنجليزي ($400 - $900).</span>
+
+                            <span class="en-only"><strong>3. Zawya / AETOSWire / Gulf News:</strong> Dual-language press release distribution ($400 - $900).</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
 
         </div>
+
+
+
 
 
         <div id="tab-ai-seo" class="tab-content">
+
             <div class="cards-grid">
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-gold"><i class="fa-solid fa-microchip"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">إعداد هيكل Schema.org JSON-LD</span>
+
                             <span class="en-only">Schema.org JSON-LD Infrastructure</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">تضمين بيانات Organization & LocalBusiness المحسّنة لدبي والإمارات.</span>
+
                             <span class="en-only">Organization & LocalBusiness markup geo-targeted for Dubai & UAE.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">إضافة تعريف الخدمة: Exhibition Stand Design, Event Production, Retail Kiosks.</span>
+
                             <span class="en-only">Service Schema definition for Exhibition Stand Design & Event Production.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">ربط الموقع محلياً بالنطاق الجغرافي والأنشطة التجارية المعتمدة.</span>
+
                             <span class="en-only">Connecting site to local Dubai business registries & licensed services.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-blue"><i class="fa-solid fa-magnifying-glass"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">تحسين العناوين والعناصر (CTR Meta)</span>
+
                             <span class="en-only">High-CTR Meta Titles & Descriptions</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">صياغة Meta Titles جذابة تحوي الكلمات المفتاحية الأكثر طلباً بدبي.</span>
+
                             <span class="en-only">Crafting compelling Meta Titles targeting top Dubai search queries.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">استهداف الجمل الاستفهامية التي يجيب عليها ChatGPT وPerplexity.</span>
+
                             <span class="en-only">Targeting conversational Q&A keywords indexed by ChatGPT & Perplexity.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">تضمين السمعة القوية للمجموعة وكلمات الثقة مثل "Award-Winning Designers".</span>
+
                             <span class="en-only">Embedding trust badges and "Award-Winning Stand Builders" hooks.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-purple"><i class="fa-solid fa-network-wired"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">ترسيخ الـ Brand Entity في الذكاء الاصطناعي</span>
+
                             <span class="en-only">Brand Entity Building & AI Knowledge Graph</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">ربط صفحات التواصل الاجتماعي للأستاذ فراس نصر والشركة بنفس الـ Knowledge Graph.</span>
+
                             <span class="en-only">Linking official social profiles & CEO Firas Nasr to Knowledge Graph.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">نشر مقالات صحفية وبيانات إعلامية لربط اسم UMI Group بالمعارض الضخمة.</span>
+
                             <span class="en-only">Publishing authority PR articles linking UMI Group to major expos.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">تغطية كافة المعارض الرئيسية (GITEX, Arab Health, Gulfood, Cityscape).</span>
+
                             <span class="en-only">Full coverage of major Dubai expos (GITEX, Gulfood, Arab Health).</span>
+
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
+
 
             <!-- AI & SEO Interactive Checklist -->
+
             <div class="calendar-section" style="margin-top: 2rem;">
+
                 <div class="calendar-header-box">
+
                     <div class="calendar-title-group">
+
                         <h3><i class="fa-solid fa-robot" style="color: var(--umi-brand);"></i> <span class="ar-only">خطوات تنفيذ استراتيجية الذكاء الاصطناعي والـ SEO</span><span class="en-only">AI Search & SEO Execution Roadmap</span></h3>
+
                         <p><span class="ar-only">خطوات تفصيلية قابلة للتتبع مع حاسبة إنجاز فورية تُحدَّث بالضغط على كل خطوة مكتملة.</span><span class="en-only">Trackable action checklist with live progress counter for AI Search dominance.</span></p>
+
                     </div>
+
                     <div class="progress-widget">
+
                         <div class="progress-info">
+
                             <span class="progress-label"><i class="fa-solid fa-chart-line"></i> <span class="ar-only">نسبة تنفيذ خطة الـ AI:</span><span class="en-only">AI Plan Progress:</span></span>
+
                             <span class="progress-percentage" id="aiProgressPercent">0%</span>
+
                         </div>
+
                         <div class="progress-bar-bg">
+
                             <div class="progress-bar-fill" id="aiProgressBarFill"></div>
+
                         </div>
+
                         <div class="progress-stats-sub">
+
                             <span><span class="ar-only">الخطوات المكتملة:</span><span class="en-only">Completed:</span> <strong id="aiCompletedCount">0</strong> / 15</span>
+
                             <span><span class="ar-only">المتبقية:</span><span class="en-only">Remaining:</span> <strong id="aiRemainingCount">15</strong></span>
+
                         </div>
+
                     </div>
+
                 </div>
 
+
+
                 <div class="calendar-table-responsive">
+
                     <table class="calendar-table">
+
                         <thead>
+
                             <tr>
+
                                 <th style="width: 50px;"><span class="ar-only">تم؟</span><span class="en-only">Done?</span></th>
+
                                 <th style="width: 220px;"><span class="ar-only">المرحلة</span><span class="en-only">Phase</span></th>
+
                                 <th><span class="ar-only">الخطوة التنفيذية</span><span class="en-only">Action Step</span></th>
+
                                 <th style="width: 180px;"><span class="ar-only">المسؤول</span><span class="en-only">Owner</span></th>
+
                                 <th style="width: 130px;"><span class="ar-only">الأولوية</span><span class="en-only">Priority</span></th>
+
                             </tr>
+
                         </thead>
+
                         <tbody id="aiChecklistTableBody">
+
                             <!-- Populated by JS -->
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
-        </div>�ة وبيانات إعلامية لربط اسم UMI Group بالمعارض الضخمة.</li>
+
+        </div>ة وبيانات إعلامية لربط اسم UMI Group بالمعارض الضخمة.</li>
+
                         <li>تغطية كافة المعارض الرئيسية (GITEX, Arab Health, Gulfood, Cityscape).</li>
+
                     </ul>
+
                 </div>
+
             
 
+
+
             </div>
+
+
 
             <!-- AI & SEO Interactive Checklist -->
+
             <div class="calendar-section" style="margin-top: 2rem;">
+
                 <div class="calendar-header-box">
+
                     <div class="calendar-title-group">
+
                         <h3><i class="fa-solid fa-robot" style="color: var(--umi-brand);"></i> خطوات تنفيذ استراتيجية الذكاء الاصطناعي والـ SEO</h3>
+
                         <p>خطوات تفصيلية قابلة للتتبع مع حاسبة إنجاز فورية تُحدَّث بالضغط على كل خطوة مكتملة.</p>
+
                     </div>
+
                     <div class="progress-widget">
+
                         <div class="progress-info">
+
                             <span class="progress-label"><i class="fa-solid fa-chart-line"></i> نسبة تنفيذ خطة الـ AI:</span>
+
                             <span class="progress-percentage" id="aiProgressPercent">0%</span>
+
                         </div>
+
                         <div class="progress-bar-bg">
+
                             <div class="progress-bar-fill" id="aiProgressBarFill"></div>
+
                         </div>
+
                         <div class="progress-stats-sub">
+
                             <span>الخطوات المكتملة: <strong id="aiCompletedCount">0</strong> / 15</span>
+
                             <span>المتبقية: <strong id="aiRemainingCount">15</strong></span>
+
                         </div>
+
                     </div>
+
                 </div>
 
+
+
                 <div class="calendar-table-responsive">
+
                     <table class="calendar-table">
+
                         <thead>
+
                             <tr>
+
                                 <th style="width: 50px;">تم؟</th>
+
                                 <th style="width: 220px;">المرحلة</th>
+
                                 <th>الخطوة التنفيذية</th>
+
                                 <th style="width: 180px;">المسؤول</th>
+
                                 <th style="width: 130px;">الأولوية</th>
+
                             </tr>
+
                         </thead>
+
                         <tbody id="aiChecklistTableBody">
+
                             <!-- Populated by JS -->
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
         <!-- TAB 3: خطة المحتوى (3 أجزاء + جدول 3 أشهر وتشاك ليست) -->
+
         <div id="tab-pillars" class="tab-content">
+
             <!-- 3 Pillar Summary Cards -->
+
             <div class="cards-grid">
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-gold"><i class="fa-solid fa-user-gear"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">1. البيرسونال براند (الأستاذ فراس نصر)</span>
+
                             <span class="en-only">1. Personal Branding (CEO Firas Nasr)</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">رؤية وأفكار الأستاذ فراس نصر عن مستقبل تصميم الفعاليات والمعارض.</span>
+
                             <span class="en-only">CEO Firas Nasr's vision and thoughts on the future of exhibition design.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">فيديوهات نصائح للشركات حول اختيار المساحات والاستفادة القصوى من المعرض.</span>
+
                             <span class="en-only">Expert video tips for companies on maximizing booth space & event ROI.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">لقاءات وصور تجمع الأستاذ فراس مع كبار الشخصيات والشباك الاستثماري.</span>
+
                             <span class="en-only">Photos & meetings featuring CEO Firas with VIPs and key partners.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-blue"><i class="fa-solid fa-users"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">2. فريق العمل والموظفين</span>
+
                             <span class="en-only">2. Team & Employee Showcase</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">فيديوهات سريعة للمصممين أثناء بناء المخططات 3D على أحدث برامج Render.</span>
+
                             <span class="en-only">3D designers crafting renders on high-end software behind the scenes.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">تغطيات المهندسين والفنيين داخل مصنع UMI وتجهيز الخامات.</span>
+
                             <span class="en-only">Engineers & craftsmen fabricating custom booth materials inside UMI factory.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">إبراز التكريمات والإنجازات والجوائز الداخلية لفريق العمل.</span>
+
                             <span class="en-only">Spotlighting team achievements, internal awards, and project milestones.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-purple"><i class="fa-solid fa-award"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">3. سابقة الأعمال (Portfolio)</span>
+
                             <span class="en-only">3. Company Portfolio</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">استعراض سينمائي لأجنحة المعارض المنفذة في دبي وأبوظبي.</span>
+
                             <span class="en-only">Cinematic showcase of custom stands built across Dubai & Abu Dhabi.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">تسليط الضوء على مشاريع شرطة دبي، ديوا، بينانس، وأهم العلامات.</span>
+
                             <span class="en-only">High-profile builds for Dubai Police, DEWA, Binance, and top brands.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">فيديوهات Timelapse تبين بناء الجناح بالكامل في 48 ساعة.</span>
+
                             <span class="en-only">48-hour timelapse videos showing full booth assembly from scratch.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
+
 
             <!-- 3-MONTH DYNAMIC CONTENT CALENDAR & CHECKLIST SECTION -->
+
             <div class="calendar-section">
+
                 <div class="calendar-header-box">
+
                     <div class="calendar-title-group">
+
                         <h3><i class="fa-solid fa-calendar-days"></i> <span class="ar-only">جدول محتوى 3 أشهر والتراكينج (36 منشور)</span><span class="en-only">3-Month Content Calendar & Tracker (36 Posts)</span></h3>
+
                         <p><span class="ar-only">بمعدل 3 منشورات أسبوعياً (الأحد، الثلاثاء، الخميس) موزعة بالتساوي على الأجزاء الثلاثة مع حاسبة إنجاز فورية.</span><span class="en-only">3 posts weekly (Sun, Tue, Thu) equally divided across the 3 pillars with real-time completion tracker.</span></p>
+
                     </div>
+
+
 
                     <!-- Interactive Progress Tracker Box -->
+
                     <div class="progress-widget">
+
                         <div class="progress-info">
+
                             <span class="progress-label"><i class="fa-solid fa-chart-line"></i> <span class="ar-only">نسبة تنفيذ الخطة:</span><span class="en-only">Execution Rate:</span></span>
+
                             <span class="progress-percentage" id="progressPercent">0%</span>
+
                         </div>
+
                         <div class="progress-bar-bg">
+
                             <div class="progress-bar-fill" id="progressBarFill"></div>
+
                         </div>
+
                         <div class="progress-stats-sub">
+
                             <span><span class="ar-only">المنشورات المكتملة:</span><span class="en-only">Completed:</span> <strong id="completedCount">0</strong> / 36</span>
+
                             <span><span class="ar-only">المتبقية:</span><span class="en-only">Remaining:</span> <strong id="remainingCount">36</strong></span>
+
                         </div>
+
                     </div>
+
                 </div>
+
+
 
                 <!-- Month Filters -->
+
                 <div class="month-filters">
+
                     <button class="month-btn active" onclick="filterCalendar('all')"><span class="ar-only">كافة الأشهر (36 منشور)</span><span class="en-only">All Months (36 Posts)</span></button>
+
                     <button class="month-btn" onclick="filterCalendar('m1')"><span class="ar-only">الشهر الأول (12 منشور)</span><span class="en-only">Month 1 (12 Posts)</span></button>
+
                     <button class="month-btn" onclick="filterCalendar('m2')"><span class="ar-only">الشهر الثاني (12 منشور)</span><span class="en-only">Month 2 (12 Posts)</span></button>
+
                     <button class="month-btn" onclick="filterCalendar('m3')"><span class="ar-only">الشهر الثالث (12 منشور)</span><span class="en-only">Month 3 (12 Posts)</span></button>
+
                 </div>
+
+
 
                 <!-- Calendar Table -->
+
                 <div class="calendar-table-responsive">
+
                     <table class="calendar-table">
+
                         <thead>
+
                             <tr>
+
                                 <th style="width: 50px;"><span class="ar-only">تم؟</span><span class="en-only">Done?</span></th>
+
                                 <th><span class="ar-only">الأسبوع / اليوم</span><span class="en-only">Week / Day</span></th>
+
                                 <th><span class="ar-only">جزء المحتوى (Pillar)</span><span class="en-only">Pillar</span></th>
+
                                 <th><span class="ar-only">الهدف من المنشور (Goal)</span><span class="en-only">Goal</span></th>
+
                                 <th><span class="ar-only">فكرة الكرياتيف والنوع (Creative)</span><span class="en-only">Creative & Format</span></th>
+
                                 <th><span class="ar-only">منصات النشر والتفاعل</span><span class="en-only">Platforms</span></th>
+
                             </tr>
+
                         </thead>
+
                         <tbody id="calendarTableBody">
+
                             <!-- Dynamically Generated 36 Rows via JS below -->
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
         <!-- TAB 4: نمو إنستجرام -->
+
         <div id="tab-instagram" class="tab-content">
+
             <div class="cards-grid">
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-insta"><i class="fa-solid fa-clapperboard"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">استراتيجية الـ Reels والوصول العريض</span>
+
                             <span class="en-only">Reels Strategy & Viral Reach</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">إنتاج Reels سريعة وجذابة (15-30 ثانية) بأصوات التريند للانتشار المباشر.</span>
+
                             <span class="en-only">Creating 15-30s trending Reels showcasing high-energy booth setups.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">استخدام انتقالات بصرية مذهلة بين المخطط الـ 3D والجناح الحقيقي.</span>
+
                             <span class="en-only">Using smooth visual transitions from 3D renders to finished stands.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">إدراج Hashtags مستهدفة لرجال الأعمال وصناع القرار بالإمارات.</span>
+
                             <span class="en-only">Targeted Dubai B2B hashtags for business decision-makers.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-blue"><i class="fa-solid fa-share-nodes"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">الربط والتوجيه من المنصات الأخري</span>
+
                             <span class="en-only">Cross-Platform Funnel</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">توجيه متابعي صفحة فيسبوك المليونية ولينكدان للتفاعل في إنستجرام.</span>
+
                             <span class="en-only">Funneling Facebook & LinkedIn followers to engage on Instagram.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">مسابقات وفاعليات تفاعلية حصرية لمتابعي حساب إنستجرام.</span>
+
                             <span class="en-only">Exclusive interactive polls, Q&A sessions, and behind-the-scenes stories.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">استخدام الـ Collab Posts مع الموظفين والشخصيات المؤثرة بالقطاع.</span>
+
                             <span class="en-only">Collaborative posts with industry leaders, clients, and key team members.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-gold"><i class="fa-solid fa-comments"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">الأتمتة والتفاعل الفوري (DM Automation)</span>
+
                             <span class="en-only">Instant DM & Lead Automation</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">رد تلقائي ذكي سريع عند التعليق على الصور بكلمات مثل "Quote" أو "Price".</span>
+
                             <span class="en-only">Instant auto-reply DMs when users comment "Quote" or "Design".</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">إرسال البروفايل ورابط سابقة الأعمال في الخاص فوراً لزيادة Leads.</span>
+
                             <span class="en-only">Automated company portfolio delivery to prospect inboxes.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">تخصيص هايلايتس (Highlights) مرتبة للمشاريع حسب القطاعات.</span>
+
                             <span class="en-only">Organized Instagram story Highlights sorted by industry & expo.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
         <!-- TAB 5: زيادة الليز (Leads) -->
+
         <div id="tab-leads" class="tab-content">
+
             <div class="cards-grid">
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-gold"><i class="fa-solid fa-paper-plane"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">تطوير نموذج صفحة Contact Us</span>
+
                             <span class="en-only">Contact Form Optimization</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">تبسيط نموذج التواصل إلى 4 حقول رئيسية فقط لتقليل نسبة التسرب.</span>
+
                             <span class="en-only">Streamlining contact forms to 4 essential fields to minimize drop-off.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">إضافة خيار رفع المخطط أو ملف الـ Brief مباشرة في النموذج.</span>
+
                             <span class="en-only">Direct PDF/Brief upload field for immediate design estimates.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">زر اتخاذ قرار واضح وقوي (CTA): "احصل على تصميم 3D وتكلفة مجاناً".</span>
+
                             <span class="en-only">High-converting CTA: "Get Free 3D Design & Instant Quote".</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-blue"><i class="fa-solid fa-bolt"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">التواصل الفوري عبر الواتساب (WhatsApp Direct)</span>
+
                             <span class="en-only">Direct WhatsApp Funnel</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li><span style="color: #10b981; font-weight: bold;">[Active]</span> <span class="ar-only">زر الواتساب التفاعلي المربوط بصفحة التواصل والمشاريع.</span><span class="en-only">Interactive WhatsApp button linked across all project pages.</span></li>
+
                         <li>
+
                             <span class="ar-only">رسالة ترحيبية مجهزة: "أهلاً بك في UMI Group، كيف يمكننا مساعدتك في معرضك القادم؟"</span>
+
                             <span class="en-only">Pre-filled greeting: "Welcome to UMI Group! How can we assist your next exhibition?"</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">ربط الرسائل بنظام التتبع المباشر لمعرفة مصدر كل عميل.</span>
+
                             <span class="en-only">UTM tracking for incoming WhatsApp messages to measure ad ROI.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
+
                         <div class="card-icon-box icon-purple"><i class="fa-solid fa-shield-halved"></i></div>
+
                         <div class="card-title">
+
                             <span class="ar-only">إشارات الثقة (Social Proof)</span>
+
                             <span class="en-only">Social Proof & Trust Signals</span>
+
                         </div>
+
                     </div>
+
                     <ul class="card-list">
+
                         <li>
+
                             <span class="ar-only">إضافة لوجو كبار العملاء (شرطة دبي، ديوا، بينانس) بجانب النموذج مباشرة.</span>
+
                             <span class="en-only">Prominent client badges (Dubai Police, DEWA, Binance) near lead forms.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">عرض التقييمات وآراء العملاء (Testimonials) لرفع درجة الاطمئنان.</span>
+
                             <span class="en-only">Client testimonials & Google reviews embedded near CTA buttons.</span>
+
                         </li>
+
                         <li>
+
                             <span class="ar-only">تأكيد سرية البيانات وسرعة الرد خلال أقل من 15 دقيقة.</span>
+
                             <span class="en-only">Guaranteed 15-minute response time & NDA data protection badge.</span>
+
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
     </main>
 
+
+
     <footer>
+
         <p>
+
             <span class="ar-only">تم إعداد هذه الخطة خصيصاً لمجلس إدارة <strong>UMI Group</strong> لعام 2026 &copy;</span>
+
             <span class="en-only">Exclusively prepared for the Board of Directors — <strong>UMI Group 2026</strong> &copy;</span>
+
         </p>
+
     </footer>
 
+
+
     <!-- JavaScript for Dynamic Carousel, Calendar, & Interactive Checklist -->
+
     <script>
+
         // Tab Switcher Function
+
         function switchTab(tabId) {
+
             const contents = document.querySelectorAll('.tab-content');
+
             contents.forEach(content => content.classList.remove('active'));
 
+
+
             const buttons = document.querySelectorAll('.nav-btn');
+
             buttons.forEach(btn => btn.classList.remove('active'));
 
+
+
             const targetTab = document.getElementById(tabId);
+
             if (targetTab) {
+
                 targetTab.classList.add('active');
+
             }
 
+
+
             event.currentTarget.classList.add('active');
+
         }
+
+
 
         // Carousel Slider Functionality
+
         let currentSlide = 0;
+
         const track = document.getElementById('mainCarouselTrack');
+
         const dots = document.querySelectorAll('.dot');
+
         const totalSlides = 4;
 
+
+
         function updateCarousel() {
+
             track.style.transform = `translateX(${currentSlide * 100}%)`;
+
             dots.forEach((dot, index) => {
+
                 if (index === currentSlide) {
+
                     dot.classList.add('active');
+
                 } else {
+
                     dot.classList.remove('active');
+
                 }
+
             });
+
         }
+
+
 
         function nextSlide() {
+
             currentSlide = (currentSlide + 1) % totalSlides;
+
             updateCarousel();
+
         }
+
+
 
         function prevSlide() {
+
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+
             updateCarousel();
+
         }
+
+
 
         function goToSlide(index) {
+
             currentSlide = index;
+
             updateCarousel();
+
         }
 
+
+
         let autoSlideTimer = setInterval(nextSlide, 6000);
+
         const carouselWrapper = document.querySelector('.carousel-wrapper');
+
         carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
+
         carouselWrapper.addEventListener('mouseleave', () => {
+
             autoSlideTimer = setInterval(nextSlide, 6000);
+
         });
 
+
+
         // -------------------------------------------------------------
+
         // 3-MONTH CONTENT CALENDAR & DYNAMIC CHECKLIST DATA GENERATOR
+
         // -------------------------------------------------------------
+
         const calendarPostsData = [
+
             // MONTH 1 (Weeks 1 - 4)
+
             // Week 1
+
             { month: 'm1', week: 'الأسبوع 1 - الأحد (2 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'بناء الثقة والقيادة الفكرية', creative: 'فيديو قصير (Reel) للأستاذ فراس نصر يتحدث عن "سر نجاح تواجد UMI في معارض دبي من 2005 حتى 2026".', platform: 'LinkedIn & Instagram & FB' },
+
             { month: 'm1', week: 'الأسبوع 1 - الثلاثاء (4 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'إبراز العنصر البشري والدقة', creative: 'فيديو BTS لمهندسي التصميم أثناء بناء مخطط جناح 3D وتعديل تفاصيل الإضاءة.', platform: 'Instagram Reel & TikTok' },
+
             { month: 'm1', week: 'الأسبوع 1 - الخميس (6 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض القوة والعملاء الكبار', creative: 'فيديو سينمائي عالي الجودة لجناح (شرطة دبي) مع مقارنة التصميم الـ 3D بالتنفيذ الحقيقي.', platform: 'Instagram & LinkedIn & FB' },
 
+
+
             // Week 2
+
             { month: 'm1', week: 'الأسبوع 2 - الأحد (9 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'نصائح استراتيجية للشركات', creative: 'منشور كارسول (Carousel 5 شرائح) بقلم الأستاذ فراس: "أخطاء قاتلة تجنبها عند تصميم جناح معرضك".', platform: 'LinkedIn & Instagram' },
+
             { month: 'm1', week: 'الأسبوع 2 - الثلاثاء (11 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'تعزيز ثقافة الجودة والتصنيع', creative: 'تغطية مصورة من داخل مصنع UMI لتجهيز وتجميع خامات الأخشاب والإضاءات (هتتعمل بالـ AI).', platform: 'Instagram & Facebook' },
+
             { month: 'm1', week: 'الأسبوع 2 - الخميس (13 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'إبراز التنوع والضخامة', creative: 'عرض خاص لجناح شركة (بينانس Binance) بالمعارض التقنية مع تفاصيل التفاعلية.', platform: 'Instagram Reel & LinkedIn' },
 
+
+
             // Week 3
+
             { month: 'm1', week: 'الأسبوع 3 - الأحد (16 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'استعراض الرؤية المستقبلية', creative: 'صورة احترافية للأستاذ فراس نصر مع اقتباس (Quote) حول الابتكار في مواد البناء المستدامة.', platform: 'LinkedIn & Instagram' },
+
             { month: 'm1', week: 'الأسبوع 3 - الثلاثاء (18 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'Spotlight الموظفين', creative: 'سلسلة "تعرف على مهندسي UMI" - مقابلة 30 ثانية مع واحد من التيم ليدر وكيفية العمل مع العميل.', platform: 'Instagram Reel & LinkedIn' },
+
             { month: 'm1', week: 'الأسبوع 3 - الخميس (20 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'إثبات سرعة الإنجاز', creative: 'فيديو Fast-Motion / Timelapse لبناء جناح معارض كامل خلال 48 ساعة فقط.', platform: 'Instagram Reel & FB & TikTok' },
 
+
+
             // Week 4
+
             { month: 'm1', week: 'الأسبوع 4 - الأحد (23 أغسطس)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'تحليل عائد الاستثمار ROI', creative: 'مقالة تخصصية بقلم الأستاذ فراس نصر: "كيف أحدثت التكنولوجيا ثورة في تصميم المعارض وأصبحت الركن الأساسي لجذب العملاء والشركات؟".', platform: 'LinkedIn Article & IG Carousel' },
+
             { month: 'm1', week: 'الأسبوع 4 - الثلاثاء (25 أغسطس)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'إبراز روح الفريق والتحدي', creative: 'فيديو التسليم النهائي لعميل طلب التنفيذ في وقت قياسي متأخر وكان يواجه أزمة وقت حقيقية، وفرحة فريق UMI بالإنجاز والتسليم قبل الافتتاح بساعة.', platform: 'Instagram Reel & Stories' },
+
             { month: 'm1', week: 'الأسبوع 4 - الخميس (27 أغسطس)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'حالة نجاح Case Study', creative: 'دراسة حالة بالأرقام لجناح (DEWA - هيئة كهرباء ومياه دبي) وكيف جذب آلاف الزوار.', platform: 'LinkedIn & Instagram & FB' },
 
+
+
             // MONTH 2 (Weeks 5 - 8)
+
             // Week 5
+
             { month: 'm2', week: 'الأسبوع 5 - الأحد (6 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'القيادة في المعارض القادمة', creative: 'فيديو الأستاذ فراس نصر يتحدث عن الاستعدادات لمعرض GITEX و Gulfood القادم.', platform: 'LinkedIn & Instagram' },
+
             { month: 'm2', week: 'الأسبوع 5 - الثلاثاء (8 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'الدقة والابتكار في 3D', creative: 'فيديو مقارنة الشاشة بين برنامج الريندر 3D والخامة الواقعية المستخدمة في الحقيقة.', platform: 'Instagram Reel & TikTok' },
+
             { month: 'm2', week: 'الأسبوع 5 - الخميس (10 سبتمبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض قطاع العقارات', creative: 'عرض مشروع جناح (Meraas - ميرداس) وتفاصيل الفخامة والتنسيق الهيكلي.', platform: 'Instagram & LinkedIn' },
 
+
+
             // Week 6
+
             { month: 'm2', week: 'الأسبوع 6 - الأحد (13 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'نصائح اختيار المساحات', creative: 'فيديو نصائح الأستاذ فراس: "كيف تختار مكان جناحك داخل قاعة المعرض لضمان أعلى حركة زوار؟".', platform: 'LinkedIn Reel & IG' },
+
             { month: 'm2', week: 'الأسبوع 6 - الثلاثاء (15 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'إبراز معايير السلامة والجودة', creative: 'تغطية جودة تشطيبات الأخشاب والدهانات الاحترافية داخل المصنع بأيدي الفنيين.', platform: 'Instagram & Facebook' },
+
             { month: 'm2', week: 'الأسبوع 6 - الخميس (17 سبتمبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض الأكشاك Retail Kiosks', creative: 'عرض أكشاك ومنافذ البيع المبتكرة (Ain Dubai Kiosks) والديكورات التجارية.', platform: 'Instagram & FB & LinkedIn' },
 
+
+
             // Week 7
+
             { month: 'm2', week: 'الأسبوع 7 - الأحد (20 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'العلاقات الدبلوماسية والشراكات', creative: 'صورة وتغطية لقاء الأستاذ فراس نصر مع الوفود المشاركة بملتقى الاستثمار.', platform: 'LinkedIn & Instagram' },
+
             { month: 'm2', week: 'الأسبوع 7 - الثلاثاء (22 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'Spotlight فريق المبيعات والخدمة', creative: 'لقاء سريع مع مدير حسابات العملاء يوضح كيفية تنفيذ ميزانية العميل بأفضل تصميم.', platform: 'Instagram Reel & LinkedIn' },
+
             { month: 'm2', week: 'الأسبوع 7 - الخميس (24 سبتمبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض قطاع العطور والتجميل', creative: 'فيديو سينمائي لجناح (العربية للعود Arabian Oud) بالمعرض وتأثيرات الإضاءة الزجاجية.', platform: 'Instagram Reel & FB' },
 
+
+
             // Week 8
+
             { month: 'm2', week: 'الأسبوع 8 - الأحد (27 سبتمبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'توظيف التكنولوجيا المعمارية', creative: 'منشور كارسول برأي الأستاذ فراس: "كيف ندمج الذكاء الاصطناعي والشاشات التفاعلية في الأجنحة؟".', platform: 'LinkedIn & Instagram' },
+
             { month: 'm2', week: 'الأسبوع 8 - الثلاثاء (29 سبتمبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'الالتزام والعمل الليلي', creative: 'تغطية العمليات اللوجستية والشحن والنقل إلى مركز دبي التجاري العالمي في منتصف الليل.', platform: 'Instagram Story & Reel' },
+
             { month: 'm2', week: 'الأسبوع 8 - الخميس (1 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'المشاريع الحكومية الضخمة', creative: 'عرض كامل لجناح (وزارة الصحة MOHAP) بالتفاصيل الفنية والتجهيز الهيكلي.', platform: 'LinkedIn & Instagram & FB' },
 
+
+
             // MONTH 3 (Weeks 9 - 12)
+
             // Week 9
+
             { month: 'm3', week: 'الأسبوع 9 - الأحد (4 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'رسالة شكر ونجاح', creative: 'فيديو الأستاذ فراس نصر يشكر العملاء بعد ختام الموسم الأول ويستعرض الخطوات القادمة.', platform: 'LinkedIn & Instagram' },
+
             { month: 'm3', week: 'الأسبوع 9 - الثلاثاء (6 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'تجميع الجوائز والإنجازات', creative: 'صورة وفيديو تجمع فريق UMI بالكامل مع الجوائز التكريمية بعد تسليم المعارض بنجاح.', platform: 'Instagram & LinkedIn' },
+
             { month: 'm3', week: 'الأسبوع 9 - الخميس (8 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'قطاع البنوك والمؤسسات المالية', creative: 'استعراض مشروع جناح (بنك الإمارات دبي الوطني / البنوك الوطنية) بالمعرض.', platform: 'LinkedIn & Instagram' },
 
+
+
             // Week 10
+
             { month: 'm3', week: 'الأسبوع 10 - الأحد (11 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'دليل الشركات الجديد 2026', creative: 'الإعلان عن إطلاق دليل UMI المجاني لتصميم الأجنحة بقلم الأستاذ فراس نصر.', platform: 'LinkedIn & IG (Lead Magnet)' },
+
             { month: 'm3', week: 'الأسبوع 10 - الثلاثاء (13 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'اختبارات الإضاءة والصوت', creative: 'فيديو كواليس مهندسي الصوت والإضاءة أثناء ضبط الشاشات التفاعلية قبل افتتاح الجناح.', platform: 'Instagram Reel & TikTok' },
+
             { month: 'm3', week: 'الأسبوع 10 - الخميس (15 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'استعراض المطاعم والكافيهات', creative: 'استعراض تصاميم المطاعم والمقاهي العصرية (Taisuke & Helvaci Ali).', platform: 'Instagram Reel & FB' },
 
+
+
             // Week 11
+
             { month: 'm3', week: 'الأسبوع 11 - الأحد (18 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'التوسع الإقليمي بالخليج', creative: 'فيديو الأستاذ فراس يتحدث عن مشاريع UMI المرتقبة في السعودية والإمارات.', platform: 'LinkedIn & Instagram' },
+
             { month: 'm3', week: 'الأسبوع 11 - الثلاثاء (20 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'Spotlight فريق الدعم اللوجستي', creative: 'فيديو شكر وتكريم لسائقي وفنيي الشحن والديكور لجهودهم في تسليم المشاريع.', platform: 'Instagram & Facebook' },
+
             { month: 'm3', week: 'الأسبوع 11 - الخميس (22 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'أجنحة الطيران والتكنولوجيا', creative: 'عرض مشروع جناح (طيران الإمارات / مصر للطيران) بمعرض الطيران الدولي.', platform: 'LinkedIn & Instagram & FB' },
 
+
+
             // Week 12
+
             { month: 'm3', week: 'الأسبوع 12 - الأحد (25 أكتوبر)', pillar: 'P1', pName: '1. البيرسونال براند (الأستاذ فراس نصر)', goal: 'ملخص الربع الأول 2026', creative: 'مقالة ملخص الربع الأول للأستاذ فراس نصر وتوجيه الدعوة لحجز أجنحة المعارض القادمة.', platform: 'LinkedIn Article & IG' },
+
             { month: 'm3', week: 'الأسبوع 12 - الثلاثاء (27 أكتوبر)', pillar: 'P2', pName: '2. كواليس وفريق العمل', goal: 'احتفالية ختام الربع السنوي', creative: 'فيديو احتفال عائلة UMI بتحقيق كامل أهداف المحتوى والنمو معاً.', platform: 'Instagram Reel & Stories' },
+
             { month: 'm3', week: 'الأسبوع 12 - الخميس (29 أكتوبر)', pillar: 'P3', pName: '3. معرض الأعمال (Portfolio)', goal: 'فيديو حصاد 3 أشهر (Showreel)', creative: 'فيديو Showreel سينمائي مجمع لأجمل 10 أجنحة معارض تم تنفيذها خلال الـ 3 أشهر.', platform: 'Instagram Reel & LinkedIn & FB' }
+
         ];
 
+
+
         // Load checked states from LocalStorage
+
         const savedChecklist = JSON.parse(localStorage.getItem('umi_calendar_checklist') || '{}');
+
         let currentCalendarFilter = 'all';
+
+
+
+        const goalMapEN = {
+            'بناء الثقة والقيادة الفكرية': 'Building Trust & Thought Leadership',
+            'إبراز العنصر البشري والدقة': 'Showcasing Human Capital & Engineering Precision',
+            'استعراض القوة والعملاء الكبار': 'Demonstrating Market Authority & Major Clients',
+            'نصائح استراتيجية للشركات': 'Strategic Advice for Exhibition Exhibitors',
+            'تعزيز ثقافة الجودة والتصنيع': 'Promoting Factory Quality & Craftsmanship',
+            'إبراز التنوع والضخامة': 'Highlighting Project Scale & Diversity',
+            'استعراض الرؤية المستقبلية': 'Sharing Future Vision & Industry Trends',
+            'Spotlight الموظفين': 'Employee Spotlight & Team Culture',
+            'إثبات سرعة الإنجاز': 'Proving Fast Turnaround & 48H Delivery',
+            'تحليل عائد الاستثمار ROI': 'Exhibition Return on Investment (ROI) Analysis',
+            'إبراز روح الفريق والتحدي': 'Teamwork & Deadline Crunch Time',
+            'حالة نجاح Case Study': 'Success Case Study (Data & Results)',
+            'القيادة في المعارض القادمة': 'Leadership in Upcoming Dubai Expos (GITEX & Gulfood)',
+            'الدقة والابتكار في 3D': 'Precision & Innovation in 3D Rendering vs Reality',
+            'استعراض قطاع العقارات': 'Real Estate Sector Exhibition Stand Showcase',
+            'نصائح اختيار المساحات': 'Expert Tips on Expo Booth Location Selection',
+            'إبراز معايير السلامة والجودة': 'Safety, Finishing & Fabrication Standards',
+            'استعراض الأكشاك Retail Kiosks': 'Retail Kiosks & Commercial Fit-Out Showcase',
+            'العلاقات الدبلوماسية والشراكات': 'Diplomatic Relations & Strategic Partnerships',
+            'Spotlight فريق المبيعات والخدمة': 'Client Relations & Account Managers Spotlight',
+            'استعراض قطاع العطور والتجميل': 'Luxury Perfume & Cosmetics Stand Showcase',
+            'توظيف التكنولوجيا المعمارية': 'Integrating Smart Screens & AI in Stand Architecture',
+            'الالتزام والعمل الليلي': 'Logistics Commitment & Overnight Setup',
+            'المشاريع الحكومية الضخمة': 'Government Mega-Projects (Ministry of Health Stand)',
+            'رسالة شكر ونجاح': 'Season 1 Conclusion & Milestone Gratitude',
+            'تجميع الجوائز والإنجازات': 'Celebrating Team Awards & Achievements',
+            'قطاع البنوك والمؤسسات المالية': 'Banking & Financial Sector Stand Showcase',
+            'ملخص الربع الأول 2026': 'Q1 2026 Growth Summary & Future Booking Call',
+            'احتفالية ختام الربع السنوي': 'Quarterly Finale Celebration with UMI Team',
+            'فيديو حصاد 3 أشهر (Showreel)': '3-Month Masterpiece Showreel (Top 10 Builds)'
+        };
 
         function getCalendarItemText(item, field) {
             const isEn = document.documentElement.getAttribute('lang') === 'en';
@@ -1691,8 +3394,8 @@
                 if (item.week.includes('الأسبوع 4 - الأحد')) return 'Week 4 - Sun (Aug 23)';
                 if (item.week.includes('الأسبوع 4 - الثلاثاء')) return 'Week 4 - Tue (Aug 25)';
                 if (item.week.includes('الأسبوع 4 - الخميس')) return 'Week 4 - Thu (Aug 27)';
-                const weekMatch = item.week.match(/\d+/);
-                const wNum = weekMatch ? weekMatch[0] : '1';
+                const wMatch = item.week.match(/\d+/);
+                const wNum = wMatch ? wMatch[0] : '1';
                 if (item.week.includes('الأحد')) return `Week ${wNum} - Sun`;
                 if (item.week.includes('الثلاثاء')) return `Week ${wNum} - Tue`;
                 if (item.week.includes('الخميس')) return `Week ${wNum} - Thu`;
@@ -1700,13 +3403,11 @@
             }
 
             if (field === 'goal') {
-                if (item.pillar === 'P1') return 'Thought Leadership & Trust';
-                if (item.pillar === 'P2') return 'Behind The Scenes & Craftsmanship';
-                if (item.pillar === 'P3') return 'Portfolio Showcase & ROI';
+                return goalMapEN[item.goal] || item.goal;
             }
 
             if (field === 'creative') {
-                if (item.pillar === 'P1') return 'Reel / Article by CEO Firas Nasr on exhibition design strategy & market ROI.';
+                if (item.pillar === 'P1') return 'Short Reel / Article by CEO Firas Nasr on UMI exhibition stand design strategy & ROI.';
                 if (item.pillar === 'P2') return 'Behind-The-Scenes video of 3D designers, engineers & factory fabrication.';
                 if (item.pillar === 'P3') return 'High-quality video comparing 3D design vs completed booth build for top clients.';
             }
@@ -1714,291 +3415,581 @@
             return item[field];
         }
 
+
+
         function renderCalendarTable(filterMonth = 'all') {
+
             currentCalendarFilter = filterMonth;
+
             const tbody = document.getElementById('calendarTableBody');
+
             if (!tbody) return;
+
             tbody.innerHTML = '';
 
+
+
             let filteredData = calendarPostsData;
+
             if (filterMonth !== 'all') {
+
                 filteredData = calendarPostsData.filter(item => item.month === filterMonth);
+
             }
+
+
 
             filteredData.forEach((post) => {
+
                 const globalIndex = calendarPostsData.indexOf(post);
+
                 const isChecked = savedChecklist[globalIndex] ? 'checked' : '';
+
                 const rowClass = isChecked ? 'completed-row' : '';
 
+
+
                 let pillarBadgeClass = 'badge-p1';
+
                 if (post.pillar === 'P2') pillarBadgeClass = 'badge-p2';
+
                 if (post.pillar === 'P3') pillarBadgeClass = 'badge-p3';
 
+
+
                 const weekStr = getCalendarItemText(post, 'week');
+
                 const pillarStr = getCalendarItemText(post, 'pName');
+
                 const goalStr = getCalendarItemText(post, 'goal');
+
                 const creativeStr = getCalendarItemText(post, 'creative');
 
+
+
                 const tr = document.createElement('tr');
+
                 tr.className = rowClass;
+
                 tr.id = `row-${globalIndex}`;
+
                 tr.innerHTML = `
+
                     <td>
+
                         <label class="chk-container">
+
                             <input type="checkbox" onchange="togglePostCheck(${globalIndex}, this)" ${isChecked}>
+
                             <span class="checkmark"></span>
+
                         </label>
+
                     </td>
+
                     <td><strong>${weekStr}</strong></td>
+
                     <td><span class="pillar-badge ${pillarBadgeClass}">${pillarStr}</span></td>
+
                     <td>${goalStr}</td>
+
                     <td>${creativeStr}</td>
+
                     <td><span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">${post.platform}</span></td>
+
                 `;
+
                 tbody.appendChild(tr);
+
             });
 
+
+
             updateProgressStats();
+
         }
+
+
 
         function togglePostCheck(index, checkboxElem) {
+
             savedChecklist[index] = checkboxElem.checked;
+
             localStorage.setItem('umi_calendar_checklist', JSON.stringify(savedChecklist));
+
             
+
             const rowElem = document.getElementById(`row-${index}`);
+
             if (rowElem) {
+
                 if (checkboxElem.checked) {
+
                     rowElem.classList.add('completed-row');
+
                 } else {
+
                     rowElem.classList.remove('completed-row');
+
                 }
+
             }
+
+
 
             updateProgressStats();
+
         }
 
+
+
         function updateProgressStats() {
+
             const total = 36;
+
             let checkedCount = 0;
+
             for (let i = 0; i < total; i++) {
+
                 if (savedChecklist[i]) checkedCount++;
+
             }
+
+
 
             const percent = Math.round((checkedCount / total) * 100);
 
+
+
             // Update Progress UI
+
             const pct = document.getElementById('progressPercent');
+
             const bar = document.getElementById('progressBarFill');
+
             const comp = document.getElementById('completedCount');
+
             const rem = document.getElementById('remainingCount');
+
             if (pct) pct.innerText = `${percent}%`;
+
             if (bar) bar.style.width = `${percent}%`;
+
             if (comp) comp.innerText = checkedCount;
+
             if (rem) rem.innerText = total - checkedCount;
+
             
+
             // Update Top KPI Card
+
             const kpiProgressVal = document.getElementById('kpiProgressVal');
+
             if (kpiProgressVal) {
+
                 kpiProgressVal.innerText = `${percent}%`;
+
             }
+
         }
+
+
 
         function filterCalendar(monthFilter) {
+
             const filterBtns = document.querySelectorAll('.month-btn');
+
             filterBtns.forEach(btn => btn.classList.remove('active'));
+
             if (event && event.currentTarget) event.currentTarget.classList.add('active');
 
+
+
             renderCalendarTable(monthFilter);
+
         }
+
+
 
         // Initialize Calendar Table on Page Load
+
         document.addEventListener('DOMContentLoaded', () => {
+
             renderCalendarTable('all');
+
         });
+
     
+
         // -------------------------------------------------------------
+
         // AI & SEO INTERACTIVE CHECKLIST DATA
+
         // -------------------------------------------------------------
+
         const aiChecklistData = [
+
             // Phase 1: Schema.org JSON-LD
+
             { phase: 'المرحلة 1: Schema.org', step: 'إضافة بيانات Organization JSON-LD على الصفحة الرئيسية باسم وعنوان وتفاصيل UMI Group.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
+
             { phase: 'المرحلة 1: Schema.org', step: 'إضافة بيانات LocalBusiness مع إحداثيات دبي الدقيقة (GPS Coordinates) ونطاق الخدمة.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
+
             { phase: 'المرحلة 1: Schema.org', step: 'إضافة Service Schema لكل خدمة: تصميم الأجنحة، الديكور، الأكشاك، وإنتاج الفعاليات.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
+
             { phase: 'المرحلة 1: Schema.org', step: 'إضافة Person Schema للأستاذ فراس نصر (CEO) مربوط بـ sameAs لحسابات LinkedIn & Instagram.', resp: 'مدير الموقع', priority: 'عالية', color: 'icon-gold' },
+
             { phase: 'المرحلة 1: Schema.org', step: 'اختبار الـ Schema على أداة Google Rich Results Test والتأكد من عدم وجود أخطاء.', resp: 'مطور الموقع', priority: 'عالية', color: 'icon-gold' },
 
+
+
             // Phase 2: CTR Meta Titles
+
             { phase: 'المرحلة 2: Meta Titles & CTR', step: 'مراجعة وتحديث عنوان صفحة Home ليكون: "UMI Group | #1 Exhibition Stand Designers in Dubai".', resp: 'مدير المحتوى', priority: 'عالية', color: 'icon-blue' },
+
             { phase: 'المرحلة 2: Meta Titles & CTR', step: 'صياغة Meta Descriptions مخصصة لكل صفحة رئيسية بالكلمات المفتاحية الأكثر بحثاً بدبي.', resp: 'مدير المحتوى', priority: 'عالية', color: 'icon-blue' },
+
             { phase: 'المرحلة 2: Meta Titles & CTR', step: 'إضافة الكلمات المفتاحية الاستفهامية التي يجيب عليها ChatGPT & Perplexity في نصوص الصفحات.', resp: 'مدير المحتوى', priority: 'متوسطة', color: 'icon-blue' },
+
             { phase: 'المرحلة 2: Meta Titles & CTR', step: 'إضافة هيكل H1 / H2 / H3 محسّن بالكلمات المفتاحية الجغرافية (دبي، الإمارات، معارض، أجنحة).', resp: 'مطور الموقع', priority: 'متوسطة', color: 'icon-blue' },
+
             { phase: 'المرحلة 2: Meta Titles & CTR', step: 'تفعيل Rank Math Analytics وربطه بـ Google Search Console لمتابعة النتائج.', resp: 'مدير الموقع', priority: 'متوسطة', color: 'icon-blue' },
 
+
+
             // Phase 3: Brand Entity / Knowledge Graph
+
             { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'إنشاء وربط حسابات سوشيال ميديا رسمية (LinkedIn & Instagram & Facebook) بنفس الاسم والبيانات.', resp: 'مدير التسويق', priority: 'عالية', color: 'icon-purple' },
+
             { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'نشر مقال إعلامي/صحفي خارجي يذكر اسم UMI Group مع رابط للموقع (مصادر موثوقة).', resp: 'مدير التسويق', priority: 'عالية', color: 'icon-purple' },
+
             { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'إعداد صفحة Wikipedia أو Wikidata لـ UMI Group مع كافة التفاصيل (اختياري مستقبلي).', resp: 'مدير التسويق', priority: 'منخفضة', color: 'icon-purple' },
+
             { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'تسجيل UMI Group في Google Business Profile وتحديث كافة بيانات الشركة بدبي.', resp: 'مدير الموقع', priority: 'عالية', color: 'icon-purple' },
+
             { phase: 'المرحلة 3: Brand Entity (Knowledge Graph)', step: 'مراجعة النتائج شهرياً: اختبار الظهور في ChatGPT & Gemini & Perplexity بعبارات البحث المستهدفة.', resp: 'مدير التسويق', priority: 'متوسطة', color: 'icon-purple' },
+
         ];
 
+
+
         const aiDefaultDone = { 0: true, 1: true, 4: true };
+
         const savedAiRaw = localStorage.getItem('umi_ai_checklist');
+
         const savedAiChecklist = savedAiRaw ? JSON.parse(savedAiRaw) : Object.assign({}, aiDefaultDone);
 
+
+
         function getAiItemText(item, field) {
+
             const isEn = document.documentElement.getAttribute('lang') === 'en';
+
             if (!isEn) return item[field];
 
+
+
             if (field === 'phase') {
+
                 if (item.phase.includes('المرحلة 1')) return 'Phase 1: Schema.org JSON-LD';
+
                 if (item.phase.includes('المرحلة 2')) return 'Phase 2: Meta Titles & CTR';
+
                 if (item.phase.includes('المرحلة 3')) return 'Phase 3: Brand Entity & Knowledge Graph';
+
             }
+
+
 
             if (field === 'resp') {
+
                 if (item.resp === 'مطور الموقع') return 'Web Developer';
+
                 if (item.resp === 'مدير المحتوى') return 'Content Manager';
+
                 if (item.resp === 'مدير التسوق' || item.resp === 'مدير التسويق') return 'Marketing Manager';
+
                 if (item.resp === 'مدير الموقع') return 'Webmaster';
+
             }
+
+
 
             if (field === 'priority') {
+
                 if (item.priority === 'عالية') return 'High';
+
                 if (item.priority === 'متوسطة') return 'Medium';
+
                 if (item.priority === 'منخفضة') return 'Low';
+
             }
+
+
 
             if (field === 'step') {
+
                 if (item.step.includes('Organization JSON-LD')) return 'Add Organization JSON-LD markup with UMI Group details to Homepage.';
+
                 if (item.step.includes('LocalBusiness')) return 'Add LocalBusiness schema with Dubai GPS coordinates & service radius.';
+
                 if (item.step.includes('Service Schema')) return 'Add Service schema for Stand Design, Events Production, & Retail Kiosks.';
+
                 if (item.step.includes('Person Schema')) return 'Add Person schema for CEO Firas Nasr linked to LinkedIn & Instagram.';
+
                 if (item.step.includes('Rich Results Test')) return 'Test Schema structure on Google Rich Results Test tool for zero errors.';
+
                 if (item.step.includes('Meta Titles')) return 'Update Homepage Meta Title: "UMI Group | #1 Exhibition Stand Designers in Dubai".';
+
                 if (item.step.includes('Meta Descriptions')) return 'Craft targeted Meta Descriptions for all core pages with Dubai keywords.';
+
                 if (item.step.includes('ChatGPT')) return 'Include conversational search queries answered by ChatGPT & Perplexity.';
+
                 if (item.step.includes('H1 / H2 / H3')) return 'Optimize H1/H2 heading hierarchy with Dubai geo-targeted keywords.';
+
                 if (item.step.includes('Rank Math')) return 'Connect Rank Math Analytics & Google Search Console for live tracking.';
+
                 if (item.step.includes('سوشيال ميديا')) return 'Setup & link official LinkedIn, Instagram & Facebook business pages.';
+
                 if (item.step.includes('مقال إعلامي')) return 'Publish PR guest articles mentioning UMI Group on high authority media.';
+
                 if (item.step.includes('Wikipedia')) return 'Draft Wikipedia/Wikidata entity page for UMI Group (Future roadmap).';
+
                 if (item.step.includes('Google Business Profile')) return 'Register & verify UMI Group Google Business Profile in Dubai.';
+
                 if (item.step.includes('مراجعة النتائج')) return 'Monthly Audit: Test ranking in ChatGPT, Gemini & Perplexity responses.';
+
             }
+
+
 
             return item[field];
+
         }
+
+
 
         function getPriorityBadge(priority) {
+
             const isEn = document.documentElement.getAttribute('lang') === 'en';
+
             let label = priority;
+
             if (isEn) {
+
                 if (priority === 'عالية' || priority === 'High') label = 'High';
+
                 else if (priority === 'متوسطة' || priority === 'Medium') label = 'Medium';
+
                 else label = 'Low';
+
             }
+
             if (label === 'عالية' || label === 'High') return '<span style="background: rgba(216,27,96,0.1); color: #d81b60; border: 1px solid rgba(216,27,96,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + label + '</span>';
+
             if (label === 'متوسطة' || label === 'Medium') return '<span style="background: rgba(37,99,235,0.1); color: #2563eb; border: 1px solid rgba(37,99,235,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + label + '</span>';
+
             return '<span style="background: rgba(124,58,237,0.1); color: #7c3aed; border: 1px solid rgba(124,58,237,0.3); padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">' + label + '</span>';
+
         }
+
+
 
         function renderAiChecklist() {
+
             const tbody = document.getElementById('aiChecklistTableBody');
+
             if (!tbody) return;
+
             tbody.innerHTML = '';
 
+
+
             aiChecklistData.forEach((item, index) => {
+
                 const isChecked = savedAiChecklist[index] ? 'checked' : '';
+
                 const rowClass = isChecked ? 'completed-row' : '';
 
+
+
                 const phaseStr = getAiItemText(item, 'phase');
+
                 const stepStr = getAiItemText(item, 'step');
+
                 const respStr = getAiItemText(item, 'resp');
+
                 const priorityStr = getAiItemText(item, 'priority');
 
+
+
                 const tr = document.createElement('tr');
+
                 tr.className = rowClass;
+
                 tr.id = 'ai-row-' + index;
+
                 tr.innerHTML = '<td><label class="chk-container"><input type="checkbox" onchange="toggleAiCheck(' + index + ', this)" ' + isChecked + '><span class="checkmark"></span></label></td>'
+
                     + '<td><span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">' + phaseStr + '</span></td>'
+
                     + '<td style="font-size: 0.95rem; font-weight: 600;">' + stepStr + '</td>'
+
                     + '<td><span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">' + respStr + '</span></td>'
+
                     + '<td>' + getPriorityBadge(priorityStr) + '</td>';
 
+
+
                 tbody.appendChild(tr);
+
             });
 
+
+
             updateAiProgressStats();
+
         }
+
+
 
         function toggleAiCheck(index, checkboxElem) {
+
             savedAiChecklist[index] = checkboxElem.checked;
+
             localStorage.setItem('umi_ai_checklist', JSON.stringify(savedAiChecklist));
 
+
+
             const rowElem = document.getElementById('ai-row-' + index);
+
             if (rowElem) {
+
                 if (checkboxElem.checked) rowElem.classList.add('completed-row');
+
                 else rowElem.classList.remove('completed-row');
+
             }
+
+
 
             updateAiProgressStats();
+
         }
+
+
 
         function updateAiProgressStats() {
+
             const total = aiChecklistData.length;
+
             let checked = 0;
+
             for (let i = 0; i < total; i++) {
+
                 if (savedAiChecklist[i]) checked++;
+
             }
+
+
 
             const percent = Math.round((checked / total) * 100);
+
             const pct = document.getElementById('aiProgressPercent');
+
             const bar = document.getElementById('aiProgressBarFill');
+
             const comp = document.getElementById('aiCompletedCount');
+
             const rem = document.getElementById('aiRemainingCount');
 
+
+
             if (pct) pct.innerText = percent + '%';
+
             if (bar) bar.style.width = percent + '%';
+
             if (comp) comp.innerText = checked;
+
             if (rem) rem.innerText = total - checked;
+
         }
+
+
 
         // Language Switcher Function
+
         function setLang(lang) {
+
             const html = document.documentElement;
+
             const btnAr = document.getElementById('btn-ar');
+
             const btnEn = document.getElementById('btn-en');
+
             const isEn = (lang === 'en');
 
+
+
             if (isEn) {
+
                 html.setAttribute('lang', 'en');
+
                 html.setAttribute('dir', 'ltr');
+
                 if (btnEn) btnEn.classList.add('active');
+
                 if (btnAr) btnAr.classList.remove('active');
+
                 document.title = 'Growth Strategy Plan 2026 — UMI Group';
+
             } else {
+
                 html.setAttribute('lang', 'ar');
+
                 html.setAttribute('dir', 'rtl');
+
                 if (btnAr) btnAr.classList.add('active');
+
                 if (btnEn) btnEn.classList.remove('active');
+
                 document.title = 'خطة النمو الاستراتيجية 2026 — UMI Group';
+
             }
 
+
+
             // Force visibility toggle for static HTML tags
+
             document.querySelectorAll('.ar-only').forEach(el => el.style.display = isEn ? 'none' : '');
+
             document.querySelectorAll('.en-only').forEach(el => el.style.display = isEn ? 'inline-block' : '');
 
+
+
             // Re-render JS dynamic tables in selected language
+
             renderCalendarTable(currentCalendarFilter);
+
             renderAiChecklist();
+
         }
 
+
+
         // Render tables on initial load
+
         document.addEventListener('DOMContentLoaded', function() {
+
             renderCalendarTable('all');
+
             renderAiChecklist();
+
         });
+
     </script>
+
 </body>
+
 </html>
+
