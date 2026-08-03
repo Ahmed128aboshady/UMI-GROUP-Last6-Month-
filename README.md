@@ -11,6 +11,7 @@ Access the live interactive presentation at:
 ---
 
 ## 📌 Features & Highlights
+* **July 2026 Performance Report:** Dedicated tab analyzing 219k+ LinkedIn impressions, GSC 16k+ search impressions, top queries, and competitor benchmark.
 * **Executive Summary & Animated Carousel:** 3 Key Pillars for Growth.
 * **AI & GEO SEO Strategy:** JSON-LD Schema.org, Knowledge Graph, CTR Meta Titles for Dubai.
 * **3-Month Content Calendar (36 Posts):** 3 Posts/week (Personal Brand, Employees/BTS, Work Portfolio).
