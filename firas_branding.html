@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>استراتيجية البيرسونال براندنج — الأستاذ فراس نصر (CEO)</title>
+<title>تشيك ليست البيرسونال براندنج — الأستاذ فراس نصر (CEO)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   --grad-gold:  linear-gradient(135deg,#fbbf24 0%,#f59e0b 50%,#d97706 100%);
   --grad-brand: linear-gradient(135deg,#ff4db8 0%,#e91e8c 50%,#c2185b 100%);
   --grad-blue:  linear-gradient(135deg,#60a5fa 0%,#3b82f6 50%,#1d4ed8 100%);
-  --grad-purple:linear-gradient(135deg,#a78bfa 0%,#8b5cf6 50%,#6d28d9 100%);
+  --grad-green: linear-gradient(135deg,#34d399 0%,#10b981 50%,#059669 100%);
   --radius-xl:  24px;
   --radius-2xl: 32px;
   --shadow-card:0 8px 32px rgba(0,0,0,0.4);
@@ -57,7 +57,7 @@ body.en { font-family:'Inter', sans-serif; }
 }
 @keyframes bgShift { 0%{transform:translate(0,0);} 100%{transform:translate(2%,2%);} }
 
-.container { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:0 1.5rem 4rem; }
+.container { position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:0 1.5rem 4rem; }
 
 /* NAVBAR */
 nav {
@@ -83,28 +83,36 @@ nav {
 .hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.3); color:#fcd34d; padding:0.5rem 1.4rem; border-radius:50px; font-size:0.88rem; font-weight:700; margin-bottom:1.25rem; }
 .hero-title { font-size:clamp(2rem,4.5vw,3rem); font-weight:900; line-height:1.2; margin-bottom:0.75rem; }
 .hero-title .grad { background:var(--grad-gold); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.hero-desc { font-size:1.05rem; color:var(--c-muted); max-width:750px; margin:0 auto; }
+.hero-desc { font-size:1.05rem; color:var(--c-muted); max-width:780px; margin:0 auto; }
 
-/* PROFILE HEADER CARD */
+/* PROFILE CARD */
 .profile-card {
   background:var(--c-dark2); border:1px solid var(--c-border); border-radius:var(--radius-2xl);
-  padding:2.5rem; margin-bottom:2.5rem; display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
+  padding:2rem 2.5rem; margin-bottom:2.5rem; display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
 }
-.profile-avatar-box {
-  position:relative; width:130px; height:130px; border-radius:50%;
-  background:var(--grad-gold); padding:4px; flex-shrink:0; margin:0 auto;
-}
-.profile-avatar-img {
-  width:100%; height:100%; border-radius:50%; object-fit:cover;
-  background:#1a1d24; display:flex; align-items:center; justify-content:center;
-  font-size:3rem; color:#f59e0b;
-}
+.profile-avatar-box { width:110px; height:110px; border-radius:50%; background:var(--grad-gold); padding:4px; flex-shrink:0; margin:0 auto; }
+.profile-avatar-img { width:100%; height:100%; border-radius:50%; background:#1a1d24; display:flex; align-items:center; justify-content:center; font-size:2.5rem; color:#f59e0b; }
 .profile-info { flex:1; min-width:280px; }
-.profile-name { font-size:1.8rem; font-weight:900; color:var(--c-text); margin-bottom:0.25rem; }
-.profile-role { font-size:1rem; font-weight:700; color:var(--c-gold); margin-bottom:0.75rem; }
-.profile-bio { font-size:0.92rem; color:var(--c-muted); line-height:1.6; }
-.profile-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
-.tag { padding:0.3rem 0.85rem; border-radius:50px; font-size:0.78rem; font-weight:700; background:rgba(255,255,255,0.06); border:1px solid var(--c-border); color:var(--c-muted); }
+.profile-name { font-size:1.6rem; font-weight:900; color:var(--c-text); margin-bottom:0.25rem; }
+.profile-role { font-size:0.95rem; font-weight:700; color:var(--c-gold); margin-bottom:0.5rem; }
+
+/* PROGRESS TRACKER WIDGET */
+.progress-panel {
+  background:linear-gradient(135deg, rgba(245,158,11,0.1), rgba(233,30,140,0.06));
+  border:1px solid rgba(245,158,11,0.3); border-radius:var(--radius-2xl);
+  padding:2rem 2.5rem; margin-bottom:2.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;
+}
+.progress-title-box { max-width:500px; }
+.progress-title-box h3 { font-size:1.3rem; font-weight:900; color:var(--c-text); margin-bottom:0.3rem; display:flex; align-items:center; gap:0.5rem; }
+.progress-title-box p { font-size:0.88rem; color:var(--c-muted); }
+
+.progress-widget { width:320px; min-width:260px; }
+.progress-info { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; }
+.progress-label { font-size:0.85rem; font-weight:700; color:var(--c-muted); }
+.progress-percentage { font-size:1.6rem; font-weight:900; color:var(--c-gold); }
+.progress-bar-bg { width:100%; height:12px; background:rgba(255,255,255,0.1); border-radius:50px; overflow:hidden; }
+.progress-bar-fill { height:100%; width:0%; background:var(--grad-gold); border-radius:50px; transition:width 0.4s ease; box-shadow:0 0 12px rgba(245,158,11,0.5); }
+.progress-stats-sub { display:flex; justify-content:space-between; font-size:0.78rem; color:var(--c-muted); margin-top:0.4rem; font-weight:700; }
 
 /* GLASS PANELS */
 .glass-panel { background:var(--c-dark2); border:1px solid var(--c-border); border-radius:var(--radius-2xl); padding:2.5rem; margin-bottom:2rem; }
@@ -113,35 +121,37 @@ nav {
 .section-title { font-size:1.4rem; font-weight:900; color:var(--c-text); }
 .section-sub { font-size:0.8rem; color:var(--c-muted); font-weight:600; text-transform:uppercase; letter-spacing:2px; }
 
-/* ACCORDION / POST CARDS */
-.post-card { background:var(--c-dark3); border:1px solid var(--c-border); border-radius:var(--radius-xl); padding:1.75rem; margin-bottom:1.25rem; }
-.post-header { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem; border-bottom:1px solid var(--c-dim); padding-bottom:0.75rem; }
-.post-num { font-size:0.85rem; font-weight:800; color:var(--c-gold); text-transform:uppercase; }
-.post-platform { display:inline-flex; align-items:center; gap:0.4rem; background:rgba(59,130,246,0.15); color:#93c5fd; padding:0.25rem 0.75rem; border-radius:50px; font-size:0.75rem; font-weight:700; }
-.post-title { font-size:1.15rem; font-weight:800; color:var(--c-text); margin-bottom:0.75rem; }
+/* CHECKLIST TABLE */
+.table-wrap { overflow-x:auto; border-radius:var(--radius-xl); border:1px solid var(--c-border); }
+table { width:100%; border-collapse:collapse; min-width:800px; font-size:0.9rem; }
+thead tr { background:linear-gradient(135deg, rgba(245,158,11,0.15), rgba(233,30,140,0.1)); border-bottom:1px solid rgba(245,158,11,0.3); }
+th { padding:1.1rem 1.25rem; font-weight:800; font-size:0.85rem; color:var(--c-muted); white-space:nowrap; text-align:inherit; }
+td { padding:1.1rem 1.25rem; border-bottom:1px solid var(--c-border); vertical-align:middle; color:var(--c-muted); }
+tbody tr:hover { background:var(--c-glass); }
 
-.copy-box {
-  background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08);
-  border-radius:14px; padding:1.25rem; font-size:0.92rem; color:#e2e8f0;
-  line-height:1.7; white-space:pre-line; margin-bottom:1rem;
-}
+tr.completed-row { background:rgba(16,185,129,0.08) !important; }
+tr.completed-row td { opacity:0.85; }
+tr.completed-row td strong { text-decoration:line-through; color:var(--c-green); }
+
+/* CUSTOM CHECKBOX */
+.chk-container { display:inline-block; position:relative; padding-left:28px; cursor:pointer; font-size:1rem; user-select:none; }
+html[dir="rtl"] .chk-container { padding-left:0; padding-right:28px; }
+.chk-container input { position:absolute; opacity:0; cursor:pointer; height:0; width:0; }
+.checkmark { position:absolute; top:0; left:0; height:22px; width:22px; background:rgba(255,255,255,0.08); border:2px solid var(--c-border); border-radius:6px; transition:var(--transition); }
+html[dir="rtl"] .checkmark { left:auto; right:0; }
+.chk-container:hover input ~ .checkmark { border-color:var(--c-gold); }
+.chk-container input:checked ~ .checkmark { background:var(--c-green); border-color:var(--c-green); box-shadow:0 0 10px rgba(16,185,129,0.4); }
+.checkmark:after { content:""; position:absolute; display:none; left:7px; top:3px; width:5px; height:10px; border:solid white; border-width:0 2px 2px 0; transform:rotate(45deg); }
+.chk-container input:checked ~ .checkmark:after { display:block; }
+
+.pillar-badge { display:inline-flex; align-items:center; gap:0.4rem; padding:0.3rem 0.85rem; border-radius:50px; font-size:0.78rem; font-weight:800; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.3); color:#fcd34d; }
 
 .copy-btn {
   display:inline-flex; align-items:center; gap:0.4rem;
-  background:var(--grad-gold); color:#fff; border:none; padding:0.45rem 1rem;
-  border-radius:10px; font-weight:700; font-size:0.8rem; cursor:pointer; transition:var(--transition);
+  background:var(--grad-gold); color:#fff; border:none; padding:0.35rem 0.85rem;
+  border-radius:8px; font-weight:700; font-size:0.78rem; cursor:pointer; transition:var(--transition);
 }
-.copy-btn:hover { transform:scale(1.03); }
-
-/* GRID LAYOUTS */
-.two-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
-@media(max-width:768px) { .two-grid { grid-template-columns:1fr; } }
-
-.list-box { background:var(--c-dark3); border:1px solid var(--c-border); border-radius:var(--radius-xl); padding:1.75rem; }
-.list-box h4 { font-size:1.1rem; font-weight:800; color:var(--c-text); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
-.step-list { list-style:none; display:flex; flex-direction:column; gap:0.85rem; }
-.step-list li { display:flex; gap:0.75rem; font-size:0.9rem; color:var(--c-muted); line-height:1.6; }
-.step-num { width:26px; height:26px; border-radius:50%; background:var(--grad-gold); color:#fff; font-weight:900; font-size:0.78rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+.copy-btn:hover { transform:scale(1.04); box-shadow:0 0 10px rgba(245,158,11,0.4); }
 
 footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c-border); margin-top:2rem; }
 .footer-logo { font-size:1.6rem; font-weight:900; background:var(--grad-gold); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
@@ -181,21 +191,21 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
   <!-- HERO -->
   <div class="hero">
     <div class="hero-badge">
-      <i class="fa-solid fa-user-tie"></i>
-      <span class="ar-only">خطة البيرسونال براندنج المخصصة — 2026</span>
-      <span class="en-only">Executive Personal Branding Strategy — 2026</span>
+      <i class="fa-solid fa-user-check"></i>
+      <span class="ar-only">تشيك ليست البيرسونال براندنج والتتبّع المباشر</span>
+      <span class="en-only">Interactive Personal Branding Checklist</span>
     </div>
     <h1 class="hero-title">
-      <span class="ar-only">استراتيجية القيادة الفكرية للأستاذ <span class="grad">فراس نصر (CEO)</span></span>
-      <span class="en-only">Executive Thought Leadership — <span class="grad">CEO Firas Nasr</span></span>
+      <span class="ar-only">منشورات البيرسونال براندنج للأستاذ <span class="grad">فراس نصر (12 منشور)</span></span>
+      <span class="en-only">CEO Firas Nasr <span class="grad">Personal Branding Checklist</span></span>
     </h1>
     <p class="hero-desc">
-      <span class="ar-only">دليل خطوة بخطوة لتطوير وتلميع أكونتات الأستاذ فراس نصر على LinkedIn و Instagram، مع مكتبة منشورات جاهزة للنشر واسترانيجية بناء الثقة وجذب كبار العملاء.</span>
-      <span class="en-only">A complete step-by-step roadmap for CEO Firas Nasr's LinkedIn & Instagram profiles, including ready-to-publish content and VIP client attraction strategies.</span>
+      <span class="ar-only">تم استخراج جميع منشورات البيرسونال براندنج (Pillar 1) الـ 12 من جدول الـ 36 منشور الرئيسي وتحويلها إلى تشيك ليست تفاعلية مع حاسبة إنجاز فورية وحفظ إلكتروني.</span>
+      <span class="en-only">Extracted directly from the 36-post content calendar (Pillar 1 - Personal Branding), converted into an interactive checklist with real-time tracker.</span>
     </p>
   </div>
 
-  <!-- PROFILE HEADER CARD -->
+  <!-- PROFILE CARD -->
   <div class="profile-card">
     <div class="profile-avatar-box">
       <div class="profile-avatar-img"><i class="fa-solid fa-user-tie"></i></div>
@@ -203,272 +213,58 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
     <div class="profile-info">
       <div class="profile-name">الأستاذ / فراس نصر | Firas Nasr</div>
       <div class="profile-role">الرئيس التنفيذي ومؤسس مجموعة UMI Group — دبي والإمارات</div>
-      <div class="profile-bio">
-        <span class="ar-only">خبير ورائد في تصميم وتصنيع أجنحة المعارض والديكورات التجارية بالخليج لأكثر من 20 عاماً. قاد تنفيذ مشاريع كبرى لمؤسسات حكومية وعالمية مثل شرطة دبي، ديوا، بينانس، وأرادَ.</span>
-        <span class="en-only">Founder & CEO of UMI Group. 20+ years pioneer in custom exhibition stand design & fabrication across Dubai & GCC. Delivered flagship builds for Dubai Police, DEWA, Binance & Arada.</span>
+    </div>
+  </div>
+
+  <!-- PROGRESS TRACKER WIDGET -->
+  <div class="progress-panel">
+    <div class="progress-title-box">
+      <h3><i class="fa-solid fa-chart-pie" style="color:#f59e0b;"></i> <span class="ar-only">عداد إنجاز خطة البيرسونال براندنج</span><span class="en-only">Personal Branding Completion Tracker</span></h3>
+      <p><span class="ar-only">يتم تحديث نسبة الإنجاز والمنشورات المتبقية تلقائياً وتخزينها بالضغط على كل منشور مكتمل.</span><span class="en-only">Live percentage and remaining post counts update automatically upon checking off items.</span></p>
+    </div>
+
+    <div class="progress-widget">
+      <div class="progress-info">
+        <span class="progress-label"><span class="ar-only">نسبة الإنجاز:</span><span class="en-only">Execution Rate:</span></span>
+        <span class="progress-percentage" id="firasProgressPercent">0%</span>
       </div>
-      <div class="profile-tags">
-        <span class="tag">🏆 Thought Leadership</span>
-        <span class="tag">🏛️ Exhibition Stand Architect</span>
-        <span class="tag">🇦🇪 Dubai B2B Leader</span>
-        <span class="tag">💡 Innovation & ROI</span>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="firasProgressBarFill"></div>
+      </div>
+      <div class="progress-stats-sub">
+        <span><span class="ar-only">المنشورات المكتملة:</span><span class="en-only">Completed:</span> <strong id="firasCompletedCount">0</strong> / 12</span>
+        <span><span class="ar-only">المتبقية:</span><span class="en-only">Remaining:</span> <strong id="firasRemainingCount">12</strong></span>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 1: ACCOUNT OPTIMIZATION ROADMAP -->
+  <!-- CHECKLIST SECTION -->
   <div class="glass-panel">
     <div class="section-header">
-      <div class="section-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="section-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b;"><i class="fa-solid fa-list-check"></i></div>
       <div>
-        <div class="section-sub"><span class="ar-only">الخطوة الأولى</span><span class="en-only">Step 01</span></div>
-        <div class="section-title"><span class="ar-only">خطوات تطوير وتلميع حسابات الأستاذ فراس نصر</span><span class="en-only">Social Media Profile Optimization Roadmap</span></div>
+        <div class="section-sub"><span class="ar-only">الجدول والتراكر</span><span class="en-only">Interactive Table</span></div>
+        <div class="section-title"><span class="ar-only">تشيك ليست الـ 12 منشور مخصص للقيادة الفكرية</span><span class="en-only">The 12 Personal Branding Posts Checklist</span></div>
       </div>
     </div>
 
-    <div class="two-grid">
-      <!-- LinkedIn Optimization -->
-      <div class="list-box">
-        <h4><i class="fa-brands fa-linkedin" style="color:#0a66c2;"></i> <span class="ar-only">تحديث حساب LinkedIn الاحترافي</span><span class="en-only">LinkedIn Profile Setup</span></h4>
-        <ul class="step-list">
-          <li>
-            <div class="step-num">1</div>
-            <div>
-              <strong>الـ Headline المقترح:</strong><br>
-              <code style="color:#f59e0b;font-size:0.85rem;">CEO & Founder at UMI Group | Exhibition Stand Design & Build Pioneer in Dubai | Helping Brands Stand Out at GITEX, Gulfood & ADNEC</code>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">2</div>
-            <div>
-              <strong>قسم نبذة عني (About Narrative):</strong><br>
-              <span class="ar-only">قصة 20 عاماً من تأسيس UMI Group والتحول لأبرز مصنع أجنحة معارض بدبي، مع التركيز على الـ ROI والدقة الهندسة 100% بين الـ 3D والواقع.</span>
-              <span class="en-only">20-year story of building UMI Group into Dubai's premier exhibition stand manufacturer, focusing on ROI and 100% 3D-to-real precision.</span>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">3</div>
-            <div>
-              <strong>قسم العناصر المميزة (Featured Section):</strong><br>
-              <span class="ar-only">تثبيت أفضل فيديو Reel (مقارنة 3D والجناح الحقيقي لشرطة دبي) + رابط الموقع الخاص بطلب الاستشارات.</span>
-              <span class="en-only">Pinning top 3D vs Real Life stand build video (Dubai Police) + Direct Consultation link.</span>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">4</div>
-            <div>
-              <strong>صورة الغلاف (Banner):</strong><br>
-              <span class="ar-only">تصميم بنر بدقة عالية يظهر الأستاذ فراس نصر أمام جناح ضخم ين تحمل شعار UMI Group وعملائنا الكبار.</span>
-              <span class="en-only">High-res branded banner showing CEO Firas Nasr with UMI Group logo & major client badges.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Instagram Optimization -->
-      <div class="list-box">
-        <h4><i class="fa-brands fa-instagram" style="color:#e91e8c;"></i> <span class="ar-only">تحديث حساب Instagram الرسمي</span><span class="en-only">Instagram Profile Setup</span></h4>
-        <ul class="step-list">
-          <li>
-            <div class="step-num">1</div>
-            <div>
-              <strong>الـ Bio المقترح:</strong><br>
-              <code style="color:#e91e8c;font-size:0.85rem;">CEO @umigroup.ae 🏛️<br>20+ Yrs Exhibition Stand Design & Build in Dubai 🇦🇪<br>Transforming 3D Renders into VIP Expo Booths<br>📩 DM "DESIGN" for Free Quote</code>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">2</div>
-            <div>
-              <strong>هيكلة الـ Highlights المثالية:</strong><br>
-              <span class="ar-only">
-                • 🏆 <strong>Awards & VIPs:</strong> الصور واللقاءات الفاخرة.<br>
-                • 🎬 <strong>Behind The Scenes:</strong> فيديوهات المصنع والمهندسين.<br>
-                • 📐 <strong>3D vs Built:</strong> مقارنات التصميم بالواقع.<br>
-                • 💡 <strong>CEO Tips:</strong> نصائح المعارض والـ ROI.
-              </span>
-              <span class="en-only">
-                • 🏆 <strong>Awards & VIPs:</strong> High-profile meetings.<br>
-                • 🎬 <strong>Behind The Scenes:</strong> Factory & engineering.<br>
-                • 📐 <strong>3D vs Built:</strong> Design-to-reality comparison.<br>
-                • 💡 <strong>CEO Tips:</strong> Expo strategy advice.
-              </span>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">3</div>
-            <div>
-              <strong>تثبيت 3 منشورات بأعلى الحساب (Pinned Posts):</strong><br>
-              <span class="ar-only">1. فيديو التعريف بالأستاذ فراس نصر ورؤية UMI. <br>2. فيديو جناح شرطة دبي / ديوا. <br>3. دليل أخطاء المعارض.</span>
-              <span class="en-only">1. Intro video of CEO Firas & UMI Vision. <br>2. Dubai Police/DEWA stand video. <br>3. Expo Mistakes guide.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECTION 2: READY TO PUBLISH POSTS LIBRARY -->
-  <div class="glass-panel">
-    <div class="section-header">
-      <div class="section-icon" style="background:rgba(233,30,140,0.15);color:#e91e8c;"><i class="fa-solid fa-pen-nib"></i></div>
-      <div>
-        <div class="section-sub"><span class="ar-only">المكتبة الجاهزة</span><span class="en-only">Content Library</span></div>
-        <div class="section-title"><span class="ar-only">مكتبة المنشورات الجاهزة للنشر للأستاذ فراس نصر</span><span class="en-only">Ready-to-Publish Posts for CEO Firas Nasr</span></div>
-      </div>
-    </div>
-
-    <!-- POST 1 -->
-    <div class="post-card">
-      <div class="post-header">
-        <span class="post-num">المنشور الأول — Thought Leadership (Carousel / Article)</span>
-        <span class="post-platform"><i class="fa-brands fa-linkedin"></i> LinkedIn & Instagram</span>
-      </div>
-      <div class="post-title">
-        <span class="ar-only">عنوان المنشور: "5 أخطاء قاتلة تُكلف الشركات آلاف الدولارات في تصميم أجنحة المعارض بدبي"</span>
-        <span class="en-only">Title: "5 Fatal Mistakes Costing Brands Thousands in Dubai Exhibition Stand Design"</span>
-      </div>
-      <div class="copy-box" id="copy-post-1">
-<span class="ar-only">خلال 20 عاماً من إدارة وتأسيس UMI Group في دبي، شفت مئات الشركات بتدفع ميزانيات ضخمة للمشاركة في معارض زي GITEX و Gulfood و Arab Health.. لكن للأسف، أغلبهم بيكرروا 5 أخطاء قاتلة بتقلل من عائد استثمارهم (ROI):
-
-1️⃣ التركيز على الشكل وإهمال مسار حركة الزائر (Traffic Flow inside booth).
-2️⃣ الاعتماد على تصميمات 3D براقة غير قابلة للتنفيذ المالي أو اللوجستي على أرض الواقع.
-3️⃣ إهمال إضاءة المنتج الرئيسية والتركيز على الإضاءة العامة فقط.
-4️⃣ عدم وجود مساحة مخصصة للاجتماعات السريعة وحفظ العقود (VIP Meeting Area).
-5️⃣ اختيار مواد بناء ثقيلة تزود تكلفة النقل والتجميع دون فائدة معمارية.
-
-💡 في UMI Group، فلسفتنا من 2005 قائمة على مطابقة الـ 3D Render مع الواقع بنسبة 100% وتصنيع كل جزء داخل مصنعنا بدبي لضمان أعلى جودة بأقل وقت تسليم.
-
-شاركوني في التعليقات: إيه أكبر تحدي واجهكم أثناء التجهيز لمعرضكم الأخير؟
-
-#ExhibitionDesign #DubaiBusiness #GITEX #UMIGroup #FirasNasr #ThoughtLeadership #DubaiExhibitions</span>
-<span class="en-only">Over 20 years of founding and leading UMI Group in Dubai, I’ve seen hundreds of global brands spend massive budgets at GITEX, Gulfood & Arab Health—only to repeat 5 fatal mistakes that ruin their ROI:
-
-1️⃣ Focusing purely on aesthetics while ignoring attendee traffic flow.
-2️⃣ Approving flashy 3D renders that are impossible or overpriced to build on site.
-3️⃣ Neglecting focused product lighting in favor of generic ambient lights.
-4️⃣ Omitting a dedicated quiet area for high-value VIP deal negotiations.
-5️⃣ Using overly heavy materials that inflate transport costs without adding design value.
-
-💡 At UMI Group, our core philosophy since 2005 is delivering 100% 3D-to-real accuracy fabricated directly in our Dubai facility.
-
-What was the biggest challenge you faced during your last exhibition setup? Comment below!
-
-#ExhibitionDesign #DubaiBusiness #GITEX #UMIGroup #FirasNasr #ThoughtLeadership #DubaiExhibitions</span>
-      </div>
-      <button class="copy-btn" onclick="copyText('copy-post-1')"><i class="fa-solid fa-copy"></i> <span class="ar-only">نسخ النص الجاهز</span><span class="en-only">Copy Post Content</span></button>
-    </div>
-
-    <!-- POST 2 -->
-    <div class="post-card">
-      <div class="post-header">
-        <span class="post-num">المنشور الثاني — Video Reel / Script (كلام الأستاذ فراس بالفيديو)</span>
-        <span class="post-platform"><i class="fa-brands fa-instagram"></i> Instagram Reel & LinkedIn</span>
-      </div>
-      <div class="post-title">
-        <span class="ar-only">سكربت الفيديو: "سر الـ 48 ساعة والتطابق 100% بين الـ 3D والواقع في UMI Group"</span>
-        <span class="en-only">Video Script: "The 48-Hour Miracle & 100% 3D Precision at UMI Group"</span>
-      </div>
-      <div class="copy-box" id="copy-post-2">
-<span class="ar-only">🎬 [مشهد البداية: الأستاذ فراس نصر يتحدث من داخل أرض المعرض أو مصنع UMI وتظهر خلفه مجسمات الأجنحة]
-
-🗣️ "لما عميل بييجي لـ UMI Group بطلب تصميم جناح معارض بدبي، أول كلمة بيقولها لي: (أستاذ فراس، هل اللي في الرسمة الـ 3D هو اللي هستلمه في أرض المعرض فعلاً؟)
-
-إجابتي ديماً بتكون: (مش بس هيستلمه زي الرسمة.. هيستلمه بنفس الخامة والإضاءة وقبل موعد الافتتاح بـ 24 ساعة كمان!)
-
-السر مش في البرامج الفاخرة.. السر في أننا بنصنع كل قطعة في مصنعنا الخاص بدبي، ومهندسينا بيكونوا مع الفنيين من أول قطع الخشب لحد آخر لمشة إضاءة.
-
-ده اللي خلى كبار المؤسسات زي شرطة دبي وديوا وبينانس يثقوا فينا على مدار سنوات."
-
-📌 اكتب كلمة "DESIGN" في التعليقات وهنبعتلك البروفايل الكامل والدليل المجاني لتصميم جناحك القادم!</span>
-<span class="en-only">🎬 [Opening Visual: CEO Firas Nasr speaking inside the UMI factory or on exhibition floor with 3D booth graphics overlay]
-
-🗣️ "When a client approaches UMI Group for an exhibition stand in Dubai, their first question is always: (Firas, will the physical booth actually match this 3D render?)
-
-My answer is always: (Not only will it match 100%, but it will use the exact materials, lighting, and be delivered 24 hours before opening day!)
-
-The secret isn't just software—it's that we fabricate every single element in our own Dubai facility under expert engineering supervision.
-
-That’s why Dubai Police, DEWA, and Binance rely on UMI Group year after year."
-
-📌 Comment "DESIGN" below and we’ll send you our 2026 Portfolio directly to your inbox!</span>
-      </div>
-      <button class="copy-btn" onclick="copyText('copy-post-2')"><i class="fa-solid fa-copy"></i> <span class="ar-only">نسخ سكربت الفيديو</span><span class="en-only">Copy Video Script</span></button>
-    </div>
-
-    <!-- POST 3 -->
-    <div class="post-card">
-      <div class="post-header">
-        <span class="post-num">المنشور الثالث — Case Study & Big Win Story</span>
-        <span class="post-platform"><i class="fa-brands fa-linkedin"></i> LinkedIn Article / Post</span>
-      </div>
-      <div class="post-title">
-        <span class="ar-only">عنوان المنشور: "كيف نفذ فريق UMI جناح شرطة دبي / ديوا تحت ضغط 48 ساعة فقط؟"</span>
-        <span class="en-only">Title: "How UMI Group Built Dubai Police / DEWA Booth Under 48-Hour Deadline"</span>
-      </div>
-      <div class="copy-box" id="copy-post-3">
-<span class="ar-only">في عالم المعارض بدبي، الوقت مش مجرد عنصر.. الوقت هو الفارق بين النجاح الكامل أو الخسارة المادية والمعنوية.
-
-في أحد أكبر المعارض الدولية بدبي، تواصلت معنا جهة كبرى بعد تعثر المقاول السابق، وكان المتبقي على حفل الافتتاح أقل من 48 ساعة فقط لبناء جناح مخصص على مساحة ضخمة!
-
-تحدي حقيقي لفريق UMI Group:
-أكثر من 20 مهندس وفني عملوا على مدار الساعة داخل مصنعنا بدبي لنقل المخططات وتجميع الخامات والشاشات التفاعلية، وتم تسليم الجناح كاملاً وجاهزاً لاستقبال كبار الشخصيات قبل الافتتاح بساعتين كاملتين.
-
-فخور بفرق عمل UMI Group اللي بيثبتوا كل يوم أن الالتزام والجودة مش مجرد شعار.. ده أسلوب عملنا اليومي.
-
-#UMIGroup #DubaiEvents #DubaiPolice #ExhibitionStand #FirasNasr #Leadership</span>
-<span class="en-only">In the Dubai exhibition industry, time isn't just a factor—it's the line between complete triumph and total failure.
-
-During a major international expo at DWTC, a high-profile client reached out after their contractor dropped out—leaving less than 48 hours before official opening VIP ceremonies!
-
-A true test for UMI Group:
-Over 20 engineers and craftsmen worked non-stop at our Dubai facility to pre-fabricate, transport, assemble, and test interactive lighting. The stand was handed over cleanly 2 hours ahead of schedule.
-
-Immensely proud of our UMI Group team who prove every single day that quality and commitment are non-negotiable standards.
-
-#UMIGroup #DubaiEvents #DubaiPolice #ExhibitionStand #FirasNasr #Leadership</span>
-      </div>
-      <button class="copy-btn" onclick="copyText('copy-post-3')"><i class="fa-solid fa-copy"></i> <span class="ar-only">نسخ النص الجاهز</span><span class="en-only">Copy Post Content</span></button>
-    </div>
-
-  </div>
-
-  <!-- SECTION 3: POSTING ROUTINE & KPIS -->
-  <div class="glass-panel">
-    <div class="section-header">
-      <div class="section-icon" style="background:rgba(16,185,129,0.15);color:#10b981;"><i class="fa-solid fa-calendar-check"></i></div>
-      <div>
-        <div class="section-sub"><span class="ar-only">الجدول الأسبوعي ومؤشرات النجاح</span><span class="en-only">Posting Routine & KPIs</span></div>
-        <div class="section-title"><span class="ar-only">جدول النشر الأسبوعي ومواعيد التفاعل المثالية</span><span class="en-only">Weekly Schedule & KPI Dashboard</span></div>
-      </div>
-    </div>
-
-    <div class="two-grid">
-      <div class="list-box">
-        <h4><i class="fa-solid fa-clock" style="color:#10b981;"></i> <span class="ar-only">جدول المواعيد الأسبوعي المقترح</span><span class="en-only">Weekly Posting Schedule</span></h4>
-        <ul class="step-list">
-          <li>
-            <div class="step-num">الأحد</div>
-            <div><strong>9:00 AM GST:</strong> منشور القيادة الفكرية (Thought Leadership / Carousel) على LinkedIn & IG.</div>
-          </li>
-          <li>
-            <div class="step-num">الثلاثاء</div>
-            <div><strong>5:00 PM GST:</strong> فيديو قصصي Reel (كواليس التصنيع أو فيديو بصوت الأستاذ فراس).</div>
-          </li>
-          <li>
-            <div class="step-num">الخميس</div>
-            <div><strong>10:00 AM GST:</strong> استعراض مشاريع ضخمة وحالات نجاح (Portfolio Showcase & Big Wins).</div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="list-box">
-        <h4><i class="fa-solid fa-chart-line" style="color:#f59e0b;"></i> <span class="ar-only">مؤشرات الأداء المستهدفة (Target KPIs)</span><span class="en-only">Target KPI Metrics</span></h4>
-        <ul class="step-list">
-          <li><div class="step-num">1</div><div><strong>LinkedIn Connection Requests:</strong> زيادة طلبات التواصل من C-Level بدبي بـ 150+ شهرياً.</div></li>
-          <li><div class="step-num">2</div><div><strong>Profile Views:</strong> نمو مشاهدات الحساب بـ +250% خلال أول 60 يوماً.</div></li>
-          <li><div class="step-num">3</div><div><strong>Inbound Inquiries:</strong> تحويل تفاعلات المنشورات لـ 10-20 استفسار مباشر عن مشاريع المعارض.</div></li>
-        </ul>
-      </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:50px;"><span class="ar-only">تم؟</span><span class="en-only">Done?</span></th>
+            <th style="width:180px;"><span class="ar-only">الأسبوع واليوم</span><span class="en-only">Week & Date</span></th>
+            <th style="width:200px;"><span class="ar-only">الجزء (Pillar)</span><span class="en-only">Pillar</span></th>
+            <th style="width:220px;"><span class="ar-only">الهدف من المنشور</span><span class="en-only">Post Goal</span></th>
+            <th><span class="ar-only">فكرة الكرياتيف والسكربت</span><span class="en-only">Creative Concept & Script</span></th>
+            <th style="width:160px;"><span class="ar-only">منصات النشر</span><span class="en-only">Platforms</span></th>
+            <th style="width:100px;"><span class="ar-only">نسخ</span><span class="en-only">Copy</span></th>
+          </tr>
+        </thead>
+        <tbody id="firasChecklistTableBody">
+          <!-- JS Dynamic Population -->
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -477,17 +273,184 @@ Immensely proud of our UMI Group team who prove every single day that quality an
 <footer>
   <div class="footer-logo">UMI GROUP</div>
   <div style="font-size:0.85rem;color:var(--c-dim);margin-top:0.5rem;">
-    <span class="ar-only">استراتيجية البيرسونال براندنج للأستاذ فراس نصر 2026 · جميع الحقوق محفوظة ©</span>
-    <span class="en-only">CEO Firas Nasr Personal Branding Strategy 2026 · All Rights Reserved ©</span>
+    <span class="ar-only">تشيك ليست البيرسونال براندنج للأستاذ فراس نصر 2026 · جميع الحقوق محفوظة ©</span>
+    <span class="en-only">CEO Firas Nasr Personal Branding Checklist 2026 · All Rights Reserved ©</span>
   </div>
 </footer>
 
 <script>
-function copyText(elementId) {
-  const text = document.getElementById(elementId).innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    alert('تم نسخ النص بنجاح! جاهز للنشر مباشرة على الحساب.');
+// 12 Personal Branding (P1) Posts extracted from 36-Post Calendar
+const firasPostsData = [
+  {
+    week_ar: 'الأسبوع 1 - الأحد (2 أغسطس)', week_en: 'Week 1 - Sun (Aug 2)',
+    goal_ar: 'بناء الثقة والقيادة الفكرية', goal_en: 'Building Trust & Thought Leadership',
+    creative_ar: 'فيديو قصير (Reel) للأستاذ فراس نصر يتحدث عن "سر نجاح تواجد UMI في معارض دبي من 2005 حتى 2026، وكيفية التطابق 100% بين الـ 3D والواقع".',
+    creative_en: 'Short Reel by CEO Firas Nasr discussing "The secret behind UMI\'s 20-year success in Dubai exhibitions & 100% 3D-to-real accuracy".',
+    platform: 'LinkedIn & Instagram & FB'
+  },
+  {
+    week_ar: 'الأسبوع 2 - الأحد (9 أغسطس)', week_en: 'Week 2 - Sun (Aug 9)',
+    goal_ar: 'نصائح استراتيجية للشركات', goal_en: 'Strategic Advice for Expo Exhibitors',
+    creative_ar: 'منشور كارسول (Carousel 5 شرائح) بقلم الأستاذ فراس: "5 أخطاء قاتلة تجنبها عند تصميم جناح معرضك بدبي لتجنب ضياع الميزانية".',
+    creative_en: 'Educational Carousel (5 slides) by CEO Firas: "5 Fatal mistakes to avoid in Dubai exhibition stand design to save your budget".',
+    platform: 'LinkedIn & Instagram'
+  },
+  {
+    week_ar: 'الأسبوع 3 - الأحد (16 أغسطس)', week_en: 'Week 3 - Sun (Aug 16)',
+    goal_ar: 'استعراض الرؤية المستقبلية', goal_en: 'Sharing Future Vision & Industry Trends',
+    creative_ar: 'صورة احترافية للأستاذ فراس نصر مع اقتباس (Quote) حول الابتكار في مواد البناء المستدامة وتصميم الأجنحة الذكية.',
+    creative_en: 'High-res Quote Post featuring CEO Firas Nasr on sustainable materials & smart booth architecture trends.',
+    platform: 'LinkedIn & Instagram'
+  },
+  {
+    week_ar: 'الأسبوع 4 - الأحد (23 أغسطس)', week_en: 'Week 4 - Sun (Aug 23)',
+    goal_ar: 'تحليل عائد الاستثمار ROI', goal_en: 'Exhibition Return on Investment (ROI)',
+    creative_ar: 'مقالة تخصصية بقلم الأستاذ فراس نصر: "كيف أحدثت التكنولوجيا ثورة في تصميم المعارض وأصبحت الركن الأساسي لجذب العملاء والشركات؟".',
+    creative_en: 'Specialized LinkedIn Article by CEO Firas: "How technology revolutionized exhibition stand design to maximize B2B ROI".',
+    platform: 'LinkedIn Article & IG Carousel'
+  },
+  {
+    week_ar: 'الأسبوع 5 - الأحد (6 سبتمبر)', week_en: 'Week 5 - Sun (Sep 6)',
+    goal_ar: 'القيادة في المعارض القادمة', goal_en: 'Leadership in Upcoming Expos (GITEX & Gulfood)',
+    creative_ar: 'فيديو الأستاذ فراس نصر يتحدث عن الاستعدادات لمعرض GITEX و Gulfood القادم وكيف تجهز شركتك للتميز بين آلاف العارضين.',
+    creative_en: 'Executive Video Shorts with CEO Firas preparing brands for upcoming GITEX & Gulfood expos in Dubai.',
+    platform: 'LinkedIn & Instagram'
+  },
+  {
+    week_ar: 'الأسبوع 6 - الأحد (13 سبتمبر)', week_en: 'Week 6 - Sun (Sep 13)',
+    goal_ar: 'نصائح اختيار المساحات', goal_en: 'Expert Tips on Stand Location Selection',
+    creative_ar: 'فيديو نصائح الأستاذ فراس: "كيف تختار مكان جناحك داخل قاعة المعرض لضمان أعلى حركة زوار وتفاعل؟".',
+    creative_en: 'Video advice by CEO Firas: "How to choose the prime booth location inside the exhibition hall for max foot traffic".',
+    platform: 'LinkedIn Reel & IG'
+  },
+  {
+    week_ar: 'الأسبوع 7 - الأحد (20 سبتمبر)', week_en: 'Week 7 - Sun (Sep 20)',
+    goal_ar: 'العلاقات الدبلوماسية والشراكات', goal_en: 'Diplomatic Relations & Strategic Partnerships',
+    creative_ar: 'صورة وتغطية لقاء الأستاذ فراس نصر مع الوفود المشاركة بملتقى الاستثمار وتوقيع عقود التصميم الفاخرة.',
+    creative_en: 'Photo coverage featuring CEO Firas Nasr meeting international investment delegations & signing contracts.',
+    platform: 'LinkedIn & Instagram'
+  },
+  {
+    week_ar: 'الأسبوع 8 - الأحد (27 سبتمبر)', week_en: 'Week 8 - Sun (Sep 27)',
+    goal_ar: 'توظيف التكنولوجيا المعمارية', goal_en: 'Smart Screens & AI in Stand Architecture',
+    creative_ar: 'منشور كارسول برأي الأستاذ فراس: "كيف ندمج الذكاء الاصطناعي والشاشات التفاعلية في الأجنحة لزيادة تفاعل الزوار؟".',
+    creative_en: 'Carousel post by CEO Firas: "How to integrate smart interactive screens & AI elements into exhibition stands".',
+    platform: 'LinkedIn & Instagram'
+  },
+  {
+    week_ar: 'الأسبوع 9 - الأحد (4 أكتوبر)', week_en: 'Week 9 - Sun (Oct 4)',
+    goal_ar: 'رسالة شكر ونجاح', goal_en: 'Season 1 Conclusion & Milestone Gratitude',
+    creative_ar: 'فيديو الأستاذ فراس نصر يشكر العملاء بعد ختام الموسم الأول ويستعرض الخطوات القادمة لمستقبل المعارض بدبي.',
+    creative_en: 'Video message by CEO Firas Nasr thanking VIP clients & showcasing upcoming Q4 2026 expansion plans.',
+    platform: 'LinkedIn & Instagram'
+  },
+  {
+    week_ar: 'الأسبوع 10 - الأحد (11 أكتوبر)', week_en: 'Week 10 - Sun (Oct 11)',
+    goal_ar: 'الريادة في الاقتصاد المستدام', goal_en: 'Sustainability & Eco-Friendly Architecture',
+    creative_ar: 'مقالة للأستاذ فراس حول دور UMI Group في تقديم أجنحة صديقة للبيئة قابلة للإعادة الاستخدام لتقليل الهدر.',
+    creative_en: 'Article by CEO Firas on UMI Group\'s eco-friendly reusable booth designs reducing material waste.',
+    platform: 'LinkedIn Article & IG'
+  },
+  {
+    week_ar: 'الأسبوع 11 - الأحد (18 أكتوبر)', week_en: 'Week 11 - Sun (Oct 18)',
+    goal_ar: 'توجيه النصائح الاستراتيجية 2027', goal_en: '2027 Strategic Exhibition Roadmap',
+    creative_ar: 'فيديو قصير للأستاذ فراس نصر يشارك دراسة اتجاهات تصميم أجنحة المعارض القادمة للعام الجديد.',
+    creative_en: 'Short Video by CEO Firas sharing global exhibition design trends and 2027 market predictions.',
+    platform: 'LinkedIn & IG Reel'
+  },
+  {
+    week_ar: 'الأسبوع 12 - الأحد (25 أكتوبر)', week_en: 'Week 12 - Sun (Oct 25)',
+    goal_ar: 'ملخص الربع الأول 2026', goal_en: 'Q1 2026 Summary & Future Booking Call',
+    creative_ar: 'مقالة ملخص الربع السنوي للأستاذ فراس نصر وتوجيه الدعوة لحجز أجنحة المعارض القادمة لضمان موعد التصنيع.',
+    creative_en: 'Quarterly summary article by CEO Firas Nasr inviting brands to book upcoming exhibition stands early.',
+    platform: 'LinkedIn Article & IG'
+  }
+];
+
+// Saved State from LocalStorage
+const savedFirasChecklist = JSON.parse(localStorage.getItem('umi_firas_checklist') || '{}');
+
+function renderFirasChecklist() {
+  const tbody = document.getElementById('firasChecklistTableBody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+
+  const isEn = document.documentElement.getAttribute('lang') === 'en';
+
+  firasPostsData.forEach((post, index) => {
+    const isChecked = savedFirasChecklist[index] ? 'checked' : '';
+    const rowClass = isChecked ? 'completed-row' : '';
+
+    const weekStr = isEn ? post.week_en : post.week_ar;
+    const goalStr = isEn ? post.goal_en : post.goal_ar;
+    const creativeStr = isEn ? post.creative_en : post.creative_ar;
+    const pillarStr = isEn ? '1. Personal Branding (CEO Firas)' : '1. البيرسونال براند (الأستاذ فراس)';
+
+    const tr = document.createElement('tr');
+    tr.className = rowClass;
+    tr.id = `firas-row-${index}`;
+    tr.innerHTML = `
+      <td>
+        <label class="chk-container">
+          <input type="checkbox" onchange="toggleFirasCheck(${index}, this)" ${isChecked}>
+          <span class="checkmark"></span>
+        </label>
+      </td>
+      <td><strong>${weekStr}</strong></td>
+      <td><span class="pillar-badge">${pillarStr}</span></td>
+      <td><span style="font-weight:700;color:var(--c-text);">${goalStr}</span></td>
+      <td style="font-size:0.9rem;line-height:1.6;">${creativeStr}</td>
+      <td><span style="font-size:0.82rem;color:var(--c-muted);font-weight:700;">${post.platform}</span></td>
+      <td>
+        <button class="copy-btn" onclick="copyPostText('${escapeJs(creativeStr)}')"><i class="fa-solid fa-copy"></i> ${isEn ? 'Copy' : 'نسخ'}</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
   });
+
+  updateFirasProgressStats();
+}
+
+function escapeJs(str) {
+  return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+}
+
+function copyPostText(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert('تم نسخ فكرة وسكربت المنشور بنجاح!');
+  });
+}
+
+function toggleFirasCheck(index, checkboxElem) {
+  savedFirasChecklist[index] = checkboxElem.checked;
+  localStorage.setItem('umi_firas_checklist', JSON.stringify(savedFirasChecklist));
+
+  const rowElem = document.getElementById(`firas-row-${index}`);
+  if (rowElem) {
+    if (checkboxElem.checked) rowElem.classList.add('completed-row');
+    else rowElem.classList.remove('completed-row');
+  }
+
+  updateFirasProgressStats();
+}
+
+function updateFirasProgressStats() {
+  const total = firasPostsData.length;
+  let checked = 0;
+  for (let i = 0; i < total; i++) {
+    if (savedFirasChecklist[i]) checked++;
+  }
+
+  const percent = Math.round((checked / total) * 100);
+  const pct = document.getElementById('firasProgressPercent');
+  const bar = document.getElementById('firasProgressBarFill');
+  const comp = document.getElementById('firasCompletedCount');
+  const rem = document.getElementById('firasRemainingCount');
+
+  if (pct) pct.innerText = percent + '%';
+  if (bar) bar.style.width = percent + '%';
+  if (comp) comp.innerText = checked;
+  if (rem) rem.innerText = total - checked;
 }
 
 function setLang(lang) {
@@ -502,23 +465,25 @@ function setLang(lang) {
     document.body.classList.add('en');
     btnEn.classList.add('active');
     btnAr.classList.remove('active');
-    document.title = 'CEO Firas Nasr — Personal Branding Strategy 2026';
+    document.title = 'CEO Firas Nasr — Personal Branding Checklist';
   } else {
     html.setAttribute('lang','ar');
     html.setAttribute('dir','rtl');
     document.body.classList.remove('en');
     btnAr.classList.add('active');
     btnEn.classList.remove('active');
-    document.title = 'استراتيجية البيرسونال براندنج — الأستاذ فراس نصر (CEO)';
+    document.title = 'تشيك ليست البيرسونال براندنج — الأستاذ فراس نصر (CEO)';
   }
 
   document.querySelectorAll('.ar-only').forEach(el => { el.style.display = isEN ? 'none' : 'inline'; });
   document.querySelectorAll('.en-only').forEach(el => { el.style.display = isEN ? 'inline' : 'none'; });
+
+  renderFirasChecklist();
 }
-(function init() {
-  document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
-  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
-})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderFirasChecklist();
+});
 </script>
 </body>
 </html>
