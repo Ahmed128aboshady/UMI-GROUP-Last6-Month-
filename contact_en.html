@@ -125,6 +125,39 @@ nav {
   transition:all 0.3s ease; cursor:pointer; border:none; text-align:center; white-space:normal !important; word-break:break-word !important;
 }
 
+/* CUSTOM BEAUTIFUL WHATSAPP MODAL */
+.umi-wa-modal-overlay {
+  position:fixed; inset:0; z-index:99999;
+  background:rgba(15,23,42,0.7); backdrop-filter:blur(8px);
+  display:none; align-items:center; justify-content:center; padding:1rem;
+}
+.umi-wa-modal-overlay.active { display:flex; }
+.umi-wa-modal-card {
+  background:#fff; border-radius:20px; padding:1.75rem 1.25rem;
+  max-width:400px; width:100%; text-align:center; position:relative;
+  box-shadow:0 25px 50px rgba(0,0,0,0.25);
+  animation:popIn 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+.umi-wa-modal-close {
+  position:absolute; top:12px; right:16px; background:none; border:none;
+  font-size:1.5rem; font-weight:bold; color:#94a3b8; cursor:pointer;
+}
+.umi-wa-modal-icon {
+  width:56px; height:56px; border-radius:50%;
+  background:rgba(16,185,129,0.15); color:#10b981;
+  font-size:1.8rem; display:flex; align-items:center; justify-content:center;
+  margin:0 auto 0.85rem;
+}
+.umi-wa-modal-title { font-size:1.2rem; font-weight:900; color:#0f172a; margin-bottom:0.3rem; }
+.umi-wa-modal-desc { font-size:0.82rem; color:#475569; font-weight:600; margin-bottom:1rem; }
+.umi-wa-modal-submit-btn {
+  width:100%; padding:0.8rem 1rem; border:none; border-radius:10px;
+  background:linear-gradient(135deg,#34d399 0%,#10b981 100%); color:#fff;
+  font-weight:900; font-size:0.9rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:0.4rem;
+  box-shadow:0 6px 18px rgba(16,185,129,0.3);
+}
+
 /* SUCCESS MODAL */
 .modal-overlay {
   position:fixed; inset:0; z-index:999; background:rgba(15,23,42,0.6); backdrop-filter:blur(8px);
@@ -243,7 +276,7 @@ footer { text-align:center; padding:1.75rem 1rem 1.25rem; border-top:1px solid #
         <div class="whatsapp-desc">
           Chat instantly on WhatsApp with our Dubai Account Manager for immediate support.
         </div>
-        <button onclick="handleWhatsAppClick(event)" class="whatsapp-btn">
+        <button type="button" onclick="openWaModal()" class="whatsapp-btn">
           <i class="fa-brands fa-whatsapp"></i>
           <span>Start Instant WhatsApp Chat</span>
         </button>
@@ -294,6 +327,22 @@ footer { text-align:center; padding:1.75rem 1rem 1.25rem; border-top:1px solid #
   </div>
 
 </div><!-- /container -->
+
+<!-- CUSTOM BEAUTIFUL WHATSAPP POPUP MODAL -->
+<div class="umi-wa-modal-overlay" id="umiWaModal">
+  <div class="umi-wa-modal-card">
+    <button type="button" class="umi-wa-modal-close" onclick="closeWaModal()">&times;</button>
+    <div class="umi-wa-modal-icon">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="umi-wa-modal-title">Connect Directly on WhatsApp</div>
+    <div class="umi-wa-modal-desc">Enter your Phone / WhatsApp number for priority dedicated consultation:</div>
+    <input type="tel" id="umiWaModalPhone" class="form-input" placeholder="e.g. +971 50 123 4567" style="margin-bottom:1rem;text-align:center;font-size:0.95rem;">
+    <button type="button" class="umi-wa-modal-submit-btn" onclick="submitWaModalAndOpen()">
+      <i class="fa-brands fa-whatsapp"></i> Continue to WhatsApp Chat
+    </button>
+  </div>
+</div>
 
 <!-- SUCCESS MODAL -->
 <div class="modal-overlay" id="successModal">
@@ -360,19 +409,36 @@ function handleFormSubmit(e) {
   });
 }
 
-function handleWhatsAppClick(e) {
-  e.preventDefault();
+function openWaModal() {
+  document.getElementById("umiWaModal").classList.add("active");
+  setTimeout(function() {
+    var phoneInput = document.getElementById("umiWaModalPhone");
+    if (phoneInput) phoneInput.focus();
+  }, 100);
+}
 
-  // 📲 Smart Phone Prompt: Asks user for phone number to log into Google Sheet instead of N/A
-  var userPhone = prompt("📲 Please enter your Phone / WhatsApp Number for priority dedicated support:", "");
-  var finalPhone = (userPhone && userPhone.trim() !== "") ? userPhone.trim() : "Direct WhatsApp Click";
+function closeWaModal() {
+  document.getElementById("umiWaModal").classList.remove("active");
+}
 
-  const whatsappUrl = "https://wa.me/971501151453?text=" + encodeURIComponent("Hi UMI Group, I need a 3D exhibition stand design & quote in Dubai. My phone number is: " + finalPhone);
+function submitWaModalAndOpen() {
+  var phoneInput = document.getElementById("umiWaModalPhone");
+  var userPhone = phoneInput ? phoneInput.value.trim() : "";
+  var finalPhone = (userPhone !== "") ? userPhone : "Direct WhatsApp Click";
 
+  var whatsappUrl = "https://wa.me/971501151453?text=" + encodeURIComponent("Hi UMI Group, I need a 3D exhibition stand design & quote in Dubai. My phone number is: " + finalPhone);
+
+  // 1️⃣ Direct user action click -> Open WhatsApp immediately (prevents popup blocker!)
+  var waWin = window.open(whatsappUrl, '_blank');
+  if (!waWin || waWin.closed || typeof waWin.closed === 'undefined') {
+    window.location.href = whatsappUrl;
+  }
+
+  // 2️⃣ Background fetch to Google Sheet with captured phone number
   const payload = {
     name: "WhatsApp Lead",
     company: "N/A",
-    phone: finalPhone, // 👈 Phone number is logged directly into Google Sheet!
+    phone: finalPhone,
     email: "N/A",
     message: "Initiated WhatsApp Chat from Landing Page",
     source: "whatsapp_button_click_en",
@@ -386,7 +452,7 @@ function handleWhatsAppClick(e) {
     body: JSON.stringify(payload)
   }).catch(err => console.warn("WhatsApp Google Sheet log error:", err));
 
-  window.open(whatsappUrl, '_blank');
+  closeWaModal();
 }
 
 function closeModal() {
