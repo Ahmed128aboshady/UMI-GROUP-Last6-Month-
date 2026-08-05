@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4HHK85G');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Get Free 3D Stand Design & Quote — UMI Group Dubai</title>
@@ -180,6 +188,11 @@ footer { text-align:center; padding:1.75rem 1rem 1.25rem; border-top:1px solid #
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4HHK85G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div class="bg-canvas"></div>
 
 <!-- NAVBAR -->
@@ -395,6 +408,7 @@ function handleFormSubmit(e) {
     ua: navigator.userAgent
   };
 
+  // 1️⃣ Send to Google Sheet
   fetch(GOOGLE_WEB_APP_URL, {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=UTF-8" },
@@ -408,6 +422,16 @@ function handleFormSubmit(e) {
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Send Request & Claim Free 3D Design Now</span>';
     }
+    
+    // 🟢 2️⃣ Fire GTM dataLayer Event (form_submission)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'form_submission',
+      'form_name': 'Free 3D Stand Design Form',
+      'exhibition_name': exhibition,
+      'lead_type': 'B2B Form Lead'
+    });
+
     document.getElementById('successModal').classList.add('active');
     document.getElementById('leadForm').reset();
   });
@@ -434,28 +458,27 @@ function submitWaModalAndOpen(e) {
   var userPhone = phoneInput ? phoneInput.value.trim() : "";
   var errBox = document.getElementById("umiWaModalErr");
 
-  // 🛑 REQUIRE PHONE NUMBER FIRST! Stop redirect if empty!
   if (!userPhone || userPhone === "") {
     if (errBox) errBox.style.display = "block";
     if (phoneInput) phoneInput.focus();
-    return false; // STOP HERE!
+    return false;
   }
 
   if (errBox) errBox.style.display = "none";
 
   var whatsappUrl = "https://wa.me/971501151453?text=" + encodeURIComponent("Hi UMI Group, I need a 3D exhibition stand design & quote in Dubai. My phone number is: " + userPhone);
 
-  // 1️⃣ Direct user action -> Open WhatsApp immediately with the captured phone number
+  // 1️⃣ Direct user action -> Open WhatsApp immediately
   var waWin = window.open(whatsappUrl, '_blank');
   if (!waWin || waWin.closed || typeof waWin.closed === 'undefined') {
     window.location.href = whatsappUrl;
   }
 
-  // 2️⃣ Background fetch to Google Sheet with captured phone number
+  // 2️⃣ Background fetch to Google Sheet
   const payload = {
     name: "WhatsApp Lead",
     company: "N/A",
-    phone: userPhone, // 👈 Captured phone number logged to Google Sheet!
+    phone: userPhone,
     email: "N/A",
     message: "Initiated WhatsApp Chat from Landing Page",
     source: "whatsapp_button_click_en",
@@ -468,6 +491,14 @@ function submitWaModalAndOpen(e) {
     headers: { "Content-Type": "text/plain;charset=UTF-8" },
     body: JSON.stringify(payload)
   }).catch(err => console.warn("WhatsApp Google Sheet log error:", err));
+
+  // 🟢 3️⃣ Fire GTM dataLayer Event (whatsapp_click)
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'whatsapp_click',
+    'lead_phone': userPhone,
+    'lead_type': 'Instant WhatsApp Lead'
+  });
 
   closeWaModal();
 }
