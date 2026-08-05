@@ -144,7 +144,7 @@ nav {
   display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;
   background:var(--grad-green); color:#fff; padding:0.8rem 1.5rem; border-radius:12px;
   text-decoration:none; font-weight:800; font-size:0.95rem; width:100%; box-shadow:0 6px 20px rgba(16,185,129,0.25);
-  transition:var(--transition);
+  transition:var(--transition); cursor:pointer;
 }
 .whatsapp-btn:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(16,185,129,0.35); }
 
@@ -301,11 +301,11 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
           <span class="ar-only">تواصل مباشرة على الواتساب مع مدير حسابات العملاء بدبي لاستلام التفاصيل فوراً.</span>
           <span class="en-only">Chat instantly on WhatsApp with our Dubai Account Manager for immediate support.</span>
         </div>
-        <a href="https://wa.me/971501234567?text=Hi,%20I%20need%20a%20quote%20and%203D%20exhibition%20stand%20design%20in%20Dubai" target="_blank" class="whatsapp-btn">
+        <button onclick="handleWhatsAppClick(event)" class="whatsapp-btn">
           <i class="fa-brands fa-whatsapp"></i>
           <span class="ar-only">محادثة واتساب فورية مباشرة</span>
           <span class="en-only">Start Instant WhatsApp Chat</span>
-        </a>
+        </button>
       </div>
 
       <!-- PROOF CARD -->
@@ -365,8 +365,8 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
       <span class="en-only">Request Received Successfully! 🎉</span>
     </div>
     <div class="modal-desc">
-      <span class="ar-only">شكراً لتواصلك معنا. سيقوم مهندس التصميم ومدير المشاريع في UMI Group بالتواصل معك خلال ساعتين لإرسال التصميم الـ 3D والكتالوج.</span>
-      <span class="en-only">Thank you! Our UMI Group lead design engineer will contact you within 2 hours with your free 3D render proposal.</span>
+      <span class="ar-only">شكراً لتواصلك معنا. تم تسجيل بياناتك في الشيت وسيتم التواصل معك من مدير المشاريع خلال ساعتين.</span>
+      <span class="en-only">Thank you! Your request is logged to our Google Sheet and our lead design engineer will contact you within 2 hours.</span>
     </div>
     <button class="modal-close-btn" onclick="closeModal()">
       <span class="ar-only">موافق</span>
@@ -384,10 +384,80 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
 </footer>
 
 <script>
+// ✅ Google Apps Script Web App Endpoint for Google Sheet Logging
+const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxUrkhqhXz_FVrgPxkorSayGcqzM9tHNMIYaHUzmUR0ZOY3Zsi71Ge-D0OmcIDpyO4mfQ/exec";
+
+// 1. Form Submit Handler (Logs Form Submissions to Google Sheet)
 function handleFormSubmit(e) {
   e.preventDefault();
-  document.getElementById('successModal').classList.add('active');
-  document.getElementById('leadForm').reset();
+  const submitBtn = document.querySelector('.form-submit-btn');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+  }
+
+  const name = document.getElementById('input-name')?.value || '';
+  const company = document.getElementById('input-company')?.value || '';
+  const phone = document.getElementById('input-phone')?.value || '';
+  const expoSelect = document.getElementById('select-expo');
+  const exhibition = expoSelect ? expoSelect.options[expoSelect.selectedIndex].text : '';
+
+  const payload = {
+    name: name,
+    company: company,
+    phone: phone,
+    email: "N/A",
+    message: "Requested Free 3D Stand Design for Exhibition: " + exhibition,
+    source: "form_submit_landing_page",
+    page: location.href,
+    ua: navigator.userAgent
+  };
+
+  fetch(GOOGLE_WEB_APP_URL, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=UTF-8" },
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.text())
+  .then(data => {
+    console.log("Logged Form to Google Sheet:", data);
+  })
+  .catch(err => console.warn("Google Sheet log error:", err))
+  .finally(() => {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span class="ar-only">أرسل الطلب واحصل على التصميم المجاني الان</span><span class="en-only">Send Request & Claim Free 3D Design Now</span>';
+    }
+    document.getElementById('successModal').classList.add('active');
+    document.getElementById('leadForm').reset();
+  });
+}
+
+// 2. WhatsApp Click Handler (Logs WhatsApp Clicks to Google Sheet + Opens WhatsApp)
+function handleWhatsAppClick(e) {
+  e.preventDefault();
+  const whatsappUrl = "https://wa.me/971501151453?text=" + encodeURIComponent("Hi UMI Group, I need a 3D exhibition stand design & quote in Dubai.");
+
+  const payload = {
+    name: "WhatsApp Click Lead",
+    company: "N/A",
+    phone: "N/A",
+    email: "N/A",
+    message: "Clicked Instant WhatsApp Chat Button",
+    source: "whatsapp_button_click",
+    page: location.href,
+    ua: navigator.userAgent
+  };
+
+  // Fire and forget fetch to Google Sheet
+  fetch(GOOGLE_WEB_APP_URL, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=UTF-8" },
+    body: JSON.stringify(payload)
+  }).catch(err => console.warn("WhatsApp Google Sheet log error:", err));
+
+  // Open WhatsApp immediately
+  window.open(whatsappUrl, '_blank');
 }
 
 function closeModal() {
