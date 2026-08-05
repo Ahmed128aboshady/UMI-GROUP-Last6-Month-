@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة تحسين صفحة التواصل واختبارات التحويل CRO — UMI Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --c-brand:     #e91e8c;
+  --c-gold:      #d97706;
+  --c-gold-light:#f59e0b;
+  --c-blue:      #2563eb;
+  --c-purple:    #7c3aed;
+  --c-green:     #10b981;
+  --c-red:       #ef4444;
+  --c-bg:        #f8fafc;
+  --c-card:      #ffffff;
+  --c-card-sub:  #f1f5f9;
+  --c-border:    #e2e8f0;
+  --c-text:      #0f172a;
+  --c-muted:     #475569;
+  --c-dim:       #94a3b8;
+  --grad-brand:  linear-gradient(135deg,#ff4db8 0%,#e91e8c 50%,#c2185b 100%);
+  --grad-gold:   linear-gradient(135deg,#fbbf24 0%,#d97706 100%);
+  --grad-blue:   linear-gradient(135deg,#60a5fa 0%,#2563eb 100%);
+  --grad-green:  linear-gradient(135deg,#34d399 0%,#10b981 100%);
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --shadow-card: 0 10px 30px rgba(15,23,42,0.06);
+  --shadow-hover:0 15px 40px rgba(233,30,140,0.12);
+  --transition:  all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Cairo', sans-serif;
+  background:var(--c-bg);
+  color:var(--c-text);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body.en { font-family:'Inter', sans-serif; }
+
+.bg-canvas { position:fixed; inset:0; z-index:0; pointer-events:none; }
+.bg-canvas::before {
+  content:''; position:absolute; inset:-50%;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 10%, rgba(233,30,140,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(217,119,6,0.06) 0%, transparent 55%);
+}
+
+.container { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:0 1.5rem 4rem; }
+
+/* NAVBAR */
+nav {
+  position:sticky; top:0; z-index:100; padding:1rem 2rem;
+  background:rgba(255,255,255,0.92); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--c-border);
+  display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  box-shadow:0 4px 20px rgba(0,0,0,0.03);
+}
+.nav-brand { display:flex; align-items:center; gap:1rem; }
+.nav-logo { height:44px; width:auto; }
+.nav-title { font-size:1.3rem; font-weight:900; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.nav-sub { font-size:0.7rem; color:var(--c-muted); letter-spacing:2px; font-weight:700; }
+
+.lang-toggle { display:flex; background:var(--c-card-sub); border:1px solid var(--c-border); border-radius:50px; padding:3px; }
+.lang-btn { padding:0.4rem 1.1rem; border:none; background:transparent; color:var(--c-muted); font-weight:700; font-size:0.85rem; cursor:pointer; border-radius:50px; font-family:inherit; }
+.lang-btn.active { background:var(--grad-brand); color:#fff; box-shadow:0 4px 14px rgba(233,30,140,0.3); }
+
+.back-btn { display:inline-flex; align-items:center; gap:0.5rem; background:var(--c-card); border:1px solid var(--c-border); color:var(--c-text); padding:0.45rem 1.1rem; border-radius:12px; text-decoration:none; font-weight:700; font-size:0.88rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+.back-btn:hover { background:rgba(233,30,140,0.05); border-color:var(--c-brand); color:var(--c-brand); }
+
+/* HERO */
+.hero { text-align:center; padding:3.5rem 1rem 2.5rem; }
+.hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(233,30,140,0.08); border:1px solid rgba(233,30,140,0.2); color:var(--c-brand); padding:0.5rem 1.4rem; border-radius:50px; font-size:0.88rem; font-weight:800; margin-bottom:1.25rem; }
+.hero-title { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:900; line-height:1.3; margin-bottom:0.75rem; color:var(--c-text); }
+.hero-title .grad { background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero-desc { font-size:1.05rem; color:var(--c-muted); max-width:800px; margin:0 auto; font-weight:600; }
+
+/* AUDIT CARDS GRID */
+.audit-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2.5rem; }
+@media(max-width:768px) { .audit-grid { grid-template-columns:1fr; } }
+
+.audit-card { background:var(--c-card); border:1px solid var(--c-border); border-radius:var(--radius-xl); padding:1.75rem; box-shadow:var(--shadow-card); }
+.audit-card.red-border { border-top:4px solid var(--c-red); }
+.audit-card.green-border { border-top:4px solid var(--c-green); }
+
+.audit-title { font-size:1.15rem; font-weight:900; color:var(--c-text); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
+
+.audit-list { list-style:none; display:flex; flex-direction:column; gap:0.85rem; font-size:0.9rem; color:var(--c-muted); font-weight:600; }
+.audit-list li { display:flex; gap:0.6rem; align-items:start; }
+.audit-list i { font-size:1rem; margin-top:3px; flex-shrink:0; }
+
+/* STRATEGY GLASS PANELS */
+.glass-panel { background:var(--c-card); border:1px solid var(--c-border); border-radius:var(--radius-2xl); padding:2.5rem; margin-bottom:2rem; box-shadow:var(--shadow-card); }
+.section-header { display:flex; align-items:center; gap:1rem; margin-bottom:1.75rem; }
+.section-icon { width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.35rem; flex-shrink:0; }
+.section-title { font-size:1.4rem; font-weight:900; color:var(--c-text); }
+.section-sub { font-size:0.8rem; color:var(--c-brand); font-weight:800; text-transform:uppercase; letter-spacing:2px; }
+
+/* STEPS LIST */
+.steps-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; }
+.step-box { background:var(--c-card-sub); border:1px solid var(--c-border); border-radius:var(--radius-xl); padding:1.5rem; }
+.step-num { width:32px; height:32px; border-radius:50%; background:var(--grad-brand); color:#fff; font-weight:900; font-size:0.85rem; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem; box-shadow:0 4px 10px rgba(233,30,140,0.25); }
+.step-box-title { font-size:1.05rem; font-weight:800; color:var(--c-text); margin-bottom:0.4rem; }
+.step-box-desc { font-size:0.88rem; color:var(--c-muted); font-weight:600; line-height:1.6; }
+
+/* LIVE LANDING PAGE CTA BANNER */
+.cta-banner {
+  background:linear-gradient(135deg, rgba(233,30,140,0.08), rgba(217,119,6,0.06));
+  border:2px solid rgba(233,30,140,0.25); border-radius:var(--radius-2xl);
+  padding:2.5rem; text-align:center; margin-top:2rem; box-shadow:var(--shadow-card);
+}
+.cta-banner h3 { font-size:1.6rem; font-weight:900; color:var(--c-text); margin-bottom:0.6rem; }
+.cta-banner p { font-size:0.98rem; color:var(--c-muted); font-weight:600; max-width:700px; margin:0 auto 1.5rem; }
+.cta-link-btn {
+  display:inline-flex; align-items:center; gap:0.6rem; background:var(--grad-brand);
+  color:#fff; padding:0.9rem 2rem; border-radius:14px; text-decoration:none;
+  font-weight:900; font-size:1.05rem; box-shadow:0 8px 24px rgba(233,30,140,0.3); transition:var(--transition);
+}
+.cta-link-btn:hover { transform:scale(1.04); box-shadow:0 12px 30px rgba(233,30,140,0.4); }
+
+footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c-border); margin-top:3rem; background:#fff; }
+.footer-logo { font-size:1.6rem; font-weight:900; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+.en-only { display:none; }
+.ar-only { display:inline; }
+</style>
+</head>
+
+<body>
+<div class="bg-canvas"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <img src="logo.png" alt="UMI" class="nav-logo" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 80 40\'><rect width=\'80\' height=\'40\' rx=\'8\' fill=\'%23e91e8c\'/><text x=\'40\' y=\'26\' fill=\'white\' font-size=\'16\' text-anchor=\'middle\' font-weight=\'bold\'>UMI</text></svg>'">
+    <div>
+      <div class="nav-title">UMI GROUP</div>
+      <div class="nav-sub">CONVERSION RATE OPTIMIZATION (CRO)</div>
+    </div>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">🇸🇦 AR</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+  </div>
+
+  <a href="index.html" class="back-btn">
+    <i class="fa-solid fa-house"></i>
+    <span class="ar-only">الرئيسية</span>
+    <span class="en-only">Home</span>
+  </a>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fa-solid fa-chart-line"></i>
+      <span class="ar-only">خطة تحسين معدل التحويل (CRO Strategy) لعام 2026</span>
+      <span class="en-only">Conversion Rate Optimization Strategy (2026)</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="ar-only">خطة تحويل زوار إعلانات <span class="grad">Google & LinkedIn</span> إلى عملاء محتملين (Leads)</span>
+      <span class="en-only">Converting <span class="grad">Google & LinkedIn Ads Traffic</span> into High-Value B2B Leads</span>
+    </h1>
+    <p class="hero-desc">
+      <span class="ar-only">تحليل الأسباب الجذرية لخروج الزوار من صفحة Contact Us السابقة، واستراتيجية الصفحة الجديدة المصممة لرفع معدل التحويل من 0.5% إلى 8-12%.</span>
+      <span class="en-only">Root cause analysis of drop-offs on old Contact Us page & step-by-step strategy for the new high-converting B2B landing page.</span>
+    </p>
+  </div>
+
+  <!-- AUDIT CARDS -->
+  <div class="audit-grid">
+    <!-- OLD PAGE AUDIT -->
+    <div class="audit-card red-border">
+      <div class="audit-title">
+        <i class="fa-solid fa-circle-xmark" style="color:var(--c-red);"></i>
+        <span class="ar-only">أسباب عدم تسجيل الزوار في الصفحة القديمة (The Drop-off Causes)</span>
+        <span class="en-only">Why Visitors Were Dropping Off (Old Page Audit)</span>
+      </div>
+      <ul class="audit-list">
+        <li>
+          <i class="fa-solid fa-xmark" style="color:var(--c-red);"></i>
+          <span class="ar-only"><strong>غياّب العرض المغري (No Value Hook):</strong> كانت الصفحة تطلب تعبئة نموذج تقليدي دون تقديم حافز مجاني قلق مثل (تصميم 3D مجاني).</span>
+          <span class="en-only"><strong>No High-Value Offer:</strong> Asking visitors to fill a form with no strong hook like "Free 3D Design".</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-xmark" style="color:var(--c-red);"></i>
+          <span class="ar-only"><strong>كثرة الحقول (Form Friction):</strong> وجود أسئلة غير ضرورية تزيد من تردد العميل العاجل.</span>
+          <span class="en-only"><strong>Form Friction:</strong> Asking too many questions created high drop-offs among busy executives.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-xmark" style="color:var(--c-red);"></i>
+          <span class="ar-only"><strong>غياب شارات الثقة (No Social Proof):</strong> عدم وجود شعارات العملاء الكبار (شرطة دبي، ديوا) بجوار زر الإرسال مباشرة.</span>
+          <span class="en-only"><strong>Missing Trust Badges:</strong> Lack of client logos (Dubai Police, DEWA) next to the CTA button.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-xmark" style="color:var(--c-red);"></i>
+          <span class="ar-only"><strong>غياب خيار الواتساب الفوري (No Instant Chat):</strong> صناع القرار في معارض دبي يحتاجون إجابات عاجلة فورية عبر الواتساب.</span>
+          <span class="en-only"><strong>No Instant WhatsApp Option:</strong> Expo decision makers need immediate answers via direct chat.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- NEW PAGE SOLUTION -->
+    <div class="audit-card green-border">
+      <div class="audit-title">
+        <i class="fa-solid fa-circle-check" style="color:var(--c-green);"></i>
+        <span class="ar-only">الحلول المطبقة في الصفحة الجديدة (High-Converting Solutions)</span>
+        <span class="en-only">High-Converting Solutions Implemented</span>
+      </div>
+      <ul class="audit-list">
+        <li>
+          <i class="fa-solid fa-check" style="color:var(--c-green);"></i>
+          <span class="ar-only"><strong>عرض جذاب في المانشيت (Strong Offer):</strong> "احصل على تصميم 3D مجاني + عرض أسعار تفصيلي خلال 24 ساعة!".</span>
+          <span class="en-only"><strong>Magnetic Value Hook:</strong> "Get Free 3D Stand Design & Detailed Quote in 24 Hours".</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-check" style="color:var(--c-green);"></i>
+          <span class="ar-only"><strong>تقليل الحقول لـ 4 فقط (Friction-Free):</strong> الاسم، اسم الشركة، رقم الموبايل/الواتساب، واسم المعرض.</span>
+          <span class="en-only"><strong>Ultra-Low Friction Form:</strong> Reduced to 4 essential fields (Name, Company, Phone/WhatsApp, Expo Name).</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-check" style="color:var(--c-green);"></i>
+          <span class="ar-only"><strong>إبراز الإثباتات والخبرة (Proof Section):</strong> عرض 20+ عاماً خبرة بدبي، 500+ جناح منفّذ، وشعارات كبار العملاء.</span>
+          <span class="en-only"><strong>Prominent Trust Metrics:</strong> 20+ Yrs Dubai Experience, 500+ Builds, Dubai Police & DEWA logos.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-check" style="color:var(--c-green);"></i>
+          <span class="ar-only"><strong>محادثة واتساب مباشرة (Instant WhatsApp CTA):</strong> زر مخصص للتواصل الفوري مع مدير الحسابات للمواعيد العاجلة.</span>
+          <span class="en-only"><strong>Direct WhatsApp Chat Button:</strong> Instant messaging route for urgent B2B exhibition deadlines.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4-STEP CRO EXECUTION BLUEPRINT -->
+  <div class="glass-panel">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(233,30,140,0.1);color:var(--c-brand);"><i class="fa-solid fa-stairs"></i></div>
+      <div>
+        <div class="section-sub"><span class="ar-only">الخطوات التنفيذية</span><span class="en-only">Execution Plan</span></div>
+        <div class="section-title"><span class="ar-only">خطة الربط بين الإعلانات وصفحة التحويل (Ad Alignment)</span><span class="en-only">Google & LinkedIn Ad Campaign Alignment</span></div>
+      </div>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <div class="step-box-title"><span class="ar-only">مطابقة نص الإعلان بالصفحة (Message Match)</span><span class="en-only">Ad-to-Landing Message Match</span></div>
+        <div class="step-box-desc"><span class="ar-only">إعلانات Google & LinkedIn ستعد العميل بـ "تصميم 3D مجاني"، وعند ضغطه يجد نفس العنوان بالضبط في رأس الصفحة لتأكيد الموثوقية.</span><span class="en-only">Ads promise "Free 3D Stand Design", matching the landing page headline word-for-word.</span></div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <div class="step-box-title"><span class="ar-only">تتبع التحويلات (Pixel & Conversion Tracking)</span><span class="en-only">Conversion Pixel Tracking</span></div>
+        <div class="step-box-desc"><span class="ar-only">تركيب Google Ads Tag و LinkedIn Insight Tag لتسجيل كل من يضغط زر Send Request أو زر WhatsApp لتحسين الخوارزميات.</span><span class="en-only">Installing Google Ads Tag & LinkedIn Insight Tag to track form submits & WhatsApp clicks.</span></div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <div class="step-box-title"><span class="ar-only">إعادة الاستهداف الذكي (Retargeting Ads)</span><span class="en-only">Smart Retargeting Ads</span></div>
+        <div class="step-box-desc"><span class="ar-only">الزوار الذين زاروا الصفحة ولم يكملوا التسجيل ستظهر لهم إعلانات Reels على إنستجرام ولينكدان بفيديو الأستاذ فراس نصر لحثهم على العودة.</span><span class="en-only">Show video Reels ads to bounced visitors featuring CEO Firas Nasr inviting them back.</span></div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <div class="step-box-title"><span class="ar-only">الرد الآلي السريع (SLA & Quick Follow-Up)</span><span class="en-only">2-Hour Sales SLA</span></div>
+        <div class="step-box-desc"><span class="ar-only">توجيه الطلبات فوراً لمدير الحسابات للاتصال بالعميل خلال ساعتين فقط لحجز موعد التصميم الـ 3D.</span><span class="en-only">Routing lead notifications to Dubai Account Manager for response within 2 hours.</span></div>
+      </div>
+    </div>
+
+    <!-- CTA BANNER TO LIVE PAGE -->
+    <div class="cta-banner">
+      <h3><span class="ar-only">🚀 الصفحة الجديدة جاهزة ومباشرة الآن!</span><span class="en-only">🚀 The New High-Converting Page is Live!</span></h3>
+      <p><span class="ar-only">تم تصميم وتجهيز صفحة التحويل الجديدة ذات المعدل العالي (contact.html) لتكون الوجهة الرئيسية لإعلانات Google و LinkedIn.</span><span class="en-only">The newly redesigned high-converting landing page (contact.html) is ready for launch.</span></p>
+      <a href="contact.html" target="_blank" class="cta-link-btn">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <span class="ar-only">شاهد وتصفح صفحة التحويل الجديدة (contact.html)</span>
+        <span class="en-only">View Live Conversion Landing Page (contact.html)</span>
+      </a>
+    </div>
+
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="footer-logo">UMI GROUP</div>
+  <div style="font-size:0.85rem;color:var(--c-muted);margin-top:0.5rem;font-weight:700;">
+    <span class="ar-only">خطة تحسين معدل التحويل واختبارات الصفحة — UMI Group دبي 2026 · جميع الحقوق محفوظة ©</span>
+    <span class="en-only">CRO Strategy & Landing Page Optimization Plan — UMI Group Dubai 2026 · All Rights Reserved ©</span>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  const html = document.getElementById('html-root');
+  const btnAr = document.getElementById('btn-ar');
+  const btnEn = document.getElementById('btn-en');
+  const isEN = lang === 'en';
+
+  if (isEN) {
+    html.setAttribute('lang','en');
+    html.setAttribute('dir','ltr');
+    document.body.classList.add('en');
+    btnEn.classList.add('active');
+    btnAr.classList.remove('active');
+    document.title = 'CRO Strategy & Contact Us Optimization — UMI Group';
+  } else {
+    html.setAttribute('lang','ar');
+    html.setAttribute('dir','rtl');
+    document.body.classList.remove('en');
+    btnAr.classList.add('active');
+    btnEn.classList.remove('active');
+    document.title = 'خطة تحسين صفحة التواصل واختبارات التحويل CRO — UMI Group';
+  }
+
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = isEN ? 'none' : 'inline'; });
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = isEN ? 'inline' : 'none'; });
+}
+(function init() {
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+})();
+</script>
+</body>
+</html>

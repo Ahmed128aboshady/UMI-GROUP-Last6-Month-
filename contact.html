@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>احصل على تصميم 3D مجاني وعرض أسعار — UMI Group دبي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --c-brand:     #e91e8c;
+  --c-gold:      #d97706;
+  --c-gold-light:#f59e0b;
+  --c-blue:      #2563eb;
+  --c-green:     #10b981;
+  --c-bg:        #f8fafc;
+  --c-card:      #ffffff;
+  --c-card-sub:  #f1f5f9;
+  --c-border:    #e2e8f0;
+  --c-text:      #0f172a;
+  --c-muted:     #475569;
+  --c-dim:       #94a3b8;
+  --grad-brand:  linear-gradient(135deg,#ff4db8 0%,#e91e8c 50%,#c2185b 100%);
+  --grad-gold:   linear-gradient(135deg,#fbbf24 0%,#d97706 100%);
+  --grad-green:  linear-gradient(135deg,#34d399 0%,#10b981 100%);
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --shadow-card: 0 10px 30px rgba(15,23,42,0.06);
+  --shadow-hover:0 15px 40px rgba(233,30,140,0.12);
+  --transition:  all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'Cairo', sans-serif;
+  background:var(--c-bg);
+  color:var(--c-text);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body.en { font-family:'Inter', sans-serif; }
+
+.bg-canvas { position:fixed; inset:0; z-index:0; pointer-events:none; }
+.bg-canvas::before {
+  content:''; position:absolute; inset:-50%;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 10%, rgba(233,30,140,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(217,119,6,0.06) 0%, transparent 55%);
+}
+
+.container { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:0 1.5rem 4rem; }
+
+/* NAVBAR */
+nav {
+  position:sticky; top:0; z-index:100; padding:1rem 2rem;
+  background:rgba(255,255,255,0.92); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--c-border);
+  display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  box-shadow:0 4px 20px rgba(0,0,0,0.03);
+}
+.nav-brand { display:flex; align-items:center; gap:1rem; }
+.nav-logo { height:44px; width:auto; }
+.nav-title { font-size:1.3rem; font-weight:900; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.nav-sub { font-size:0.7rem; color:var(--c-muted); letter-spacing:2px; font-weight:700; }
+
+.lang-toggle { display:flex; background:var(--c-card-sub); border:1px solid var(--c-border); border-radius:50px; padding:3px; }
+.lang-btn { padding:0.4rem 1.1rem; border:none; background:transparent; color:var(--c-muted); font-weight:700; font-size:0.85rem; cursor:pointer; border-radius:50px; font-family:inherit; }
+.lang-btn.active { background:var(--grad-brand); color:#fff; box-shadow:0 4px 14px rgba(233,30,140,0.3); }
+
+.back-btn { display:inline-flex; align-items:center; gap:0.5rem; background:var(--c-card); border:1px solid var(--c-border); color:var(--c-text); padding:0.45rem 1.1rem; border-radius:12px; text-decoration:none; font-weight:700; font-size:0.88rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+.back-btn:hover { background:rgba(233,30,140,0.05); border-color:var(--c-brand); color:var(--c-brand); }
+
+/* HERO */
+.hero { text-align:center; padding:3rem 1rem 2rem; }
+.hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(233,30,140,0.08); border:1px solid rgba(233,30,140,0.2); color:var(--c-brand); padding:0.5rem 1.4rem; border-radius:50px; font-size:0.88rem; font-weight:800; margin-bottom:1.25rem; }
+.hero-title { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:900; line-height:1.3; margin-bottom:0.75rem; color:var(--c-text); }
+.hero-title .grad { background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero-desc { font-size:1.05rem; color:var(--c-muted); max-width:780px; margin:0 auto; font-weight:600; }
+
+/* MAIN CONVERSION GRID */
+.conversion-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:2.5rem; margin-top:2rem; align-items:start; }
+@media(max-width:992px) { .conversion-grid { grid-template-columns:1fr; } }
+
+/* FORM CARD */
+.form-card {
+  background:var(--c-card); border:2px solid rgba(233,30,140,0.2); border-radius:var(--radius-2xl);
+  padding:2.5rem; box-shadow:0 15px 40px rgba(233,30,140,0.08); position:relative;
+}
+.form-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:6px; background:var(--grad-brand);
+  border-top-left-radius:var(--radius-2xl); border-top-right-radius:var(--radius-2xl);
+}
+.form-header { margin-bottom:1.75rem; text-align:center; }
+.form-title { font-size:1.4rem; font-weight:900; color:var(--c-text); margin-bottom:0.4rem; }
+.form-subtitle { font-size:0.88rem; color:var(--c-muted); font-weight:600; }
+
+.form-group { margin-bottom:1.25rem; }
+.form-label { display:block; font-size:0.88rem; font-weight:800; color:var(--c-text); margin-bottom:0.4rem; }
+.form-input, .form-select, .form-textarea {
+  width:100%; padding:0.85rem 1.1rem; border-radius:12px; border:1px solid var(--c-border);
+  background:#f8fafc; color:var(--c-text); font-family:inherit; font-size:0.92rem; font-weight:600;
+  transition:var(--transition);
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline:none; border-color:var(--c-brand); background:#fff; box-shadow:0 0 0 3px rgba(233,30,140,0.12);
+}
+
+.form-submit-btn {
+  width:100%; padding:1rem 1.5rem; border:none; border-radius:14px; background:var(--grad-brand);
+  color:#fff; font-family:inherit; font-size:1.05rem; font-weight:900; cursor:pointer;
+  transition:var(--transition); box-shadow:0 8px 24px rgba(233,30,140,0.3); display:flex; align-items:center; justify-content:center; gap:0.6rem;
+}
+.form-submit-btn:hover { transform:translateY(-2px); box-shadow:0 12px 30px rgba(233,30,140,0.4); }
+
+.guarantee-text { text-align:center; margin-top:1rem; font-size:0.8rem; color:var(--c-muted); font-weight:700; display:flex; align-items:center; justify-content:center; gap:0.4rem; }
+
+/* TRUST & PROOF SIDEBAR */
+.proof-sidebar { display:flex; flex-direction:column; gap:1.5rem; }
+
+.proof-card { background:var(--c-card); border:1px solid var(--c-border); border-radius:var(--radius-xl); padding:1.75rem; box-shadow:var(--shadow-card); }
+.proof-title { font-size:1.1rem; font-weight:800; color:var(--c-text); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
+
+.metric-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem; }
+.metric-box { background:var(--c-card-sub); border:1px solid var(--c-border); border-radius:14px; padding:1rem; text-align:center; }
+.metric-val { font-size:1.6rem; font-weight:900; color:var(--c-brand); }
+.metric-lbl { font-size:0.75rem; font-weight:700; color:var(--c-muted); }
+
+.client-logos-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:0.75rem; text-align:center; }
+.client-logo-item { background:var(--c-card-sub); border:1px solid var(--c-border); border-radius:10px; padding:0.6rem; font-weight:800; font-size:0.78rem; color:var(--c-text); }
+
+.whatsapp-box {
+  background:linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.02));
+  border:2px solid rgba(16,185,129,0.3); border-radius:var(--radius-xl); padding:1.5rem; text-align:center;
+}
+.whatsapp-title { font-size:1.1rem; font-weight:900; color:#059669; margin-bottom:0.4rem; display:flex; align-items:center; justify-content:center; gap:0.5rem; }
+.whatsapp-desc { font-size:0.85rem; color:var(--c-muted); font-weight:600; margin-bottom:1rem; }
+.whatsapp-btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;
+  background:var(--grad-green); color:#fff; padding:0.8rem 1.5rem; border-radius:12px;
+  text-decoration:none; font-weight:800; font-size:0.95rem; width:100%; box-shadow:0 6px 20px rgba(16,185,129,0.25);
+  transition:var(--transition);
+}
+.whatsapp-btn:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(16,185,129,0.35); }
+
+/* SUCCESS MODAL */
+.modal-overlay {
+  position:fixed; inset:0; z-index:999; background:rgba(15,23,42,0.6); backdrop-filter:blur(8px);
+  display:none; align-items:center; justify-content:center; padding:1.5rem;
+}
+.modal-overlay.active { display:flex; }
+.modal-content {
+  background:#fff; border-radius:var(--radius-2xl); padding:2.5rem; max-width:500px; width:100%;
+  text-align:center; box-shadow:0 25px 50px rgba(0,0,0,0.2); animation:popIn 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+@keyframes popIn { 0%{transform:scale(0.8);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+
+.modal-icon { width:70px; height:70px; border-radius:50%; background:rgba(16,185,129,0.15); color:var(--c-green); font-size:2.2rem; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; }
+.modal-title { font-size:1.5rem; font-weight:900; color:var(--c-text); margin-bottom:0.5rem; }
+.modal-desc { font-size:0.92rem; color:var(--c-muted); font-weight:600; margin-bottom:1.5rem; }
+.modal-close-btn { background:var(--grad-brand); color:#fff; border:none; padding:0.75rem 2rem; border-radius:12px; font-weight:800; font-size:0.92rem; cursor:pointer; }
+
+footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c-border); margin-top:3rem; background:#fff; }
+.footer-logo { font-size:1.6rem; font-weight:900; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+.en-only { display:none; }
+.ar-only { display:inline; }
+</style>
+</head>
+
+<body>
+<div class="bg-canvas"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <img src="logo.png" alt="UMI" class="nav-logo" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 80 40\'><rect width=\'80\' height=\'40\' rx=\'8\' fill=\'%23e91e8c\'/><text x=\'40\' y=\'26\' fill=\'white\' font-size=\'16\' text-anchor=\'middle\' font-weight=\'bold\'>UMI</text></svg>'">
+    <div>
+      <div class="nav-title">UMI GROUP</div>
+      <div class="nav-sub">EXHIBITION STAND DESIGN DUBAI</div>
+    </div>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">🇸🇦 AR</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+  </div>
+
+  <a href="index.html" class="back-btn">
+    <i class="fa-solid fa-house"></i>
+    <span class="ar-only">الرئيسية</span>
+    <span class="en-only">Home</span>
+  </a>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fa-solid fa-gift"></i>
+      <span class="ar-only">عرض خاص للشركات والعارضين لعام 2026</span>
+      <span class="en-only">Exclusive 2026 B2B Exhibitor Offer</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="ar-only">احصل على <span class="grad">تصميم 3D مجاني</span> + عرض أسعار تفصيلي لجناحك خلال 24 ساعة!</span>
+      <span class="en-only">Get a <span class="grad">FREE 3D Stand Design</span> & Detailed Quote Within 24 Hours!</span>
+    </h1>
+    <p class="hero-desc">
+      <span class="ar-only">صمّم وبنِ جناح معرضك بدبي والإمارات بأعلى معايير الجودة ومطابقة 100% بين التصميم والواقع بأيدي مهندسين ومصنع خاص بمجموعة UMI Group.</span>
+      <span class="en-only">Design & fabricate your custom exhibition stand in Dubai & UAE with 100% 3D-to-real precision built directly by UMI Group's factory team.</span>
+    </p>
+  </div>
+
+  <!-- CONVERSION GRID -->
+  <div class="conversion-grid">
+    
+    <!-- HIGH CONVERTING FORM -->
+    <div class="form-card">
+      <div class="form-header">
+        <div class="form-title">
+          <span class="ar-only">📋 اطلب تصميمك المجاني وعرض الأسعار</span>
+          <span class="en-only">📋 Request Your Free 3D Design & Quote</span>
+        </div>
+        <div class="form-subtitle">
+          <span class="ar-only">أدخل بياناتك وسيتم التواصل معك من مدير المشاريع خلال ساعتين</span>
+          <span class="en-only">Fill out 4 simple fields for instant dedicated consultation</span>
+        </div>
+      </div>
+
+      <form id="leadForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">
+            <span class="ar-only">الاسم الكامل *</span>
+            <span class="en-only">Full Name *</span>
+          </label>
+          <input type="text" class="form-input" required placeholder="أحمد يوسف / Ahmed Yousef">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <span class="ar-only">اسم الشركة / الجهة *</span>
+            <span class="en-only">Company Name *</span>
+          </label>
+          <input type="text" class="form-input" required placeholder="شركة المجد / Acme Corporation">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <span class="ar-only">رقم الموبايل / واتساب (للتواصل السريع) *</span>
+            <span class="en-only">Phone / WhatsApp Number *</span>
+          </label>
+          <input type="tel" class="form-input" required placeholder="+971 50 123 4567">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <span class="ar-only">اسم المعرض وتاريخه المتوقع</span>
+            <span class="en-only">Exhibition Name & Date</span>
+          </label>
+          <select class="form-select">
+            <option>GITEX Global 2026</option>
+            <option>Gulfood 2026</option>
+            <option>Arab Health 2026</option>
+            <option>Cityscape Dubai 2026</option>
+            <option>ATM (Arabian Travel Market)</option>
+            <option>معرض آخر / Other Exhibition</option>
+          </select>
+        </div>
+
+        <button type="submit" class="form-submit-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span class="ar-only">أرسل الطلب واحصل على التصميم المجاني الان</span>
+          <span class="en-only">Send Request & Claim Free 3D Design Now</span>
+        </button>
+
+        <div class="guarantee-text">
+          <i class="fa-solid fa-shield-halved" style="color:var(--c-green);"></i>
+          <span class="ar-only">بياناتك آمنة 100% ولن نشاركها مع أي طرف ثالث</span>
+          <span class="en-only">100% Privacy Guaranteed · Zero Spam Policy</span>
+        </div>
+      </form>
+    </div>
+
+    <!-- PROOF & INSTANT WHATSAPP SIDEBAR -->
+    <div class="proof-sidebar">
+
+      <!-- INSTANT WHATSAPP CTA FOR URGENT DEADLINES -->
+      <div class="whatsapp-box">
+        <div class="whatsapp-title">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="ar-only">عندك معرض عاجل ومحتاج رد فورِي؟</span>
+          <span class="en-only">Urgent Expo Deadline? Chat Directly!</span>
+        </div>
+        <div class="whatsapp-desc">
+          <span class="ar-only">تواصل مباشرة على الواتساب مع مدير حسابات العملاء بدبي لاستلام التفاصيل فوراً.</span>
+          <span class="en-only">Chat instantly on WhatsApp with our Dubai Account Manager for immediate support.</span>
+        </div>
+        <a href="https://wa.me/971501234567?text=مرحباً،%20أحتاج%20عرض%20أسعار%20وتصميم%20جناح%20معرض%20بدبي" target="_blank" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="ar-only">محادثة واتساب فورية مباشرة</span>
+          <span class="en-only">Start Instant WhatsApp Chat</span>
+        </a>
+      </div>
+
+      <!-- PROOF CARD -->
+      <div class="proof-card">
+        <div class="proof-title">
+          <i class="fa-solid fa-trophy" style="color:var(--c-gold-light);"></i>
+          <span class="ar-only">لماذا تختار مجموعة UMI Group؟</span>
+          <span class="en-only">Why Choose UMI Group Dubai?</span>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric-box">
+            <div class="metric-val">20+</div>
+            <div class="metric-lbl"><span class="ar-only">عاماً من الخبرة بدبي</span><span class="en-only">Years Dubai Experience</span></div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">500+</div>
+            <div class="metric-lbl"><span class="ar-only">جناح منفّذ بنجاح</span><span class="en-only">Exhibition Stands Built</span></div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">100%</div>
+            <div class="metric-lbl"><span class="ar-only">مطابقة 3D للواقع</span><span class="en-only">3D to Built Precision</span></div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">24H</div>
+            <div class="metric-lbl"><span class="ar-only">تسليم مجاني للتصميم</span><span class="en-only">Free Design Turnaround</span></div>
+          </div>
+        </div>
+
+        <div style="font-weight:800;font-size:0.85rem;color:var(--c-text);margin-bottom:0.6rem;">
+          <span class="ar-only">أبرز عملاء شرفنا بتنفيذ أجنحتهم:</span>
+          <span class="en-only">Trusted By Industry Leaders:</span>
+        </div>
+
+        <div class="client-logos-grid">
+          <div class="client-logo-item">شرطة دبي</div>
+          <div class="client-logo-item">DEWA ديوا</div>
+          <div class="client-logo-item">Binance</div>
+          <div class="client-logo-item">Arada أرادَ</div>
+          <div class="client-logo-item">Meraas ميرداس</div>
+          <div class="client-logo-item">MOHAP الصحة</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div><!-- /container -->
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-content">
+    <div class="modal-icon"><i class="fa-solid fa-check"></i></div>
+    <div class="modal-title">
+      <span class="ar-only">تم استلام طلبك بنجاح! 🎉</span>
+      <span class="en-only">Request Received Successfully! 🎉</span>
+    </div>
+    <div class="modal-desc">
+      <span class="ar-only">شكراً لتواصلك معنا. سيقوم مهندس التصميم ومدير المشاريع في UMI Group بالتواصل معك خلال ساعتين لإرسال التصميم الـ 3D والكتالوج.</span>
+      <span class="en-only">Thank you! Our UMI Group lead design engineer will contact you within 2 hours with your free 3D render proposal.</span>
+    </div>
+    <button class="modal-close-btn" onclick="closeModal()">
+      <span class="ar-only">موافق</span>
+      <span class="en-only">Got It</span>
+    </button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">UMI GROUP</div>
+  <div style="font-size:0.85rem;color:var(--c-muted);margin-top:0.5rem;font-weight:700;">
+    <span class="ar-only">صفحة التواصل الرسمية المباشرة — UMI Group دبي 2026 · جميع الحقوق محفوظة ©</span>
+    <span class="en-only">Official Direct Conversion Page — UMI Group Dubai 2026 · All Rights Reserved ©</span>
+  </div>
+</footer>
+
+<script>
+function handleFormSubmit(e) {
+  e.preventDefault();
+  document.getElementById('successModal').classList.add('active');
+  document.getElementById('leadForm').reset();
+}
+
+function closeModal() {
+  document.getElementById('successModal').classList.remove('active');
+}
+
+function setLang(lang) {
+  const html = document.getElementById('html-root');
+  const btnAr = document.getElementById('btn-ar');
+  const btnEn = document.getElementById('btn-en');
+  const isEN = lang === 'en';
+
+  if (isEN) {
+    html.setAttribute('lang','en');
+    html.setAttribute('dir','ltr');
+    document.body.classList.add('en');
+    btnEn.classList.add('active');
+    btnAr.classList.remove('active');
+    document.title = 'Get Free 3D Stand Design & Quote — UMI Group Dubai';
+  } else {
+    html.setAttribute('lang','ar');
+    html.setAttribute('dir','rtl');
+    document.body.classList.remove('en');
+    btnAr.classList.add('active');
+    btnEn.classList.remove('active');
+    document.title = 'احصل على تصميم 3D مجاني وعرض أسعار — UMI Group دبي';
+  }
+
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = isEN ? 'none' : 'inline'; });
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = isEN ? 'inline' : 'none'; });
+}
+(function init() {
+  document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+})();
+</script>
+</body>
+</html>
