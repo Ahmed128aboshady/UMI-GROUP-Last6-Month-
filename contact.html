@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>احصل على تصميم 3D مجاني وعرض أسعار — UMI Group دبي</title>
+<title>Get Free 3D Stand Design & Quote — UMI Group Dubai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -239,7 +239,7 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
             <span class="ar-only">الاسم الكامل *</span>
             <span class="en-only">Full Name *</span>
           </label>
-          <input type="text" class="form-input" required placeholder="أحمد يوسف / Ahmed Yousef">
+          <input type="text" id="input-name" class="form-input" required placeholder="أحمد يوسف / Ahmed Yousef">
         </div>
 
         <div class="form-group">
@@ -247,7 +247,7 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
             <span class="ar-only">اسم الشركة / الجهة *</span>
             <span class="en-only">Company Name *</span>
           </label>
-          <input type="text" class="form-input" required placeholder="شركة المجد / Acme Corporation">
+          <input type="text" id="input-company" class="form-input" required placeholder="شركة المجد / Acme Corporation">
         </div>
 
         <div class="form-group">
@@ -255,21 +255,21 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
             <span class="ar-only">رقم الموبايل / واتساب (للتواصل السريع) *</span>
             <span class="en-only">Phone / WhatsApp Number *</span>
           </label>
-          <input type="tel" class="form-input" required placeholder="+971 50 123 4567">
+          <input type="tel" id="input-phone" class="form-input" required placeholder="+971 50 123 4567">
         </div>
 
         <div class="form-group">
           <label class="form-label">
             <span class="ar-only">اسم المعرض وتاريخه المتوقع</span>
-            <span class="en-only">Exhibition Name & Date</span>
+            <span class="en-only">Exhibition Name & Expected Date</span>
           </label>
-          <select class="form-select">
-            <option>GITEX Global 2026</option>
-            <option>Gulfood 2026</option>
-            <option>Arab Health 2026</option>
-            <option>Cityscape Dubai 2026</option>
-            <option>ATM (Arabian Travel Market)</option>
-            <option>معرض آخر / Other Exhibition</option>
+          <select class="form-select" id="select-expo">
+            <option value="gitex">GITEX Global 2026</option>
+            <option value="gulfood">Gulfood 2026</option>
+            <option value="arabhealth">Arab Health 2026</option>
+            <option value="cityscape">Cityscape Dubai 2026</option>
+            <option value="atm">ATM (Arabian Travel Market)</option>
+            <option value="other">معرض آخر / Other Exhibition</option>
           </select>
         </div>
 
@@ -301,7 +301,7 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
           <span class="ar-only">تواصل مباشرة على الواتساب مع مدير حسابات العملاء بدبي لاستلام التفاصيل فوراً.</span>
           <span class="en-only">Chat instantly on WhatsApp with our Dubai Account Manager for immediate support.</span>
         </div>
-        <a href="https://wa.me/971501234567?text=مرحباً،%20أحتاج%20عرض%20أسعار%20وتصميم%20جناح%20معرض%20بدبي" target="_blank" class="whatsapp-btn">
+        <a href="https://wa.me/971501234567?text=Hi,%20I%20need%20a%20quote%20and%203D%20exhibition%20stand%20design%20in%20Dubai" target="_blank" class="whatsapp-btn">
           <i class="fa-brands fa-whatsapp"></i>
           <span class="ar-only">محادثة واتساب فورية مباشرة</span>
           <span class="en-only">Start Instant WhatsApp Chat</span>
@@ -341,12 +341,12 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
         </div>
 
         <div class="client-logos-grid">
-          <div class="client-logo-item">شرطة دبي</div>
-          <div class="client-logo-item">DEWA ديوا</div>
+          <div class="client-logo-item"><span class="ar-only">شرطة دبي</span><span class="en-only">Dubai Police</span></div>
+          <div class="client-logo-item"><span class="ar-only">DEWA ديوا</span><span class="en-only">DEWA</span></div>
           <div class="client-logo-item">Binance</div>
-          <div class="client-logo-item">Arada أرادَ</div>
-          <div class="client-logo-item">Meraas ميرداس</div>
-          <div class="client-logo-item">MOHAP الصحة</div>
+          <div class="client-logo-item"><span class="ar-only">Arada أرادَ</span><span class="en-only">Arada</span></div>
+          <div class="client-logo-item"><span class="ar-only">Meraas ميرداس</span><span class="en-only">Meraas</span></div>
+          <div class="client-logo-item"><span class="ar-only">MOHAP الصحة</span><span class="en-only">MOHAP</span></div>
         </div>
       </div>
 
@@ -400,6 +400,10 @@ function setLang(lang) {
   const btnEn = document.getElementById('btn-en');
   const isEN = lang === 'en';
 
+  const inputName = document.getElementById('input-name');
+  const inputCompany = document.getElementById('input-company');
+  const inputPhone = document.getElementById('input-phone');
+
   if (isEN) {
     html.setAttribute('lang','en');
     html.setAttribute('dir','ltr');
@@ -407,6 +411,9 @@ function setLang(lang) {
     btnEn.classList.add('active');
     btnAr.classList.remove('active');
     document.title = 'Get Free 3D Stand Design & Quote — UMI Group Dubai';
+    if (inputName) inputName.placeholder = 'e.g. John Smith';
+    if (inputCompany) inputCompany.placeholder = 'e.g. Acme Corporation';
+    if (inputPhone) inputPhone.placeholder = 'e.g. +971 50 123 4567';
   } else {
     html.setAttribute('lang','ar');
     html.setAttribute('dir','rtl');
@@ -414,14 +421,24 @@ function setLang(lang) {
     btnAr.classList.add('active');
     btnEn.classList.remove('active');
     document.title = 'احصل على تصميم 3D مجاني وعرض أسعار — UMI Group دبي';
+    if (inputName) inputName.placeholder = 'أحمد يوسف / Ahmed Yousef';
+    if (inputCompany) inputCompany.placeholder = 'شركة المجد / Acme Corporation';
+    if (inputPhone) inputPhone.placeholder = '+971 50 123 4567';
   }
 
   document.querySelectorAll('.ar-only').forEach(el => { el.style.display = isEN ? 'none' : 'inline'; });
   document.querySelectorAll('.en-only').forEach(el => { el.style.display = isEN ? 'inline' : 'none'; });
 }
+
 (function init() {
-  document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
-  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  if (langParam === 'en') {
+    setLang('en');
+  } else {
+    document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
+    document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+  }
 })();
 </script>
 </body>

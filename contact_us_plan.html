@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خطة تحسين صفحة التواصل واختبارات التحويل CRO — UMI Group</title>
+<title>CRO Strategy & Contact Us Optimization — UMI Group</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -286,10 +286,10 @@ footer { text-align:center; padding:3rem 1rem 2rem; border-top:1px solid var(--c
     <div class="cta-banner">
       <h3><span class="ar-only">🚀 الصفحة الجديدة جاهزة ومباشرة الآن!</span><span class="en-only">🚀 The New High-Converting Page is Live!</span></h3>
       <p><span class="ar-only">تم تصميم وتجهيز صفحة التحويل الجديدة ذات المعدل العالي (contact.html) لتكون الوجهة الرئيسية لإعلانات Google و LinkedIn.</span><span class="en-only">The newly redesigned high-converting landing page (contact.html) is ready for launch.</span></p>
-      <a href="contact.html" target="_blank" class="cta-link-btn">
+      <a href="contact.html?lang=en" target="_blank" class="cta-link-btn">
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <span class="ar-only">شاهد وتصفح صفحة التحويل الجديدة (contact.html)</span>
-        <span class="en-only">View Live Conversion Landing Page (contact.html)</span>
+        <span class="ar-only">شاهد وتصفح صفحة التحويل الجديدة بالإنجليزية (contact.html?lang=en)</span>
+        <span class="en-only">View Live Conversion Landing Page in English (contact.html?lang=en)</span>
       </a>
     </div>
 
@@ -331,9 +331,16 @@ function setLang(lang) {
   document.querySelectorAll('.ar-only').forEach(el => { el.style.display = isEN ? 'none' : 'inline'; });
   document.querySelectorAll('.en-only').forEach(el => { el.style.display = isEN ? 'inline' : 'none'; });
 }
+
 (function init() {
-  document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
-  document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  if (langParam === 'en') {
+    setLang('en');
+  } else {
+    document.querySelectorAll('.en-only').forEach(el => { el.style.display = 'none'; });
+    document.querySelectorAll('.ar-only').forEach(el => { el.style.display = 'inline'; });
+  }
 })();
 </script>
 </body>
