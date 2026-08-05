@@ -362,14 +362,19 @@ function handleFormSubmit(e) {
 
 function handleWhatsAppClick(e) {
   e.preventDefault();
-  const whatsappUrl = "https://wa.me/971501151453?text=" + encodeURIComponent("Hi UMI Group, I need a 3D exhibition stand design & quote in Dubai.");
+
+  // 📲 Smart Phone Prompt: Asks user for phone number to log into Google Sheet instead of N/A
+  var userPhone = prompt("📲 Please enter your Phone / WhatsApp Number for priority dedicated support:", "");
+  var finalPhone = (userPhone && userPhone.trim() !== "") ? userPhone.trim() : "Direct WhatsApp Click";
+
+  const whatsappUrl = "https://wa.me/971501151453?text=" + encodeURIComponent("Hi UMI Group, I need a 3D exhibition stand design & quote in Dubai. My phone number is: " + finalPhone);
 
   const payload = {
-    name: "WhatsApp Click Lead",
+    name: "WhatsApp Lead",
     company: "N/A",
-    phone: "N/A",
+    phone: finalPhone, // 👈 Phone number is logged directly into Google Sheet!
     email: "N/A",
-    message: "Clicked Instant WhatsApp Chat Button",
+    message: "Initiated WhatsApp Chat from Landing Page",
     source: "whatsapp_button_click_en",
     page: location.href,
     ua: navigator.userAgent
